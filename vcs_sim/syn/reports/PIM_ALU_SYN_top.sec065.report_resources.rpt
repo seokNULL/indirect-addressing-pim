@@ -1,0 +1,2755 @@
+ 
+****************************************
+Report : resources
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Dec 22 12:14:40 2022
+****************************************
+
+
+No resource sharing information to report.
+
+No implementations to report
+ 
+****************************************
+Design : bank_top_GDDR6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_4        | DW01_inc_DG    | width=4    | add_235_S2 (bank_top_GDDR6.v:235) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_4            | DW01_inc_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_0
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_1
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_2
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_3
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_4
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_5
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_6
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_7
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_8
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_8
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_8
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_9
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_9
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_9
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_10
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_10
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_10
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_11
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_11
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_11
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_12
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_12
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_12
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_13
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_13
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_13
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_14
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_14
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_14
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_15
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_15
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=19 | sll_929 (bank_top_GDDR6.v:929) |
+             |                | SH_width=3 |                            |
+| sub_x_2        | DW01_sub_DG    | width=6    | sub_936 (bank_top_GDDR6.v:936) |
+| gt_x_3         | DW_cmp_DG      | width=5    | gt_944 (bank_top_GDDR6.v:944) |
+| eq_x_4         | DW_cmp_DG      | width=6    | eq_945 (bank_top_GDDR6.v:945) |
+| eq_x_5         | DW_cmp_DG      | width=6    | eq_947 (bank_top_GDDR6.v:947) |
+| lt_x_6         | DW_cmp_DG      | width=5    | lt_948 (bank_top_GDDR6.v:948) |
+| sub_x_12       | DW01_sub_DG    | width=17   | sub_981 (bank_top_GDDR6.v:981) |
+| add_x_14       | DW01_inc_DG    | width=5    | add_989 (bank_top_GDDR6.v:989) |
+| DP_OP_50J2_122_1089             |            |                            |
+|                | DP_OP_50J2_122_1089 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_50J2_122_1089
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_50J2_122_1089  | sub_974 (bank_top_GDDR6.v:974)                      |
+|                      | add_976 (bank_top_GDDR6.v:976)                      |
+|                      | sub_973_S2 (bank_top_GDDR6.v:973)                   |
+|                      | add_973_S2 (bank_top_GDDR6.v:973)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( bank_top_GDDR6.v:973 bank_top_GDDR6.v:974 bank_top_GDDR6.v:976 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (area)        |                |
+| sub_x_2            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_3             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_4             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_5             | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_6             | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_12           | DW01_sub_DG      | apparch (area)     |                |
+| add_x_14           | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_50J2_122_1089                   |                    |                |
+|                    | DP_OP_50J2_122_1089 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_15
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_28J2_126_2678             |            |                            |
+|                | DP_OP_28J2_126_2678 |       |                            |
+| DP_OP_29J2_127_6293             |            |                            |
+|                | DP_OP_29J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_28J2_126_2678
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_28J2_126_2678  | add_875 (bank_top_GDDR6.v:875)                      |
+|                      | sub_876 (bank_top_GDDR6.v:876)                      |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 9     | I1 + I2 - $unsigned(7'b1111111) ( bank_top_GDDR6.v:875 bank_top_GDDR6.v:876 ) |
+==============================================================================
+
+Datapath Report for DP_OP_29J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_29J2_127_6293  | mult_881 (bank_top_GDDR6.v:881)                     |
+|                      | add_883 (bank_top_GDDR6.v:883)                      |
+|                      | mult_882 (bank_top_GDDR6.v:882)                     |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T10   | IFO  | Unsigned | 12    | I1 * I2 (bank_top_GDDR6.v:881)           |
+| T11   | IFO  | Unsigned | 8     | I3 * I4 (bank_top_GDDR6.v:882)           |
+| O1    | PO   | Unsigned | 12    | T10 + T11 (bank_top_GDDR6.v:883)         |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_28J2_126_2678                   |                    |                |
+|                    | DP_OP_28J2_126_2678 | str (area)      |                |
+| DP_OP_29J2_127_6293                   |                    |                |
+|                    | DP_OP_29J2_127_6293 | str (area)      |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_8
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_9
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_10
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_11
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_12
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_13
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_14
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_DEBUG_15
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6/rtl/bank_top_GDDR6.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_1043 (bank_top_GDDR6.v:1043) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_1088 (bank_top_GDDR6.v:1088) |
+           |                |            | sub_1093 (bank_top_GDDR6.v:1093) |
+           |                |            | sub_1098 (bank_top_GDDR6.v:1098) |
+           |                |            | sub_1103 (bank_top_GDDR6.v:1103) |
+           |                |            | sub_1108 (bank_top_GDDR6.v:1108) |
+           |                |            | sub_1113 (bank_top_GDDR6.v:1113) |
+           |                |            | sub_1118 (bank_top_GDDR6.v:1118) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+1

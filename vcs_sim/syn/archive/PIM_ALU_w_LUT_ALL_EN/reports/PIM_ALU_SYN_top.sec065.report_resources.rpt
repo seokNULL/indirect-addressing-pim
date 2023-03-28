@@ -1,0 +1,1623 @@
+ 
+****************************************
+Report : resources
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Tue Jun 23 22:45:12 2020
+****************************************
+
+
+No resource sharing information to report.
+
+No implementations to report
+ 
+****************************************
+Design : bank_top
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_5        | DW01_inc_DG    | width=3    | add_1001 (Device_top.v:1001) |
+| add_x_9        | DW01_inc_DG    | width=3    | add_1065_S2 (Device_top.v:1065) |
+| add_x_20       | DW01_inc_DG    | width=6    | add_1431 (Device_top.v:1431) |
+| add_x_140      | DW01_inc_DG    | width=7    | add_2178 (Device_top.v:2178) |
+| add_x_142      | DW01_inc_DG    | width=7    | add_2191 (Device_top.v:2191) |
+| add_x_144      | DW01_inc_DG    | width=7    | add_2204 (Device_top.v:2204) |
+| add_x_146      | DW01_inc_DG    | width=7    | add_2217 (Device_top.v:2217) |
+| sub_x_148      | DW01_dec_DG    | width=7    | sub_2264 (Device_top.v:2264) |
+| sub_x_150      | DW01_dec_DG    | width=7    | sub_2272 (Device_top.v:2272) |
+| sub_x_152      | DW01_dec_DG    | width=7    | sub_2280 (Device_top.v:2280) |
+| sub_x_154      | DW01_dec_DG    | width=7    | sub_2288 (Device_top.v:2288) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_5            | DW01_inc_DG      | apparch (area)     |                |
+| add_x_9            | DW01_inc_DG      | apparch (area)     |                |
+| add_x_20           | DW01_inc_DG      | apparch (area)     |                |
+| add_x_140          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_142          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_144          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_146          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_148          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_150          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_152          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_154          | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_32
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_0
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_0
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_33
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_1
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_1
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_34
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_2
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_2
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_35
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_3
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_3
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_36
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_4
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_37
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_5
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_5
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_38
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_6
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_6
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : NORM_stage_39
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_inc_DG    | width=5    | add_3085 (Device_top.v:3085) |
+| sub_x_2        | DW01_dec_DG    | width=5    | sub_3130 (Device_top.v:3130) |
+               |                |            | sub_3135 (Device_top.v:3135) |
+               |                |            | sub_3140 (Device_top.v:3140) |
+               |                |            | sub_3145 (Device_top.v:3145) |
+               |                |            | sub_3150 (Device_top.v:3150) |
+               |                |            | sub_3155 (Device_top.v:3155) |
+               |                |            | sub_3160 (Device_top.v:3160) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_2            | DW01_dec_DG      | apparch (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : bfloat_MAC_pipe_OPT_7
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : ADD_module_OPT_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_5        | DW01_sub_DG    | width=17   | sub_2968 (Device_top.v:2968) |
+| add_x_7        | DW01_inc_DG    | width=5    | add_2975 (Device_top.v:2975) |
+| DP_OP_54J2_122_897              |            |                            |
+|                | DP_OP_54J2_122_897 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_54J2_122_897
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_54J2_122_897   | sub_2960_S2 (Device_top.v:2960)                     |
+|                      | add_2963 (Device_top.v:2963)                        |
+|                      | sub_2961 (Device_top.v:2961)                        |
+|                      | add_2961 (Device_top.v:2961)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2960 Device_top.v:2961 Device_top.v:2963 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_5            | DW01_sub_DG      | apparch (area)     |                |
+| add_x_7            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_54J2_122_897 | DP_OP_54J2_122_897 | str (area)       |                |
+===============================================================================
+
+ 
+****************************************
+Design : MUL_OPT_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| sub_x_6        | DW01_sub_DG    | width=6    | sub_2798 (Device_top.v:2798) |
+| gt_x_8         | DW_cmp_DG      | width=5    | gt_2825 (Device_top.v:2825) |
+| eq_x_9         | DW_cmp_DG      | width=6    | eq_2826 (Device_top.v:2826) |
+| eq_x_10        | DW_cmp_DG      | width=6    | eq_2827 (Device_top.v:2827) |
+| eq_x_11        | DW_cmp_DG      | width=6    | eq_2828 (Device_top.v:2828) |
+| lt_x_12        | DW_cmp_DG      | width=5    | lt_2829 (Device_top.v:2829) |
+| DP_OP_32J2_126_2677             |            |                            |
+|                | DP_OP_32J2_126_2677 |       |                            |
+| DP_OP_33J2_127_6293             |            |                            |
+|                | DP_OP_33J2_127_6293 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_32J2_126_2677
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_32J2_126_2677  | add_2793 (Device_top.v:2793)                        |
+|                      | sub_2793 (Device_top.v:2793)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2793) |
+==============================================================================
+
+Datapath Report for DP_OP_33J2_127_6293
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_33J2_127_6293  | mult_2805 (Device_top.v:2805)                       |
+|                      | add_2808 (Device_top.v:2808)                        |
+|                      | mult_2806 (Device_top.v:2806)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T8    | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2805)              |
+| T9    | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2806)              |
+| O1    | PO   | Unsigned | 12    | T8 + T9 (Device_top.v:2808)              |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_2793 (Device_top.v:2793) sub_2793 (Device_top.v:2793)' in design 'MUL_OPT_0' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'C155 (Device_top.v:2793)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| sub_x_6            | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_8             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_9             | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_10            | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_11            | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_12            | DW_cmp_DG        | apparch (area)     |                |
+| DP_OP_32J2_126_2677                   |                    |                |
+|                    | DP_OP_32J2_126_2677 | str (area)      |                |
+| DP_OP_33J2_127_6293                   |                    |                |
+|                    | DP_OP_33J2_127_6293 | str (power)     |                |
+|                    |                  | mult_arch: and     |                |
+===============================================================================
+
+ 
+****************************************
+Design : deNORM_stage_7
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ash_1          | DW_leftsh_DG   | A_width=18 | sll_3054 (Device_top.v:3054) |
+               |                | SH_width=3 |                            |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ash_1              | DW_leftsh_DG     | astr (power)       |                |
+===============================================================================
+
+1

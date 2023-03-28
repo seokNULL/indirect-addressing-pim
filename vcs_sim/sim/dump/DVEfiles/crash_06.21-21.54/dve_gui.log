@@ -1,0 +1,217 @@
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+The file '/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd' was opened successfully.
+---------------------------------------------
+
+The tool has just detected a severe internal error:
+
+SEGV exception handled in internal functions.
+
+
+Release = 'K-2015.09-SP1_Full64'  Architecture = 'amd64'  Program = 'DVE'
+
+'33090154 33127706 33129758 230785492336'
+
+---------------------------------------------
+=======================DVE Context and Call Stack=========================
+
+An unexpected termination has occurred in /usr/synopsys/vcs_vK-2015.09-SP1/gui/dve/linux64/bin/dve.exeHostname hades
+
+During Getting value change data. 
+VPD API Function hfGetAllValueChanges Handle1="/home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd" 
+Tcl="guiSource /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/DVEfiles/session.tcl " 
+Tcl="gui_save_session -reload -default_file " 
+Tcl="gui_eval_and_log_cmd gui_save_session -reload -default_file " 
+Command line: /usr/synopsys/vcs_vK-2015.09-SP1/gui/dve/linux64/bin/dve.exe -full64
+
+--- Stack trace follows:
+[New LWP 17702]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x00000035bbeac8dd in waitpid () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fb722ba4700 (LWP 17702)):
+#0  0x00000035bc20ba5e in pthread_cond_timedwait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00000000028b422b in ?? ()
+#2  0x00000000028b46be in QThread::msleep(unsigned long) ()
+#3  0x00000000010d9ee6 in ag::dveXThread::run() ()
+#4  0x00000000028b43ba in QThreadInstance::start(void*) ()
+#5  0x00000035bc207aa1 in start_thread () from /lib64/libpthread.so.0
+#6  0x00000035bbee8c4d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fb722db3800 (LWP 17626)):
+#0  0x00000035bbeac8dd in waitpid () from /lib64/libc.so.6
+#1  0x00000035bbe3e4e9 in do_system () from /lib64/libc.so.6
+#2  0x00000035bbe3e820 in system () from /lib64/libc.so.6
+#3  0x00007fb7248a6fd8 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/liberrorinf.so
+#4  0x00007fb7248a756d in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e81c34e9ac4c8988ef4a6e067b3aa9271e9f15440f9e8f69ebc77e2fd65860faa () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/liberrorinf.so
+#5  0x00007fb7248a887b in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/liberrorinf.so
+#6  0x00007fb7248a1645 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a506fdd009d3de3db1de () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/liberrorinf.so
+#7  0x0000000001f97cc5 in ag::logErrorMessage(ag::errorType, QString const&, bool) ()
+#8  0x0000000001f9851e in ?? ()
+#9  <signal handler called>
+#10 0x00007fb724c8226b in SNPSle_b0d2dde0100180e196749f511f3ae0eda2681d649a9224744bd92df7b264fcbf5101def4a2010fc63cf87928375e6249 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#11 0x00007fb724c8531c in SNPSle_f056a393078742c4d11e51521a97ef499e06d4e1f917957cade07b7a802eb0d9c9a48db5e38bca86 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#12 0x00007fb724c8d899 in SNPSle_f056a393078742c4d11e51521a97ef499e06d4e1f917957cf879e64c0d999cbd520c1a1b55123ef104ee4b5e881fb38915784df9b2181adb957c143845a64893 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#13 0x00007fb724c90054 in SNPSle_f056a393078742c4d11e51521a97ef496aac65c0cdc113a1b9e6d93405ba9307670bdcb60cfc43d73b407aa63055cd7958d581a41d37f3cd0d6bedf3db0d8c058e41723d7306e919 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#14 0x00007fb724c91b28 in SNPSle_6cb76418efb0360d8d7d419662bd2bbcdfaac03e2c90c60c1202b373f215ac86ca3aa18e7c540e5c () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#15 0x00007fb724be29e3 in SNPSle_b89b497d83434013860c712c840015d16f7be17b77655418f285afedf7f6c2088670b83c2a0320d5eb0b243d43a688bd804dd410bf642fbf516d60009c4c54927ccd702da6d4f615e228f43b144fe354 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#16 0x00007fb724be385c in SNPSle_2d2fd458016b400942f1e8e2dce2bf389e6cd5eef5a4c95ae631f64f9c870a5edc7fc3e3141a8e5778dd73c0d99f1e760011b2559b3d71920ac8414d2813059ed2b3c756619e991fa0d0af012e2755a6b618fc4ad238dd16 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#17 0x00007fb724be3936 in SNPSle_2d2fd458016b400942f1e8e2dce2bf389e6cd5eef5a4c95a7369d1ed010bd3515c3750470b3ab5643f692e05663eb3cf3f7395000a8cc6023c5ac9377fefd542f0c2a7b45077ded6 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#18 0x00007fb724be329c in SNPSle_2d2fd458016b4009d9c2da862f3ec60964c10ad489c4ed1683271e334fc97001d0c42cc84f9845a68b16e0df8e55ddc718bc69b76848afb7 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#19 0x00007fb724bd8946 in SNPSle_2d2fd458016b4009385e3f2300263f9516706218afc2485311afa5ce774981638ba6090ca8c60e6bb8f3f9601f1e2c6bd5b9c50faaa605ac () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#20 0x00007fb724bd89cb in SNPSle_2d2fd458016b400926d35b07534286925b1f2cfa3c41f66aa6b8d1d54d429d6df27b60c7a2343a1a3f734e27b7eb738e () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#21 0x00007fb724bed907 in SNPSle_2d2fd458016b4009011b4e28906103fefb0bf8c59f9eac83bab5bf55ff3c12c86293d2e1da95def25f7009d64159551c () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#22 0x00007fb724c04b8a in SNPSle_165d4d9402b8dbfcb5997b04b0417ef430df4acca5e787f25f8398d113b6fe44f6e35105e369f782a947252fa24b4f19 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#23 0x00007fb724c37b92 in SNPSle_d67416c53d71f956fec3ceb78ea1dd9d5548ff1689b64592f2d5841f4fad0e7050a0f0201e2e47308e2b4a290d7026ba2be3365d98bc17f2 () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#24 0x00007fb724c3ab5d in SNPSle_d6972e44ac25680ca1cd742f9e58638c74256b2a1c9f7448473a2264f1ecb0a519954e96ce49d24b461f3080c703326e () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#25 0x00007fb724c3bf30 in SNPSle_27f1105ca81d10ba4d42387f02fcff08a0beb818466a4896828a5892e9c944eaa00f3924d71b537d () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#26 0x00007fb724c1614a in SNPSle_acc57c9607680358ce3ae7b10b649e15f8b6b15bcb00ec1e3e2a8fcf257b94381e1872f4b336bda23f4c2c75f6e9f9cd () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#27 0x00007fb724c1b494 in SNPSle_6f4d827c9f771681d2add2baf05324fabea8f87e1a132b4a () from /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libhflib.so
+#28 0x0000000001d3a5f8 in ag::hfAspectValueChangeDb::getAllValueChanges() const ()
+#29 0x0000000001b830f1 in ag::valLoaderList::loadAllValues() ()
+#30 0x0000000001bfdc2a in ag::metaDesign::loadAllValues(bool) ()
+#31 0x00000000010dd189 in ag::ovaAppInst::loadValues(bool) ()
+#32 0x000000000199c47c in ag::waveListView::evaluateVisibleItems() ()
+#33 0x000000000199298f in ag::waveListView::processViewportChanged() ()
+#34 0x00000000019a6cd4 in ag::waveListView::drawContentsOffset(QPainter*, int, int, int, int, int, int) ()
+#35 0x00000000029e3469 in QScrollView::viewportPaintEvent(QPaintEvent*) ()
+#36 0x00000000029e7816 in QScrollView::eventFilter(QObject*, QEvent*) ()
+#37 0x00000000029c7166 in QListView::eventFilter(QObject*, QEvent*) ()
+#38 0x00000000018aef32 in ag::baseListView::eventFilter(QObject*, QEvent*) ()
+#39 0x00000000019a360b in ag::waveListView::eventFilter(QObject*, QEvent*) ()
+#40 0x00000000029061a0 in QObject::activate_filters(QEvent*) ()
+#41 0x0000000002906229 in QObject::event(QEvent*) ()
+#42 0x000000000293205a in QWidget::event(QEvent*) ()
+#43 0x00000000028ba975 in QApplication::internalNotify(QObject*, QEvent*) ()
+#44 0x00000000028bab7f in QApplication::notify(QObject*, QEvent*) ()
+#45 0x000000000200b7b6 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#46 0x0000000001fdde1d in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#47 0x00000000028986b5 in QWidget::repaint(int, int, int, int, bool) ()
+#48 0x00000000029b77b6 in QListView::updateContents() ()
+#49 0x0000000002b86e5d in QListView::qt_invoke(int, QUObject*) ()
+#50 0x0000000002511f77 in QIvgListView::qt_invoke(int, QUObject*) ()
+#51 0x0000000001a73d02 in ag::baseListView::qt_invoke(int, QUObject*) ()
+#52 0x0000000001a7b714 in ag::metaListView::qt_invoke(int, QUObject*) ()
+#53 0x0000000001a762f1 in ag::dataView::qt_invoke(int, QUObject*) ()
+#54 0x0000000001a7dc9c in ag::waveListView::qt_invoke(int, QUObject*) ()
+#55 0x0000000002908012 in QObject::activate_signal(QConnectionList*, QUObject*) ()
+#56 0x00000000029080d2 in QObject::activate_signal(int) ()
+#57 0x000000000291e8ce in QTimer::event(QEvent*) ()
+#58 0x00000000028ba975 in QApplication::internalNotify(QObject*, QEvent*) ()
+#59 0x00000000028bab7f in QApplication::notify(QObject*, QEvent*) ()
+#60 0x000000000200b7b6 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#61 0x0000000001fdde1d in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#62 0x00000000028b0db4 in QEventLoop::activateTimers() ()
+#63 0x000000000287d4ee in QEventLoop::processEvents(unsigned int) ()
+#64 0x000000000111b751 in ag::ovaEventLoop::processEvents(unsigned int) ()
+#65 0x00000000028cae4f in QEventLoop::processEvents(unsigned int, int) ()
+#66 0x0000000001e1985f in ag::ucliProcessIF::executeScriptCommand(QString const&, int, QString const&, QString*, bool) ()
+#67 0x0000000001e1de66 in ag::ucliProcessIF::guiSource(void*, Tcl_Interp*, int, char const**) ()
+#68 0x00000000027ecd9f in TclInvokeStringCommand ()
+#69 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#70 0x00000000027ee70f in Tcl_EvalEx ()
+#71 0x00000000027ef393 in Tcl_EvalObjEx ()
+#72 0x000000000283c0e1 in Tcl_UplevelObjCmd ()
+#73 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#74 0x0000000002812e49 in ?? ()
+#75 0x00000000028178a6 in TclCompEvalObj ()
+#76 0x000000000283bad0 in TclObjInterpProc ()
+#77 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#78 0x00000000027ef20b in Tcl_EvalObjv ()
+#79 0x00000000027ef36e in Tcl_EvalObjEx ()
+#80 0x000000000283c0c7 in Tcl_UplevelObjCmd ()
+#81 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#82 0x0000000002812e49 in ?? ()
+#83 0x00000000028178a6 in TclCompEvalObj ()
+#84 0x00000000027ef3c4 in Tcl_EvalObjEx ()
+#85 0x00000000027f595b in Tcl_CatchObjCmd ()
+#86 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#87 0x0000000002812e49 in ?? ()
+#88 0x00000000028178a6 in TclCompEvalObj ()
+#89 0x000000000283bad0 in TclObjInterpProc ()
+#90 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#91 0x00000000027ef20b in Tcl_EvalObjv ()
+#92 0x000000000282b429 in ?? ()
+#93 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#94 0x00000000027ee70f in Tcl_EvalEx ()
+#95 0x00000000026778bc in ?? ()
+#96 0x000000000222d679 in ek_exec_cci_command_2(EkTclObjHandle&, cci_interp_s*, char const*, int, int, int, int, int, int, int) ()
+#97 0x0000000002227910 in EkTclShellExecImpl::TExecCommandIF::runCommand(QString&) ()
+#98 0x0000000002230e00 in EkShellExecutionImpl::TExecCommand::run() ()
+#99 0x000000000223075d in EkShellExecutionImpl::startRun(EkShellExecutionImpl::TExecCommand*, EkTriState, EkTriState) ()
+#100 0x00000000022308b0 in EkShellExecutionImpl::executeSync(QString const&, bool, bool, bool, QString*, EkShellDefs::TCmdSrc, bool, EkTriState, EkTriState, bool) ()
+#101 0x0000000001f9b4b0 in utilEkShellImpl::executeSync(QString const&, bool, bool, bool, QString*, EkShellDefs::TCmdSrc, bool, EkTriState, EkTriState, bool) ()
+#102 0x000000000113213f in ag::ovaShell::executeCmdWithFlags(QString const&, EkShellDefs::TMsgSeverity&, QString&, bool, bool, bool) ()
+#103 0x000000000120697c in ag::wndConsole::slotExecuteCmdWithFlags(QString const&, bool, bool, bool, bool) ()
+#104 0x0000000001f9cf98 in ag::utilFastTcl::invoke(bool, bool, bool, bool, bool, bool) ()
+#105 0x0000000001fe56af in ag::baseSession::load(char const*, QDomDocument&, bool, bool) ()
+#106 0x0000000001fe494a in ag::baseSession::load(char const*, bool, bool) ()
+#107 0x000000000116d1ee in ag::gui_save_session_cmd(void*, cci_interp_s*, ll_list_s*) ()
+#108 0x000000000267a83e in cci_check_command ()
+#109 0x00000000027ecd9f in TclInvokeStringCommand ()
+#110 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#111 0x00000000027ee70f in Tcl_EvalEx ()
+#112 0x00000000027ef393 in Tcl_EvalObjEx ()
+#113 0x00000000027f545e in Tcl_EvalObjCmd ()
+#114 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#115 0x0000000002812e49 in ?? ()
+#116 0x00000000028178a6 in TclCompEvalObj ()
+#117 0x000000000283bad0 in TclObjInterpProc ()
+#118 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#119 0x00000000027ef20b in Tcl_EvalObjv ()
+#120 0x00000000027ef36e in Tcl_EvalObjEx ()
+#121 0x000000000283c0c7 in Tcl_UplevelObjCmd ()
+#122 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#123 0x0000000002812e49 in ?? ()
+#124 0x00000000028178a6 in TclCompEvalObj ()
+#125 0x00000000027ef3c4 in Tcl_EvalObjEx ()
+#126 0x00000000027f595b in Tcl_CatchObjCmd ()
+#127 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#128 0x0000000002812e49 in ?? ()
+#129 0x00000000028178a6 in TclCompEvalObj ()
+#130 0x000000000283bad0 in TclObjInterpProc ()
+#131 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#132 0x00000000027ef20b in Tcl_EvalObjv ()
+#133 0x000000000282b429 in ?? ()
+#134 0x00000000027ee3c2 in TclEvalObjvInternal ()
+#135 0x00000000027ee70f in Tcl_EvalEx ()
+#136 0x00000000026778bc in ?? ()
+#137 0x000000000222d679 in ek_exec_cci_command_2(EkTclObjHandle&, cci_interp_s*, char const*, int, int, int, int, int, int, int) ()
+#138 0x0000000002227910 in EkTclShellExecImpl::TExecCommandIF::runCommand(QString&) ()
+#139 0x0000000002230e00 in EkShellExecutionImpl::TExecCommand::run() ()
+#140 0x000000000223075d in EkShellExecutionImpl::startRun(EkShellExecutionImpl::TExecCommand*, EkTriState, EkTriState) ()
+#141 0x00000000022308b0 in EkShellExecutionImpl::executeSync(QString const&, bool, bool, bool, QString*, EkShellDefs::TCmdSrc, bool, EkTriState, EkTriState, bool) ()
+#142 0x0000000001f9b4b0 in utilEkShellImpl::executeSync(QString const&, bool, bool, bool, QString*, EkShellDefs::TCmdSrc, bool, EkTriState, EkTriState, bool) ()
+#143 0x00000000021c6e3d in EkTclAction::slotExecTcl() ()
+#144 0x00000000021dbe2d in EkTclAction::qt_invoke(int, QUObject*) ()
+#145 0x0000000002908012 in QObject::activate_signal(QConnectionList*, QUObject*) ()
+#146 0x00000000029080d2 in QObject::activate_signal(int) ()
+#147 0x0000000002b924a5 in QAction::qt_invoke(int, QUObject*) ()
+#148 0x00000000021dbd14 in EkAction::qt_invoke(int, QUObject*) ()
+#149 0x00000000021dbe50 in EkTclAction::qt_invoke(int, QUObject*) ()
+#150 0x0000000002908012 in QObject::activate_signal(QConnectionList*, QUObject*) ()
+#151 0x0000000002b7609c in QSignal::signal(QVariant const&) ()
+#152 0x0000000002918c7f in QSignal::activate() ()
+#153 0x00000000029d88df in QPopupMenu::mouseReleaseEvent(QMouseEvent*) ()
+#154 0x0000000002932430 in QWidget::event(QEvent*) ()
+#155 0x00000000028ba975 in QApplication::internalNotify(QObject*, QEvent*) ()
+#156 0x00000000028bad05 in QApplication::notify(QObject*, QEvent*) ()
+#157 0x000000000200b7b6 in EkExtQtApp::notify(QObject*, QEvent*) ()
+#158 0x0000000001fdde1d in ag::baseQtApp::notify(QObject*, QEvent*) ()
+#159 0x0000000002870899 in QETWidget::translateMouseEvent(_XEvent const*) ()
+#160 0x000000000286f070 in QApplication::x11ProcessEvent(_XEvent*) ()
+#161 0x000000000287d1fa in QEventLoop::processEvents(unsigned int) ()
+#162 0x000000000111b751 in ag::ovaEventLoop::processEvents(unsigned int) ()
+#163 0x00000000028cab69 in QEventLoop::enterLoop() ()
+#164 0x00000000028caaca in QEventLoop::exec() ()
+#165 0x000000000111b0bf in run_cci_event_loop ()
+#166 0x00000000010daab4 in ag::ovaAppInst::enterEventLoop(int, char**) ()
+#167 0x0000000000de3aa9 in main ()
+Completed context dump phase data 'VPD API Function'
+==========================================================================

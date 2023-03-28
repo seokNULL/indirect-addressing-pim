@@ -1,0 +1,65 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Fri Jul 10 06:49:19 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP_PIM_ALU_proc_rr_reg
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP_vACC_0_reg_6__13_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP_PIM_ALU_proc_rr_reg/CK (DFFRHQX8MTR)       0.000 #    0.000 r
+  U0_BANK_TOP_PIM_ALU_proc_rr_reg/Q (DFFRHQX8MTR)        0.132      0.132 f
+  U3963/Y (CLKNAND2X8MTR)                                0.044      0.175 r
+  U1833/Y (NOR2X12MTR)                                   0.033      0.208 f
+  U1382/Y (BUFX6MTR)                                     0.090      0.298 f
+  U14749/Y (AOI22X2MTR)                                  0.099      0.397 r
+  U3254/Y (NAND3X2MTR)                                   0.096      0.493 f
+  U3250/Y (CLKNAND2X2MTR)                                0.075      0.567 r
+  U10976/Y (CLKNAND2X4MTR)                               0.068      0.635 f
+  U10403/Y (CLKNAND2X2MTR)                               0.052      0.687 r
+  U9554/Y (OAI2BB1X4MTR)                                 0.095      0.782 r
+  U9348/Y (NAND2X4MTR)                                   0.043      0.826 f
+  U6887/Y (NAND2X6MTR)                                   0.043      0.869 r
+  U640/Y (NAND2X6MTR)                                    0.047      0.915 f
+  U2526/Y (NAND2X8MTR)                                   0.046      0.962 r
+  U2615/Y (INVX3MTR)                                     0.032      0.994 f
+  U9404/Y (OAI21X2MTR)                                   0.072      1.066 r
+  U11974/Y (XNOR2X1MTR)                                  0.087      1.153 r
+  U9410/Y (NAND2X2MTR)                                   0.069      1.221 f
+  U4875/Y (CLKNAND2X4MTR)                                0.050      1.271 r
+  U7004/Y (NOR2X3MTR)                                    0.037      1.308 f
+  U8511/Y (OAI22X2MTR)                                   0.054      1.362 r
+  U0_BANK_TOP_vACC_0_reg_6__13_/D (DFFRHQX1MTR)          0.000      1.362 r
+  data arrival time                                                 1.362
+
+  clock clk_ext (rise edge)                              1.515      1.515
+  clock network delay (ideal)                            0.000      1.515
+  U0_BANK_TOP_vACC_0_reg_6__13_/CK (DFFRHQX1MTR)         0.000      1.515 r
+  library setup time                                    -0.153      1.362
+  data required time                                                1.362
+  --------------------------------------------------------------------------
+  data required time                                                1.362
+  data arrival time                                                -1.362
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.000
+
+
+1

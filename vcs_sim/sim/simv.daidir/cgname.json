@@ -1,0 +1,32 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "testbench": [
+        "testbench",
+        "iAVhC",
+        "module"
+    ],
+    "NORM_stage_DEBUG": [
+        "NORM_stage_DEBUG",
+        "jirwz",
+        "module"
+    ],
+    "bank_top_0000": [
+        "bank_top_0000",
+        "mjfYv",
+        "module"
+    ],
+    "bfloat_MAC_pipe_OPT": [
+        "bfloat_MAC_pipe_OPT",
+        "jEMCn",
+        "module"
+    ]
+}

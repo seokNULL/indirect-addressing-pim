@@ -1,0 +1,3 @@
+./PIM_ALU_SYN_top.v
+./bank_top_GDDR6.v
+./ddr4_v2_2_4_axi_fifo.v

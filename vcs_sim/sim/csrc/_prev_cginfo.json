@@ -1,0 +1,112 @@
+{
+    "CompileStatus": "Successful",
+    "NameTable": {
+        "NORM_stage_DEBUG": [
+            "NORM_stage_DEBUG",
+            "jirwz",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "testbench": [
+            "testbench",
+            "iAVhC",
+            "module"
+        ],
+        "bank_top_0000": [
+            "bank_top_0000",
+            "mjfYv",
+            "module"
+        ],
+        "bfloat_MAC_pipe_OPT": [
+            "bfloat_MAC_pipe_OPT",
+            "jEMCn",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.37094300000000002,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.017996999999999999,
+            "ru_nvcsw": 30,
+            "ru_maxrss_kb": 62128,
+            "ru_minflt": 15982,
+            "ru_nivcsw": 9
+        },
+        "mop/quad": 3.1518470511989629,
+        "nQuads": 15430,
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0019989999999999999,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.0029989999999999999,
+            "ru_nvcsw": 1,
+            "ru_maxrss_kb": 23264,
+            "ru_minflt": 2327,
+            "ru_nivcsw": 12
+        },
+        "outputSizePerQuad": 44.0,
+        "nMops": 48633,
+        "totalObjSize": 685111,
+        "ru_self_end": {
+            "ru_utime_sec": 0.61690599999999995,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.022995999999999999,
+            "ru_nvcsw": 30,
+            "ru_maxrss_kb": 73192,
+            "ru_minflt": 19708,
+            "ru_nivcsw": 15
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0019989999999999999,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.0029989999999999999,
+            "ru_nvcsw": 1,
+            "ru_maxrss_kb": 23264,
+            "ru_minflt": 2327,
+            "ru_nivcsw": 12
+        },
+        "mopSpeed": 197724.8610563378,
+        "quadSpeed": 62733.01268890038,
+        "Frontend(%)": 60.129582140553026,
+        "CodeGen(%)": 39.870417859446974
+    },
+    "Misc": {
+        "csrc_abs": "/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim/csrc",
+        "cwd": "/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim",
+        "csrc": "csrc",
+        "default_output_dir": "csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim/simv.daidir",
+        "archive_dir": "archive.0"
+    },
+    "CompileStrategy": "fullobj",
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "testbench",
+        "bank_top_0000",
+        "bfloat_MAC_pipe_OPT",
+        "NORM_stage_DEBUG"
+    ],
+    "CurCompileUdps": {},
+    "LVLData": [
+        "SIM"
+    ],
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 95875
+    },
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.6876.json"
+    ]
+}

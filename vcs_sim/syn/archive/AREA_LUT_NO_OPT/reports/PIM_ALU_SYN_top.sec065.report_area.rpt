@@ -1,0 +1,117 @@
+ 
+****************************************
+Report : area
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Fri Jul 10 00:55:50 2020
+****************************************
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /usr/syn_lib/samsung/CB_121st_tt/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+
+Number of ports:                         6869
+Number of nets:                         22103
+Number of cells:                        16506
+Number of combinational cells:          12967
+Number of sequential cells:              3497
+Number of macros/black boxes:               0
+Number of buf/inv:                       3236
+Number of references:                       3
+
+Combinational area:              26862.719887
+Buf/Inv area:                     3341.439925
+Noncombinational area:           27889.921108
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 54752.640995
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------
+PIM_ALU_SYN_top                   54752.6410    100.0      0.0000  13443.8405  0.0000  PIM_ALU_SYN_top
+U0_BANK_TOP                       41308.8005     75.4  12602.5599  12242.8805  0.0000  bank_top
+U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_7
+U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_6
+U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_5
+U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_4
+U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_3
+U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_2
+U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_1
+U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC   256.3200      0.5    256.3200      0.0000  0.0000  NORM_stage_DEBUG_0
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_0__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_7
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_1__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_6
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_2__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_5
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_3__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_4
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_4__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_3
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_5__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_2
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_6__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_1
+U0_BANK_TOP/ACC_LUT_RESULT_GEN_7__U0_LUT_ACC_MUX
+                                     54.4000      0.1     54.4000      0.0000  0.0000  LUT_acc_mux_0
+U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU
+                                   1737.9200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_7
+U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_7
+U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0
+                                    683.8400      1.2    683.8400      0.0000  0.0000  MUL_OPT_7
+U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU
+                                   1718.7200      3.1     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_6
+U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_6
+U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0
+                                    664.6400      1.2    664.6400      0.0000  0.0000  MUL_OPT_6
+U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU
+                                   1734.7200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_5
+U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_5
+U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0
+                                    680.6400      1.2    680.6400      0.0000  0.0000  MUL_OPT_5
+U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU
+                                   1718.4000      3.1     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_4
+U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.1200      1.4    773.1200      0.0000  0.0000  ADD_module_OPT_4
+U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0
+                                    664.6400      1.2    664.6400      0.0000  0.0000  MUL_OPT_4
+U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU
+                                   1737.9200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_3
+U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_3
+U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0
+                                    683.8400      1.2    683.8400      0.0000  0.0000  MUL_OPT_3
+U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU
+                                   1737.9200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_2
+U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_2
+U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0
+                                    683.8400      1.2    683.8400      0.0000  0.0000  MUL_OPT_2
+U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU
+                                   1737.9200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_1
+U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_1
+U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0
+                                    683.8400      1.2    683.8400      0.0000  0.0000  MUL_OPT_1
+U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU
+                                   1736.3200      3.2     12.8000    267.8400  0.0000  bfloat_MAC_pipe_OPT_0
+U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE
+                                    773.4400      1.4    773.4400      0.0000  0.0000  ADD_module_OPT_0
+U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0
+                                    682.2400      1.2    682.2400      0.0000  0.0000  MUL_OPT_0
+U0_BANK_TOP/U0_LUT_CNT              117.7600      0.2     57.2800     60.4800  0.0000  LUT_counter
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------------------
+Total                                                  26862.7199  27889.9211  0.0000
+
+1

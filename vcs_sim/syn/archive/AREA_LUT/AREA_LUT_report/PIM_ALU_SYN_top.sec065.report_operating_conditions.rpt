@@ -1,0 +1,13 @@
+
+Operating Conditions:
+
+
+    Operating Condition Name : ss_1p08v_125c
+    Library : scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+    Process :   1.00
+    Temperature : 125.00
+    Voltage :   1.08
+    Interconnect Model : balanced_tree
+1
+Warning: The 'scmetro_cmos10lp_rvt_ff_1p32v_m40c_sadhm' library has not been read in yet. (UIL-3)
+0

@@ -1,0 +1,2 @@
+dump -aggregates -add /
+run

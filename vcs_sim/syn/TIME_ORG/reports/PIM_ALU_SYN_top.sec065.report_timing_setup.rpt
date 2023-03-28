@@ -1,0 +1,71 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Fri Jul 10 02:03:06 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP_global_burst_cnt_SCAL_gran_r_reg_2_
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP_BFLOAT16_ALU_1__BFLOAT_ALU_ADD0_in_mant_reg_10_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP_global_burst_cnt_SCAL_gran_r_reg_2_/CK (DFFRHQX8MTR)    0.000 #    0.000 r
+  U0_BANK_TOP_global_burst_cnt_SCAL_gran_r_reg_2_/Q (DFFRHQX8MTR)    0.164    0.164 r
+  U26388/Y (NOR2X12MTR)                                  0.063      0.227 f
+  U10833/Y (INVX18MTR)                                   0.051      0.278 r
+  U13877/Y (INVX20MTR)                                   0.033      0.311 f
+  U13889/Y (NAND2X8MTR)                                  0.026      0.337 r
+  U14402/Y (NAND3X4MTR)                                  0.057      0.394 f
+  U13558/Y (OAI21BX4MTR)                                 0.074      0.468 r
+  U13784/Y (CLKNAND2X4MTR)                               0.064      0.531 f
+  U13785/Y (NOR2X8MTR)                                   0.063      0.594 r
+  U13855/Y (NAND3X12MTR)                                 0.089      0.683 f
+  U29671/Y (CLKNAND2X16MTR)                              0.075      0.758 r
+  U10397/Y (NAND2X12MTR)                                 0.056      0.814 f
+  U12953/Y (CLKNAND2X4MTR)                               0.055      0.869 r
+  U19113/Y (INVX3MTR)                                    0.030      0.899 f
+  U15675/Y (OAI21X2MTR)                                  0.038      0.937 r
+  U29699/Y (OAI2BB1X4MTR)                                0.069      1.006 f
+  U16450/Y (XNOR2X4MTR)                                  0.091      1.096 f
+  U20316/Y (XNOR2X4MTR)                                  0.118      1.215 f
+  U15915/Y (OAI21X6MTR)                                  0.050      1.265 r
+  U11381/Y (OAI2BB1X4MTR)                                0.068      1.333 f
+  U16047/Y (NOR2X8MTR)                                   0.080      1.413 r
+  U14993/Y (OAI21X6MTR)                                  0.066      1.479 f
+  U14594/Y (NAND2X4MTR)                                  0.039      1.518 r
+  U10834/Y (NAND2X4MTR)                                  0.050      1.568 f
+  U28697/Y (AOI21X4MTR)                                  0.078      1.646 r
+  U11216/Y (NAND2X4MTR)                                  0.051      1.698 f
+  U11217/Y (NOR2X4MTR)                                   0.045      1.743 r
+  U0_BANK_TOP_BFLOAT16_ALU_1__BFLOAT_ALU_ADD0_in_mant_reg_10_/D (DFFRHQX8MTR)    0.000    1.743 r
+  data arrival time                                                 1.743
+
+  clock clk_ext (rise edge)                              1.500      1.500
+  clock network delay (ideal)                            0.000      1.500
+  U0_BANK_TOP_BFLOAT16_ALU_1__BFLOAT_ALU_ADD0_in_mant_reg_10_/CK (DFFRHQX8MTR)    0.000    1.500 r
+  library setup time                                    -0.108      1.392
+  data required time                                                1.392
+  --------------------------------------------------------------------------
+  data required time                                                1.392
+  data arrival time                                                -1.743
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -0.351
+
+
+1

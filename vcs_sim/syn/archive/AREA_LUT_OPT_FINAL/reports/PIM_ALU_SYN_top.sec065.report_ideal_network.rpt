@@ -1,0 +1,17 @@
+ 
+****************************************
+Report : ideal_network
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Fri Jul 10 00:45:17 2020
+****************************************
+
+Source ports                Latency                     Transition
+and pins              Rise           Fall           Rise          Fall
+                    min   max      min   max      min   max     min   max
+------------------------------------------------------------------------------
+PIM_ALU_SYN_top/clk  --    --       --    --       --    --      --    --   
+PIM_ALU_SYN_top/rst_x
+                     --    --       --    --       --    --      --    --   
+
+1

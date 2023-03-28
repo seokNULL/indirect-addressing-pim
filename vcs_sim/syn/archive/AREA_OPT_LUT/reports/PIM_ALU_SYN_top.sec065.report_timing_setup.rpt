@@ -1,0 +1,85 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 21:22:39 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP/is_sigmoid_reg
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP/vACC_3_reg_3__1_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP/is_sigmoid_reg/CK (DFFRQX1MTR)             0.000 #    0.000 r
+  U0_BANK_TOP/is_sigmoid_reg/Q (DFFRQX1MTR)              0.282      0.282 f
+  U0_BANK_TOP/U464/Y (BUFX2MTR)                          0.144      0.425 f
+  U0_BANK_TOP/U465/Y (INVX1MTR)                          0.093      0.518 r
+  U0_BANK_TOP/U466/Y (NAND2X1MTR)                        0.136      0.654 f
+  U0_BANK_TOP/U467/Y (INVX1MTR)                          0.125      0.779 r
+  U0_BANK_TOP/U468/Y (BUFX2MTR)                          0.117      0.896 r
+  U0_BANK_TOP/U502/Y (BUFX2MTR)                          0.106      1.002 r
+  U0_BANK_TOP/U506/Y (INVX1MTR)                          0.104      1.106 f
+  U0_BANK_TOP/U508/Y (NOR2X1MTR)                         0.151      1.256 r
+  U0_BANK_TOP/U533/Y (AOI22X1MTR)                        0.121      1.377 f
+  U0_BANK_TOP/U535/Y (NAND2X1MTR)                        0.092      1.469 r
+  U0_BANK_TOP/U540/Y (NAND3X1MTR)                        0.184      1.653 f
+  U0_BANK_TOP/U541/Y (BUFX2MTR)                          0.183      1.837 f
+  U0_BANK_TOP/U426/Y (AND2X1MTR)                         0.138      1.974 f
+  U0_BANK_TOP/U427/Y (INVX1MTR)                          0.105      2.079 r
+  U0_BANK_TOP/U11617/Y (XOR2X1MTR)                       0.069      2.148 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U17/CO (ADDFX1MTR)    0.198     2.346 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U16/CO (ADDFX1MTR)    0.199     2.545 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U15/CO (ADDFX1MTR)    0.199     2.744 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U14/CO (ADDFX1MTR)    0.199     2.943 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U13/CO (ADDFX1MTR)    0.199     3.142 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U12/CO (ADDFX1MTR)    0.199     3.341 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U11/CO (ADDFX1MTR)    0.199     3.540 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U10/CO (ADDFX1MTR)    0.199     3.739 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U9/CO (ADDFX1MTR)    0.199      3.937 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U8/CO (ADDFX1MTR)    0.199      4.136 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U7/CO (ADDFX1MTR)    0.199      4.335 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U6/CO (ADDFX1MTR)    0.199      4.534 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U5/CO (ADDFX1MTR)    0.199      4.733 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U4/CO (ADDFX1MTR)    0.199      4.932 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U3/CO (ADDFX1MTR)    0.199      5.130 f
+  U0_BANK_TOP/DP_OP_1341J1_158_8457_U2/CO (ADDFX1MTR)    0.193      5.323 f
+  U0_BANK_TOP/U8664/Y (XOR2X1MTR)                        0.134      5.457 r
+  U0_BANK_TOP/U8666/Y (NAND2X1MTR)                       0.198      5.656 f
+  U0_BANK_TOP/U8667/Y (INVX1MTR)                         0.148      5.804 r
+  U0_BANK_TOP/U8671/Y (AOI2BB2X1MTR)                     0.161      5.965 f
+  U0_BANK_TOP/U8672/Y (AOI21X1MTR)                       0.163      6.128 r
+  U0_BANK_TOP/U8983/Y (NAND2X1MTR)                       0.124      6.251 f
+  U0_BANK_TOP/U10858/Y (NOR4X1MTR)                       0.292      6.543 r
+  U0_BANK_TOP/U12154/Y (AOI22X1MTR)                      0.159      6.702 f
+  U0_BANK_TOP/U12156/Y (OAI211X1MTR)                     0.062      6.765 r
+  U0_BANK_TOP/vACC_3_reg_3__1_/D (DFFRQX1MTR)            0.000      6.765 r
+  data arrival time                                                 6.765
+
+  clock clk_ext (rise edge)                             20.000     20.000
+  clock network delay (ideal)                            0.000     20.000
+  U0_BANK_TOP/vACC_3_reg_3__1_/CK (DFFRQX1MTR)           0.000     20.000 r
+  library setup time                                    -0.182     19.818
+  data required time                                               19.818
+  --------------------------------------------------------------------------
+  data required time                                               19.818
+  data arrival time                                                -6.765
+  --------------------------------------------------------------------------
+  slack (MET)                                                      13.053
+
+
+1

@@ -1,0 +1,88 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Dec 22 12:14:40 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_GDDR6_TOP/vACC_reg_15__16_
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_GDDR6_TOP/vACC_reg_15__20_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_GDDR6_TOP/vACC_reg_15__16_/CK (DFFRQX2MTR)     0.000 #    0.000 r
+  U0_BANK_GDDR6_TOP/vACC_reg_15__16_/Q (DFFRQX2MTR)      0.234      0.234 r
+  U0_BANK_GDDR6_TOP/U92/Y (INVX1MTR)                     0.048      0.282 f
+  U0_BANK_GDDR6_TOP/U93/Y (INVX1MTR)                     0.060      0.342 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/vACC_in[16] (bfloat_MAC_pipe_OPT_0)    0.000    0.342 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/in_acc_exp[0] (ADD_module_OPT_0)    0.000    0.342 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U31/Y (NAND2X1MTR)    0.085    0.428 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U46/CO (ADDFX1MTR)    0.209    0.636 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/intadd_2_U4/CO (ADDFX1MTR)    0.295    0.932 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/intadd_2_U3/CO (ADDFX1MTR)    0.199    1.131 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/intadd_2_U2/S (ADDFX1MTR)    0.184    1.314 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U50/Y (NAND4X1MTR)    0.124    1.439 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U51/Y (NOR3BX1MTR)    0.334    1.772 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U98/Y (MXI2X1MTR)    0.163    1.935 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U105/Y (OAI22X1MTR)    0.091    2.026 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U17/CO (ADDFX1MTR)    0.332    2.358 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U16/CO (ADDFX1MTR)    0.199    2.557 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U15/CO (ADDFX1MTR)    0.199    2.756 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U14/CO (ADDFX1MTR)    0.199    2.955 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U13/CO (ADDFX1MTR)    0.199    3.153 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U12/CO (ADDFX1MTR)    0.199    3.352 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U11/CO (ADDFX1MTR)    0.199    3.551 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U10/CO (ADDFX1MTR)    0.199    3.750 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U9/CO (ADDFX1MTR)    0.199    3.949 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U8/CO (ADDFX1MTR)    0.199    4.148 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U7/CO (ADDFX1MTR)    0.199    4.346 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U6/CO (ADDFX1MTR)    0.199    4.545 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U5/CO (ADDFX1MTR)    0.199    4.744 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U4/CO (ADDFX1MTR)    0.199    4.943 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U3/CO (ADDFX1MTR)    0.199    5.142 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_50J2_122_1089_U2/CO (ADDFX1MTR)    0.193    5.334 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U57/Y (XOR2X1MTR)    0.122    5.456 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U59/Y (NAND2X1MTR)    0.104    5.560 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U64/Y (NOR2X1MTR)    0.129    5.689 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U8/Y (INVX1MTR)    0.085    5.775 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U9/Y (INVX1MTR)    0.084    5.859 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U67/Y (AND2X1MTR)    0.103    5.962 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U69/Y (NAND2X1MTR)    0.080    6.041 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U72/Y (NOR2X1MTR)    0.110    6.151 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U75/Y (NAND2X1MTR)    0.101    6.252 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U77/Y (OAI21X1MTR)    0.054    6.306 r
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/U78/Y (OAI31X1MTR)    0.079    6.385 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE/result_exp[4] (ADD_module_OPT_0)    0.000    6.385 f
+  U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/result_exp[4] (bfloat_MAC_pipe_OPT_0)    0.000    6.385 f
+  U0_BANK_GDDR6_TOP/U3519/Y (AO22X1MTR)                  0.185      6.570 f
+  U0_BANK_GDDR6_TOP/vACC_reg_15__20_/D (DFFRQX2MTR)      0.000      6.570 f
+  data arrival time                                                 6.570
+
+  clock clk_ext (rise edge)                             20.000     20.000
+  clock network delay (ideal)                            0.000     20.000
+  U0_BANK_GDDR6_TOP/vACC_reg_15__20_/CK (DFFRQX2MTR)     0.000     20.000 r
+  library setup time                                    -0.129     19.871
+  data required time                                               19.871
+  --------------------------------------------------------------------------
+  data required time                                               19.871
+  data arrival time                                                -6.570
+  --------------------------------------------------------------------------
+  slack (MET)                                                      13.301
+
+
+1

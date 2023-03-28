@@ -1,0 +1,12 @@
+ 
+****************************************
+Report : clock_skew
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Mon Jun 22 17:23:35 2020
+****************************************
+
+                 Rise      Fall  Min Rise  Min fall        Uncertainty
+Object          Delay     Delay     Delay     Delay     Plus      Minus
+--------------------------------------------------------------------------------
+1

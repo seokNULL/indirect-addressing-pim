@@ -1,0 +1,45 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Mon Jun 22 17:32:33 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: DRAM_data[0]
+              (input port clocked by clk_ext)
+  Endpoint: DRAM_data_SYN_reg_0_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk_ext (rise edge)               0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  DRAM_data[0] (in)                       0.000      0.000 f
+  DRAM_data_SYN_reg_0_/D (DFFRQX1MTR)     0.000      0.000 f
+  data arrival time                                  0.000
+
+  clock clk_ext (rise edge)               0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  DRAM_data_SYN_reg_0_/CK (DFFRQX1MTR)    0.000      0.000 r
+  library hold time                       0.010      0.010
+  data required time                                 0.010
+  -----------------------------------------------------------
+  data required time                                 0.010
+  data arrival time                                  0.000
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -0.010
+
+
+1

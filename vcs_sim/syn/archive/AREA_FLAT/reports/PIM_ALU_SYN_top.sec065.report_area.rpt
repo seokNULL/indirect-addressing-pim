@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 20:10:56 2020
+****************************************
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /usr/syn_lib/samsung/CB_121st_tt/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+
+Number of ports:                         1617
+Number of nets:                         17414
+Number of cells:                        15842
+Number of combinational cells:          12622
+Number of sequential cells:              3220
+Number of macros/black boxes:               0
+Number of buf/inv:                       3067
+Number of references:                      56
+
+Combinational area:              26081.279885
+Buf/Inv area:                     3143.039930
+Noncombinational area:           27820.801105
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 53902.080991
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+PIM_ALU_SYN_top                   53902.0810    100.0  26081.2799  27820.8011  0.0000  PIM_ALU_SYN_top
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  26081.2799  27820.8011  0.0000
+
+1

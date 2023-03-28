@@ -1,0 +1,73 @@
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP5-3
+Date:        Fri Jul 10 06:09:21 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     59
+    Unconnected ports (LINT-28)                                    59
+--------------------------------------------------------------------------------
+
+Warning: In design 'PIM_ALU_SYN_top', port 'rd_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'wr_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_row[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_row[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[63]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[62]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[61]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[60]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[59]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[58]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[57]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[56]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[55]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[54]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[53]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[52]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[51]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[50]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[49]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[48]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[13]' is not connected to any nets. (LINT-28)
+1

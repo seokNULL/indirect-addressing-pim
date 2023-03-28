@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : qor
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Mon Jun 22 17:32:33 2020
+****************************************
+
+
+  Timing Path Group 'clk_ext'
+  -----------------------------------
+  Levels of Logic:             21.000
+  Critical Path Length:         1.866
+  Critical Path Slack:          0.000
+  Critical Path Clk Period:     2.000
+  Total Negative Slack:         0.000
+  No. of Violating Paths:       0.000
+  Worst Hold Violation:        -0.010
+  Total Hold Violation:       -10.369
+  No. of Hold Violations:    1041.000
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         41
+  Hierarchical Port Count:       4393
+  Leaf Cell Count:              19967
+  Buf/Inv Cell Count:            3596
+  Buf Cell Count:                 550
+  Inv Cell Count:                3046
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     16150
+  Sequential Cell Count:         3817
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:       29944.960
+  Noncombinational Area:    33653.441
+  Buf/Inv Area:              3748.480
+  Total Buffer Area:          744.000
+  Total Inverter Area:       3004.480
+  Macro/Black Box Area:         0.000
+  Net Area:                     0.000
+  -----------------------------------
+  Cell Area:                63598.401
+  Design Area:              63598.401
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         21293
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: hades
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                   0.345
+  Logic Optimization:                 0.998
+  Mapping Optimization:              10.817
+  -----------------------------------------
+  Overall Compile Time:              32.084
+  Overall Compile Wall Clock Time:   23.676
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.000  TNS: 0.000  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.010  TNS: 10.369  Number of Violating Paths: 1041
+
+  --------------------------------------------------------------------
+
+
+1

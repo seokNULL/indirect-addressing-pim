@@ -1,0 +1,474 @@
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP5-3
+Date:        Wed Jul  8 21:21:47 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    224
+    Unconnected ports (LINT-28)                                   224
+
+Cells                                                             116
+    Connected to power or ground (LINT-32)                        100
+    Nets connected to multiple pins on same cell (LINT-33)         16
+--------------------------------------------------------------------------------
+
+Warning: In design 'PIM_ALU_SYN_top', port 'rd_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'wr_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_row[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_row[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'req_col[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[63]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[62]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[61]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[60]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[59]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[58]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[57]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[56]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[55]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[54]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[53]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[52]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[51]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[50]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[49]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[48]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'rd_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'wr_cmd' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_row[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_row[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_col[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_col[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_col[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'req_col[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[63]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[62]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[61]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[60]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[59]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[58]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[57]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[56]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[55]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[54]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[53]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[52]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[51]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[50]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[49]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[48]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[47]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[46]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[45]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[44]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top', port 'bank_config[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_7', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_7', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_0', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_0', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_7', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_6', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_5', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_4', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_3', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_2', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_1', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'is_ovf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'is_unf' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'exp_large[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'exp_large[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'exp_large[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'exp_large[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ADD_module_OPT_0', port 'exp_large[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_1', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_1', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_2', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_2', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_3', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_3', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_4', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_4', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_5', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_5', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_6', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_6', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rd_cmd' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'wr_cmd' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_row[1]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_row[0]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_col[3]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_col[2]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_col[1]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'req_col[0]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[63]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[62]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[61]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[60]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[59]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[58]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[57]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[56]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[55]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[54]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[53]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[52]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[51]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[50]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[49]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[48]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[47]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[46]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[45]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[44]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[43]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[42]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[41]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[40]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[39]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[38]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[37]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[36]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[35]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[34]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[33]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[32]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[31]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[30]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[29]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[28]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[27]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[26]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[25]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[24]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[23]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[22]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[21]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[20]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[19]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[18]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[17]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[16]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[15]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[14]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[13]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config[3]' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_0__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_1__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_2__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_3__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_4__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_5__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_6__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'ACC_GEN_7__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ovf' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_unf' is connected to logic 0. 
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU'. (LINT-33)
+   Net 'n16' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bfloat_MAC_pipe_OPT_7', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_6', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_5', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_4', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_3', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_2', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_1', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+Warning: In design 'bfloat_MAC_pipe_OPT_0', the same net is connected to more than one pin on submodule 'U_MUL0'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'is_ovf', 'is_unf''.
+1

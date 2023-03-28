@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 21:22:38 2020
+****************************************
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /usr/syn_lib/samsung/CB_121st_tt/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+
+Number of ports:                         3234
+Number of nets:                         19057
+Number of cells:                        15932
+Number of combinational cells:          12652
+Number of sequential cells:              3279
+Number of macros/black boxes:               0
+Number of buf/inv:                       3210
+Number of references:                       3
+
+Combinational area:              26093.759890
+Buf/Inv area:                     3276.479927
+Noncombinational area:           27820.801105
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 53914.560995
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+PIM_ALU_SYN_top                   53914.5610    100.0      0.0000  13443.8405  0.0000  PIM_ALU_SYN_top
+U0_BANK_TOP                       40470.7205     75.1  26093.7599  14376.9606  0.0000  bank_top
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  26093.7599  27820.8011  0.0000
+
+1

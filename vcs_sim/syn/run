@@ -1,0 +1,56 @@
+#!/bin/csh -xf
+
+#if( $TOP_NAME != "" ) then
+#if( {eval 'test ! -z $TOP_NAME'} ) then
+#if( ! -z TOP_NAME ) then
+# echo $TOP_NAME
+# dc_shell -f scripts/leda_synthesis.tcl | tee run.log
+# exit
+#else
+# echo "TOP_NAME is not set"
+# echo "Default is lucida_icore_top"
+#endif
+
+if( $1 == "clean" ) then
+ echo "clean"
+ rm -f *.log
+ rm -f default.svf
+ rm -rf results/*
+ rm -rf reports/*
+ rm -rf WORK/*
+else if (1) then
+ setenv path_syn `pwd`
+ cd ../rtl/
+ find . -name "*.v" > $path_syn/scripts/rtl_syn_list
+ find `pwd` -name "*.v" > $path_syn/scripts/v_list
+ cd $path_syn
+ dc_shell -f scripts/synthesis.tcl | tee run.log
+#else if ($1 == PE) then
+# setenv path_syn `pwd`
+# cd ../rtl/
+# find . -name "*.v" > $path_syn/scripts/rtl_syn_list
+# find `pwd` -name "*.v" > $path_syn/scripts/v_abs_list
+# cd $path_syn
+# dc_shell -f scripts/synthesis_PE.tcl | tee run.log
+#else if ($1 == 2by2) then
+# setenv path_syn `pwd`
+# cd ../rtl_2by2_org/
+# find . -name "*.v" > $path_syn/scripts/rtl_syn_list_2by2
+# find `pwd` -name "*.v" > $path_syn/scripts/v_abs_list_2by2
+# cd $path_syn
+# dc_shell -f scripts/synthesis_PE_2by2.tcl | tee run_2by2.log
+#else if ($1 == 2by4) then
+# setenv path_syn `pwd`
+# cd ../rtl_2by4/
+# find . -name "*.v" > $path_syn/scripts/rtl_syn_list_2by4
+# find `pwd` -name "*.v" > $path_syn/scripts/v_abs_list_2by4
+# cd $path_syn
+# dc_shell -f scripts/synthesis_PE_2by4.tcl | tee run_2by4.log
+#else if ($1 == 8by8) then
+# setenv path_syn `pwd`
+# cd ../rtl_8by8/
+# find . -name "*.v" > $path_syn/scripts/rtl_syn_list_8by8
+# find `pwd` -name "*.v" > $path_syn/scripts/v_abs_list_8by8
+# cd $path_syn
+# dc_shell -f scripts/synthesis_PE_8by8.tcl | tee run_8by8.log
+endif

@@ -1,0 +1,69 @@
+ 
+****************************************
+Report : hierarchy
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 21:17:43 2020
+****************************************
+
+Attributes:
+    r - licensed design
+
+PIM_ALU_SYN_top
+    DFFRQX1MTR               scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+    DFFRQX2MTR               scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+    bank_top                           r
+        ADDFX1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        ADDHX1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AND2X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AND3X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AND4X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AO21X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AO22X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI2B1X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI2BB1X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI2BB2X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI21BX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI21X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI22X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI31X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI32X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI211X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI221X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        AOI222X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        BUFX2MTR             scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        CLKOR2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        DFFRQX1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        DFFRQX2MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        INVX1MTR             scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        MXI2X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND2BX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND2X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND3BX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND3X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND4BX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NAND4X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR2BX1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR2X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR3BX1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR3X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR4BX1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        NOR4X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OA21X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OA22X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI2B1X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI2B2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI2B11X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI2BB1X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI2BB2X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI21BX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI21X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI22X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI31X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI32X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OAI211X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OR3X1MTR             scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        OR4X1MTR             scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        XNOR2X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+        XOR2X1MTR            scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+1

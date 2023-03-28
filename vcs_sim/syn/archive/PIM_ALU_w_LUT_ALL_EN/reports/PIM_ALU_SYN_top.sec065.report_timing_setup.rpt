@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Tue Jun 23 22:45:12 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP/is_sigmoid_reg
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP/cnt_for_LUT_neg3_reg_6_
+            (rising edge-triggered flip-flop clocked by clk_ext')
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP/is_sigmoid_reg/CK (DFFRQX1MTR)             0.000 #    0.000 r
+  U0_BANK_TOP/is_sigmoid_reg/Q (DFFRQX1MTR)              0.216      0.216 r
+  U0_BANK_TOP/U77/Y (CLKOR2X1MTR)                        0.132      0.347 r
+  U0_BANK_TOP/U269/Y (INVX1MTR)                          0.093      0.440 f
+  U0_BANK_TOP/U881/Y (INVX1MTR)                          0.095      0.535 r
+  U0_BANK_TOP/U1586/Y (BUFX2MTR)                         0.126      0.661 r
+  U0_BANK_TOP/U1645/Y (NAND2X1MTR)                       0.164      0.824 f
+  U0_BANK_TOP/U1683/Y (INVX1MTR)                         0.100      0.924 r
+  U0_BANK_TOP/U7311/Y (NAND2X1MTR)                       0.102      1.026 f
+  U0_BANK_TOP/U7325/Y (NOR2X1MTR)                        0.105      1.131 r
+  U0_BANK_TOP/U7336/Y (NAND2X1MTR)                       0.106      1.237 f
+  U0_BANK_TOP/U7349/Y (NOR2X1MTR)                        0.106      1.343 r
+  U0_BANK_TOP/U7359/Y (NAND2X1MTR)                       0.103      1.446 f
+  U0_BANK_TOP/U7371/Y (NOR2X1MTR)                        0.088      1.534 r
+  U0_BANK_TOP/U7372/Y (INVX1MTR)                         0.059      1.594 f
+  U0_BANK_TOP/U7375/Y (OAI32X1MTR)                       0.065      1.658 r
+  U0_BANK_TOP/cnt_for_LUT_neg3_reg_6_/D (DFFRQX1MTR)     0.000      1.658 r
+  data arrival time                                                 1.658
+
+  clock clk_ext' (rise edge)                            10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  U0_BANK_TOP/cnt_for_LUT_neg3_reg_6_/CK (DFFRQX1MTR)    0.000     10.000 r
+  library setup time                                    -0.197      9.803
+  data required time                                                9.803
+  --------------------------------------------------------------------------
+  data required time                                                9.803
+  data arrival time                                                -1.658
+  --------------------------------------------------------------------------
+  slack (MET)                                                       8.145
+
+
+1

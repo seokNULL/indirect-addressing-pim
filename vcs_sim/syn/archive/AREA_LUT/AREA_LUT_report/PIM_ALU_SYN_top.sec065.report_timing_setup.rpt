@@ -1,0 +1,89 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Wed Jul  8 21:44:04 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP/is_sigmoid_reg
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP/vACC_3_reg_6__1_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP/is_sigmoid_reg/CK (DFFRQX1MTR)             0.000 #    0.000 r
+  U0_BANK_TOP/is_sigmoid_reg/Q (DFFRQX1MTR)              0.284      0.284 f
+  U0_BANK_TOP/U276/Y (INVX1MTR)                          0.108      0.391 r
+  U0_BANK_TOP/U277/Y (INVX1MTR)                          0.082      0.474 f
+  U0_BANK_TOP/U28/Y (CLKOR2X1MTR)                        0.192      0.666 f
+  U0_BANK_TOP/U184/Y (INVX1MTR)                          0.107      0.773 r
+  U0_BANK_TOP/U278/Y (INVX1MTR)                          0.095      0.868 f
+  U0_BANK_TOP/U279/Y (BUFX2MTR)                          0.127      0.995 f
+  U0_BANK_TOP/U280/Y (BUFX2MTR)                          0.118      1.113 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/is_LUT (bfloat_MAC_pipe_OPT_1)    0.000    1.113 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U3/Y (NOR2BX1MTR)    0.096    1.210 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/in_acc_sign (ADD_module_OPT_1)    0.000    1.210 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U24/Y (XNOR2X1MTR)    0.115    1.324 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U26/Y (NAND2X1MTR)    0.139    1.463 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U28/Y (NOR2X1MTR)    0.154    1.617 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U35/Y (INVX1MTR)    0.092    1.709 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U285/Y (BUFX2MTR)    0.132    1.841 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U310/Y (OAI22X1MTR)    0.083    1.924 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U311/Y (XOR2X1MTR)    0.103    2.027 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U17/CO (ADDFX1MTR)    0.198    2.225 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U16/CO (ADDFX1MTR)    0.199    2.424 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U15/CO (ADDFX1MTR)    0.199    2.623 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U14/CO (ADDFX1MTR)    0.199    2.821 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U13/CO (ADDFX1MTR)    0.199    3.020 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U12/CO (ADDFX1MTR)    0.199    3.219 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U11/CO (ADDFX1MTR)    0.199    3.418 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U10/CO (ADDFX1MTR)    0.199    3.617 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U9/CO (ADDFX1MTR)    0.199    3.816 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U8/CO (ADDFX1MTR)    0.199    4.015 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U7/CO (ADDFX1MTR)    0.199    4.214 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U6/CO (ADDFX1MTR)    0.199    4.412 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U5/CO (ADDFX1MTR)    0.199    4.611 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U4/CO (ADDFX1MTR)    0.199    4.810 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U3/CO (ADDFX1MTR)    0.199    5.009 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/DP_OP_53J2_122_897_U2/CO (ADDFX1MTR)    0.193    5.202 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U48/Y (XOR2X1MTR)    0.162    5.364 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U49/Y (NAND2X1MTR)    0.219    5.583 f
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/U56/Y (OAI21X1MTR)    0.149    5.732 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/result_sign (ADD_module_OPT_1)    0.000    5.732 r
+  U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/result_sign (bfloat_MAC_pipe_OPT_1)    0.000    5.732 r
+  U0_BANK_TOP/U4227/Y (OAI21BX1MTR)                      0.137      5.868 f
+  U0_BANK_TOP/U4281/Y (OAI21X1MTR)                       0.145      6.014 r
+  U0_BANK_TOP/U102/Y (INVX1MTR)                          0.127      6.141 f
+  U0_BANK_TOP/U103/Y (INVX1MTR)                          0.117      6.257 r
+  U0_BANK_TOP/U5372/Y (NAND4X1MTR)                       0.272      6.529 f
+  U0_BANK_TOP/U5384/Y (OAI221X1MTR)                      0.161      6.691 r
+  U0_BANK_TOP/vACC_3_reg_6__1_/D (DFFRQX1MTR)            0.000      6.691 r
+  data arrival time                                                 6.691
+
+  clock clk_ext (rise edge)                             20.000     20.000
+  clock network delay (ideal)                            0.000     20.000
+  U0_BANK_TOP/vACC_3_reg_6__1_/CK (DFFRQX1MTR)           0.000     20.000 r
+  library setup time                                    -0.196     19.804
+  data required time                                               19.804
+  --------------------------------------------------------------------------
+  data required time                                               19.804
+  data arrival time                                                -6.691
+  --------------------------------------------------------------------------
+  slack (MET)                                                      13.114
+
+
+1

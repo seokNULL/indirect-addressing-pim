@@ -1,0 +1,52 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Wed Jul  8 21:44:10 2020
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /usr/syn_lib/samsung/CB_121st_tt/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1mW
+
+
+  Cell Internal Power  =   1.4134 mW   (98%)
+  Net Switching Power  =  31.8172 uW    (2%)
+                         ---------
+Total Dynamic Power    =   1.4452 mW  (100%)
+
+Cell Leakage Power     =  30.1687 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           1.3665        6.5524e-03        1.2292e-02            1.3853  (  93.90%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  4.6904e-02        2.5265e-02        1.7877e-02        9.0045e-02  (   6.10%)
+--------------------------------------------------------------------------------------------------
+Total              1.4134 mW     3.1817e-02 mW     3.0169e-02 mW         1.4754 mW
+1

@@ -1,0 +1,13 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+        -max_transition
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 20:31:54 2020
+****************************************
+
+This design has no violated constraints.
+
+1

@@ -1,0 +1,172 @@
+ 
+****************************************
+Report : area
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Dec 22 12:14:40 2022
+****************************************
+
+Library(s) Used:
+
+    scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm (File: /usr/syn_lib/samsung/CB_121st_tt/PRIMITIVE/sec100226_0042_SS65LP_Normal_RVT_Normal_FE_Common_N/synopsys/scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm.db)
+
+Number of ports:                         5542
+Number of nets:                         23845
+Number of cells:                        17847
+Number of combinational cells:          14057
+Number of sequential cells:              3725
+Number of macros/black boxes:               0
+Number of buf/inv:                       3405
+Number of references:                       3
+
+Combinational area:              32659.520021
+Buf/Inv area:                     3452.159923
+Noncombinational area:           30499.201212
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 63158.721233
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ----------------------
+PIM_ALU_SYN_top                   63158.7212    100.0      0.0000   6687.3603  0.0000  PIM_ALU_SYN_top
+U0_BANK_GDDR6_TOP                 56471.3610     89.4   6911.0401  20908.8008  0.0000  bank_top_GDDR6
+U0_BANK_GDDR6_TOP/ACC_GEN_0__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_15
+U0_BANK_GDDR6_TOP/ACC_GEN_10__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_5
+U0_BANK_GDDR6_TOP/ACC_GEN_11__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_4
+U0_BANK_GDDR6_TOP/ACC_GEN_12__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_3
+U0_BANK_GDDR6_TOP/ACC_GEN_13__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_2
+U0_BANK_GDDR6_TOP/ACC_GEN_14__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_1
+U0_BANK_GDDR6_TOP/ACC_GEN_15__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_0
+U0_BANK_GDDR6_TOP/ACC_GEN_1__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_14
+U0_BANK_GDDR6_TOP/ACC_GEN_2__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_13
+U0_BANK_GDDR6_TOP/ACC_GEN_3__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_12
+U0_BANK_GDDR6_TOP/ACC_GEN_4__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_11
+U0_BANK_GDDR6_TOP/ACC_GEN_5__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_10
+U0_BANK_GDDR6_TOP/ACC_GEN_6__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_9
+U0_BANK_GDDR6_TOP/ACC_GEN_7__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_8
+U0_BANK_GDDR6_TOP/ACC_GEN_8__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_7
+U0_BANK_GDDR6_TOP/ACC_GEN_9__NORM_LOGIC
+                                    256.3200      0.4    256.3200      0.0000  0.0000  NORM_stage_DEBUG_6
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_0__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_15
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_15
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_15
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_10__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_5
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_10__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_5
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_10__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_5
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_11__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_4
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_11__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_4
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_11__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_4
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_12__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_3
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_12__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_3
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_12__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_3
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_13__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_2
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_13__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_2
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_13__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_2
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_14__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_1
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_14__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_1
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_14__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_1
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_0
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_0
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_15__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_0
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_1__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_14
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_14
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_14
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_2__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_13
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_13
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_13
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_3__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_12
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_12
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_12
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_4__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_11
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_11
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_11
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_5__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_10
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_10
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_10
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_6__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_9
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_9
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_9
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_7__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_8
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_8
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_8
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_8__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_7
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_8__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_7
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_8__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_7
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_9__BFLOAT_ALU
+                                   1534.4000      2.4      5.1200    181.4400  0.0000  bfloat_MAC_pipe_OPT_6
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_9__BFLOAT_ALU/U0_ADD_STAGE
+                                    814.0800      1.3    814.0800      0.0000  0.0000  ADD_module_OPT_6
+U0_BANK_GDDR6_TOP/BFLOAT16_ALU_9__BFLOAT_ALU/U_MUL0
+                                    533.7600      0.8    533.7600      0.0000  0.0000  MUL_OPT_6
+--------------------------------  ----------  -------  ----------  ----------  ------  ----------------------
+Total                                                  32659.5200  30499.2012  0.0000
+
+1

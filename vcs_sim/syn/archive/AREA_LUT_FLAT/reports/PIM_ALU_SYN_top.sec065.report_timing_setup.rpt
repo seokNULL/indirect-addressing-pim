@@ -1,0 +1,91 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 20:31:51 2020
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss_1p08v_125c   Library: scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+Wire Load Model Mode: top
+
+  Startpoint: U0_BANK_TOP_global_burst_cnt_VEC_gran_rr_reg_1_
+              (rising edge-triggered flip-flop clocked by clk_ext)
+  Endpoint: U0_BANK_TOP_vACC_3_reg_6__20_
+            (rising edge-triggered flip-flop clocked by clk_ext)
+  Path Group: clk_ext
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_ext (rise edge)                              0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  U0_BANK_TOP_global_burst_cnt_VEC_gran_rr_reg_1_/CK (DFFRQX1MTR)    0.000 #    0.000 r
+  U0_BANK_TOP_global_burst_cnt_VEC_gran_rr_reg_1_/Q (DFFRQX1MTR)    0.219    0.219 r
+  U9576/Y (NAND2X1MTR)                                   0.081      0.300 f
+  U9580/Y (NOR2X1MTR)                                    0.169      0.469 r
+  U9581/Y (BUFX2MTR)                                     0.151      0.620 r
+  U9582/Y (BUFX2MTR)                                     0.120      0.740 r
+  U9583/Y (AOI22X1MTR)                                   0.095      0.835 f
+  U9591/Y (AOI21X1MTR)                                   0.141      0.976 r
+  U9594/Y (NAND3BX1MTR)                                  0.205      1.181 f
+  U9595/Y (INVX1MTR)                                     0.114      1.295 r
+  U10223/Y (INVX1MTR)                                    0.113      1.408 f
+  U10251/Y (INVX1MTR)                                    0.113      1.521 r
+  U20613/Y (OAI22X1MTR)                                  0.102      1.623 f
+  DP_OP_1172J1_162_5674_U17/CO (ADDFX1MTR)               0.334      1.957 f
+  DP_OP_1172J1_162_5674_U16/CO (ADDFX1MTR)               0.199      2.156 f
+  DP_OP_1172J1_162_5674_U15/CO (ADDFX1MTR)               0.199      2.355 f
+  DP_OP_1172J1_162_5674_U14/CO (ADDFX1MTR)               0.199      2.554 f
+  DP_OP_1172J1_162_5674_U13/CO (ADDFX1MTR)               0.199      2.753 f
+  DP_OP_1172J1_162_5674_U12/CO (ADDFX1MTR)               0.199      2.952 f
+  DP_OP_1172J1_162_5674_U11/CO (ADDFX1MTR)               0.199      3.151 f
+  DP_OP_1172J1_162_5674_U10/CO (ADDFX1MTR)               0.199      3.350 f
+  DP_OP_1172J1_162_5674_U9/CO (ADDFX1MTR)                0.199      3.549 f
+  DP_OP_1172J1_162_5674_U8/CO (ADDFX1MTR)                0.199      3.747 f
+  DP_OP_1172J1_162_5674_U7/CO (ADDFX1MTR)                0.199      3.946 f
+  DP_OP_1172J1_162_5674_U6/CO (ADDFX1MTR)                0.199      4.145 f
+  DP_OP_1172J1_162_5674_U5/CO (ADDFX1MTR)                0.199      4.344 f
+  DP_OP_1172J1_162_5674_U4/CO (ADDFX1MTR)                0.199      4.543 f
+  DP_OP_1172J1_162_5674_U3/CO (ADDFX1MTR)                0.199      4.742 f
+  DP_OP_1172J1_162_5674_U2/CO (ADDFX1MTR)                0.193      4.934 f
+  U9735/Y (XOR2X1MTR)                                    0.195      5.129 r
+  U9738/Y (NAND2X1MTR)                                   0.174      5.303 f
+  U9739/Y (INVX1MTR)                                     0.141      5.444 r
+  U17056/Y (NAND2X1MTR)                                  0.113      5.558 f
+  U17122/Y (NAND2X1MTR)                                  0.077      5.635 r
+  U17123/Y (OAI21X1MTR)                                  0.097      5.732 f
+  U17124/Y (NAND2X1MTR)                                  0.057      5.789 r
+  U17125/Y (NAND2X1MTR)                                  0.082      5.872 f
+  U17242/Y (NAND2X1MTR)                                  0.054      5.926 r
+  U17243/Y (NAND2X1MTR)                                  0.081      6.006 f
+  U17483/Y (NAND2X1MTR)                                  0.054      6.061 r
+  U17484/Y (NAND2X1MTR)                                  0.071      6.131 f
+  U17486/Y (NAND2X1MTR)                                  0.069      6.200 r
+  U19225/Y (NOR2X1MTR)                                   0.052      6.252 f
+  U19881/Y (NOR2X1MTR)                                   0.070      6.322 r
+  U19882/Y (XNOR2X1MTR)                                  0.139      6.461 r
+  U20526/Y (NAND4X1MTR)                                  0.278      6.738 f
+  U20566/Y (OAI211X1MTR)                                 0.146      6.885 r
+  U20568/Y (OAI22X1MTR)                                  0.106      6.991 f
+  U0_BANK_TOP_vACC_3_reg_6__20_/D (DFFRQX2MTR)           0.000      6.991 f
+  data arrival time                                                 6.991
+
+  clock clk_ext (rise edge)                             20.000     20.000
+  clock network delay (ideal)                            0.000     20.000
+  U0_BANK_TOP_vACC_3_reg_6__20_/CK (DFFRQX2MTR)          0.000     20.000 r
+  library setup time                                    -0.147     19.853
+  data required time                                               19.853
+  --------------------------------------------------------------------------
+  data required time                                               19.853
+  data arrival time                                                -6.991
+  --------------------------------------------------------------------------
+  slack (MET)                                                      12.863
+
+
+1

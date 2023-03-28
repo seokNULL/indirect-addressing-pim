@@ -1,0 +1,29 @@
+ 
+****************************************
+Report : reference
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Dec 22 12:14:40 2022
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+DFFRQX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000     187   1615.680064  n
+DFFRQX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000     587   5071.680202  n
+bank_top_GDDR6                56471.360967       1  56471.360967  h, n
+-----------------------------------------------------------------------------
+Total 3 references                                  63158.721233
+1

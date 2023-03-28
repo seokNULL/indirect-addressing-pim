@@ -1,0 +1,860 @@
+ 
+****************************************
+Report : resources
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Thu Jul  9 20:10:56 2020
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC_paper_work/rtl/Device_top.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_85       | DW01_inc_DG    | width=7    | U0_BANK_TOP/U0_LUT_CNT/add_2958 (Device_top.v:2958) |
+| add_x_153      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_160      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_167      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_174      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_181      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_188      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_195      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| add_x_202      | DW01_inc_DG    | width=5    | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/add_2640 (Device_top.v:2640) |
+| sub_x_218      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_220       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_221       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_222       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_223       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_224       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_230      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_232      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_247      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_249       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_250       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_251       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_252       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_253       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_259      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_261      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_276      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_278       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_279       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_280       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_281       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_282       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_288      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_290      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_305      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_307       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_308       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_309       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_310       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_311       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_317      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_319      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_334      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_336       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_337       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_338       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_339       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_340       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_346      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_348      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_363      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_365       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_366       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_367       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_368       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_369       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_375      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_377      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_392      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_394       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_395       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_396       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_397       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_398       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_404      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_406      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_421      | DW01_sub_DG    | width=6    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/sub_2341 (Device_top.v:2341) |
+| gt_x_423       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/gt_2368 (Device_top.v:2368) |
+| eq_x_424       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/eq_2369 (Device_top.v:2369) |
+| eq_x_425       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/eq_2370 (Device_top.v:2370) |
+| eq_x_426       | DW_cmp_DG      | width=6    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/eq_2371 (Device_top.v:2371) |
+| lt_x_427       | DW_cmp_DG      | width=5    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/lt_2372 (Device_top.v:2372) |
+| sub_x_433      | DW01_sub_DG    | width=17   | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/sub_2517 (Device_top.v:2517) |
+| add_x_435      | DW01_inc_DG    | width=5    | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/add_2528 (Device_top.v:2528) |
+| sub_x_154      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_0__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_161      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_1__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_168      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_2__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_175      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_3__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_182      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_4__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_189      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_5__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_196      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_6__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| sub_x_203      | DW01_dec_DG    | width=5    | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2685 (Device_top.v:2685) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2690 (Device_top.v:2690) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2695 (Device_top.v:2695) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2700 (Device_top.v:2700) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2705 (Device_top.v:2705) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2710 (Device_top.v:2710) |
+|          | U0_BANK_TOP/ACC_GEN_7__NORM_LOGIC/sub_2715 (Device_top.v:2715) |
+| add_x_8        | DW01_inc_DG    | width=5    | U0_BANK_TOP/add_1060_S2 (Device_top.v:1060) |
+|                |            | U0_BANK_TOP/add_1063 (Device_top.v:1063) |
+| add_x_3        | DW01_inc_DG    | width=2    | U0_BANK_TOP/add_1050_S2 (Device_top.v:1050) |
+|                |            | U0_BANK_TOP/add_1052 (Device_top.v:1052) |
+| DP_OP_1346J1_122_7993           |            |                            |
+|                | DP_OP_1346J1_122_7993 |     |                            |
+| DP_OP_1347J1_123_2037           |            |                            |
+|                | DP_OP_1347J1_123_2037 |     |                            |
+| DP_OP_1348J1_124_7993           |            |                            |
+|                | DP_OP_1348J1_124_7993 |     |                            |
+| DP_OP_1349J1_125_2037           |            |                            |
+|                | DP_OP_1349J1_125_2037 |     |                            |
+| DP_OP_1350J1_126_7993           |            |                            |
+|                | DP_OP_1350J1_126_7993 |     |                            |
+| DP_OP_1351J1_127_2037           |            |                            |
+|                | DP_OP_1351J1_127_2037 |     |                            |
+| DP_OP_1352J1_128_7993           |            |                            |
+|                | DP_OP_1352J1_128_7993 |     |                            |
+| DP_OP_1353J1_129_2037           |            |                            |
+|                | DP_OP_1353J1_129_2037 |     |                            |
+| DP_OP_1354J1_130_7993           |            |                            |
+|                | DP_OP_1354J1_130_7993 |     |                            |
+| DP_OP_1355J1_131_2037           |            |                            |
+|                | DP_OP_1355J1_131_2037 |     |                            |
+| DP_OP_1356J1_132_7993           |            |                            |
+|                | DP_OP_1356J1_132_7993 |     |                            |
+| DP_OP_1357J1_133_2037           |            |                            |
+|                | DP_OP_1357J1_133_2037 |     |                            |
+| DP_OP_1358J1_134_7993           |            |                            |
+|                | DP_OP_1358J1_134_7993 |     |                            |
+| DP_OP_1359J1_135_2037           |            |                            |
+|                | DP_OP_1359J1_135_2037 |     |                            |
+| DP_OP_1360J1_136_7993           |            |                            |
+|                | DP_OP_1360J1_136_7993 |     |                            |
+| DP_OP_1361J1_137_2037           |            |                            |
+|                | DP_OP_1361J1_137_2037 |     |                            |
+| DP_OP_1347J1_166_8425           |            |                            |
+|                | DP_OP_1347J1_166_8425 |     |                            |
+| DP_OP_1344J1_162_8441           |            |                            |
+|                | DP_OP_1344J1_162_8441 |     |                            |
+| DP_OP_1341J1_158_8457           |            |                            |
+|                | DP_OP_1341J1_158_8457 |     |                            |
+| DP_OP_1338J1_154_9753           |            |                            |
+|                | DP_OP_1338J1_154_9753 |     |                            |
+| DP_OP_1335J1_150_8617           |            |                            |
+|                | DP_OP_1335J1_150_8617 |     |                            |
+| DP_OP_1332J1_146_8633           |            |                            |
+|                | DP_OP_1332J1_146_8633 |     |                            |
+| DP_OP_1329J1_142_8233           |            |                            |
+|                | DP_OP_1329J1_142_8233 |     |                            |
+| DP_OP_1326J1_138_8249           |            |                            |
+|                | DP_OP_1326J1_138_8249 |     |                            |
+=============================================================================
+
+Datapath Report for DP_OP_1346J1_122_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1346J1_122_7993 | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1347J1_123_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1347J1_123_2037 | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T270  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T271  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T270 + T271 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1348J1_124_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1348J1_124_7993 | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1349J1_125_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1349J1_125_2037 | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T310  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T311  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T310 + T311 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1350J1_126_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1350J1_126_7993 | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1351J1_127_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1351J1_127_2037 | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T350  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T351  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T350 + T351 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1352J1_128_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1352J1_128_7993 | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1353J1_129_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1353J1_129_2037 | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T390  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T391  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T390 + T391 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1354J1_130_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1354J1_130_7993 | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1355J1_131_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1355J1_131_2037 | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T430  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T431  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T430 + T431 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1356J1_132_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1356J1_132_7993 | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1357J1_133_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1357J1_133_2037 | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T470  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T471  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T470 + T471 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1358J1_134_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1358J1_134_7993 | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1359J1_135_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1359J1_135_2037 | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T510  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T511  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T510 + T511 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1360J1_136_7993
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1360J1_136_7993 | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 8     |                                          |
+| I2    | PI   | Signed   | 8     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 8     | I1 + I2 - $unsigned(7'b1111111) (Device_top.v:2336) |
+==============================================================================
+
+Datapath Report for DP_OP_1361J1_137_2037
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1361J1_137_2037 | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/mult_2348 (Device_top.v:2348) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/add_2351 (Device_top.v:2351) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/mult_2349 (Device_top.v:2349) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 4     |                                          |
+| I3    | PI   | Unsigned | 4     |                                          |
+| I4    | PI   | Unsigned | 4     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| T550  | IFO  | Unsigned | 12    | I1 * I2 (Device_top.v:2348)              |
+| T551  | IFO  | Unsigned | 8     | I3 * I4 (Device_top.v:2349)              |
+| O1    | PO   | Unsigned | 12    | T550 + T551 (Device_top.v:2351)          |
+==============================================================================
+
+Datapath Report for DP_OP_1347J1_166_8425
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1347J1_166_8425 | U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1344J1_162_8441
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1344J1_162_8441 | U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1341J1_158_8457
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1341J1_158_8457 | U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1338J1_154_9753
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1338J1_154_9753 | U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1335J1_150_8617
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1335J1_150_8617 | U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1332J1_146_8633
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1332J1_146_8633 | U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1329J1_142_8233
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1329J1_142_8233 | U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1326J1_138_8249
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1326J1_138_8249 | U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/sub_2509_S2 (Device_top.v:2509) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/sub_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/add_2510 (Device_top.v:2510) |
+| U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U0_ADD_STAGE/add_2512 (Device_top.v:2512) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| DG_ctrl | PI | Unsigned | 1     |                                          |
+| O1    | PO   | Signed   | 17    | addsub(I1,I2,I3) ( Device_top.v:2509 Device_top.v:2510 Device_top.v:2512 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_0__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_1__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_2__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_3__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_4__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_5__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_6__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+Information: Operator associated with resources 'U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/add_2336 (Device_top.v:2336) U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/sub_2336 (Device_top.v:2336)' in design 'PIM_ALU_SYN_top' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'U0_BANK_TOP/BFLOAT16_ALU_7__BFLOAT_ALU/U_MUL0/C168 (Device_top.v:2336)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_85           | DW01_inc_DG      | apparch (area)     |                |
+| add_x_153          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_160          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_167          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_174          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_181          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_188          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_195          | DW01_inc_DG      | apparch (area)     |                |
+| add_x_202          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_218          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_220           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_221           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_222           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_223           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_224           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_230          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_232          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_247          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_249           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_250           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_251           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_252           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_253           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_259          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_261          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_276          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_278           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_279           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_280           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_281           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_282           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_288          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_290          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_305          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_307           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_308           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_309           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_310           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_311           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_317          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_319          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_334          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_336           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_337           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_338           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_339           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_340           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_346          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_348          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_363          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_365           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_366           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_367           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_368           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_369           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_375          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_377          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_392          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_394           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_395           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_396           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_397           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_398           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_404          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_406          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_421          | DW01_sub_DG      | apparch (area)     |                |
+| gt_x_423           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_424           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_425           | DW_cmp_DG        | apparch (area)     |                |
+| eq_x_426           | DW_cmp_DG        | apparch (area)     |                |
+| lt_x_427           | DW_cmp_DG        | apparch (area)     |                |
+| sub_x_433          | DW01_sub_DG      | apparch (area)     |                |
+| add_x_435          | DW01_inc_DG      | apparch (area)     |                |
+| sub_x_154          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_161          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_168          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_175          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_182          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_189          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_196          | DW01_dec_DG      | apparch (area)     |                |
+| sub_x_203          | DW01_dec_DG      | apparch (area)     |                |
+| add_x_8            | DW01_inc_DG      | apparch (area)     |                |
+| add_x_3            | DW01_inc_DG      | apparch (area)     |                |
+| DP_OP_1346J1_122_7993                 |                    |                |
+|                    | DP_OP_1346J1_122_7993 | str (area)    |                |
+| DP_OP_1347J1_123_2037                 |                    |                |
+|                    | DP_OP_1347J1_123_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1348J1_124_7993                 |                    |                |
+|                    | DP_OP_1348J1_124_7993 | str (area)    |                |
+| DP_OP_1349J1_125_2037                 |                    |                |
+|                    | DP_OP_1349J1_125_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1350J1_126_7993                 |                    |                |
+|                    | DP_OP_1350J1_126_7993 | str (area)    |                |
+| DP_OP_1351J1_127_2037                 |                    |                |
+|                    | DP_OP_1351J1_127_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1352J1_128_7993                 |                    |                |
+|                    | DP_OP_1352J1_128_7993 | str (area)    |                |
+| DP_OP_1353J1_129_2037                 |                    |                |
+|                    | DP_OP_1353J1_129_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1354J1_130_7993                 |                    |                |
+|                    | DP_OP_1354J1_130_7993 | str (area)    |                |
+| DP_OP_1355J1_131_2037                 |                    |                |
+|                    | DP_OP_1355J1_131_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1356J1_132_7993                 |                    |                |
+|                    | DP_OP_1356J1_132_7993 | str (area)    |                |
+| DP_OP_1357J1_133_2037                 |                    |                |
+|                    | DP_OP_1357J1_133_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1358J1_134_7993                 |                    |                |
+|                    | DP_OP_1358J1_134_7993 | str (area)    |                |
+| DP_OP_1359J1_135_2037                 |                    |                |
+|                    | DP_OP_1359J1_135_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1360J1_136_7993                 |                    |                |
+|                    | DP_OP_1360J1_136_7993 | str (area)    |                |
+| DP_OP_1361J1_137_2037                 |                    |                |
+|                    | DP_OP_1361J1_137_2037 | str (power)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_1347J1_166_8425                 |                    |                |
+|                    | DP_OP_1347J1_166_8425 | str (area)    |                |
+| DP_OP_1344J1_162_8441                 |                    |                |
+|                    | DP_OP_1344J1_162_8441 | str (area)    |                |
+| DP_OP_1341J1_158_8457                 |                    |                |
+|                    | DP_OP_1341J1_158_8457 | str (area)    |                |
+| DP_OP_1338J1_154_9753                 |                    |                |
+|                    | DP_OP_1338J1_154_9753 | str (area)    |                |
+| DP_OP_1335J1_150_8617                 |                    |                |
+|                    | DP_OP_1335J1_150_8617 | str (area)    |                |
+| DP_OP_1332J1_146_8633                 |                    |                |
+|                    | DP_OP_1332J1_146_8633 | str (area)    |                |
+| DP_OP_1329J1_142_8233                 |                    |                |
+|                    | DP_OP_1329J1_142_8233 | str (area)    |                |
+| DP_OP_1326J1_138_8249                 |                    |                |
+|                    | DP_OP_1326J1_138_8249 | str (area)    |                |
+===============================================================================
+
+1

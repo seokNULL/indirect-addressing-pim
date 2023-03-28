@@ -1,0 +1,801 @@
+ 
+****************************************
+check_design summary:
+Version:     M-2016.12-SP5-3
+Date:        Thu Dec 22 12:14:40 2022
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    279
+    Unconnected ports (LINT-28)                                   279
+
+Cells                                                             252
+    Connected to power or ground (LINT-32)                        235
+    Nets connected to multiple pins on same cell (LINT-33)         17
+--------------------------------------------------------------------------------
+
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', port 'bank_config[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'bank_top_GDDR6', port 'bank_config_reg[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_15', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_15', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_15', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_14', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_13', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_12', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_11', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_10', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_9', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_8', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_7', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_6', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_5', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_4', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_3', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_2', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_1', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_MAC' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_MUL' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_vecA_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'is_vecB_start' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'bfloat_MAC_pipe_OPT_0', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_15', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_15', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_15', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_15', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_14', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_14', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_14', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_14', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_13', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_13', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_13', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_13', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_12', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_12', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_12', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_12', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_11', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_11', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_11', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_11', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_10', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_10', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_10', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_10', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_9', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_9', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_9', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_9', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_8', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_8', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_8', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_8', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_7', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_6', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_5', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_4', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_3', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_2', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_1', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'is_ADD' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'is_SUB' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'PIM_vecA_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'MUL_OPT_0', port 'PIM_vecB_read_burst_r' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_0', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_0', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_1', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_1', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_2', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_2', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_3', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_3', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_4', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_4', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_5', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_5', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_6', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_6', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_7', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_7', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_8', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_8', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_9', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_9', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_10', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_10', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_11', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_11', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_12', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_12', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_13', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_13', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_14', port 'in_sign' is not connected to any nets. (LINT-28)
+Warning: In design 'NORM_stage_DEBUG_14', port 'out[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[27]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[26]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[25]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[24]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[23]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[22]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[21]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[20]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[19]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[18]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[17]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[16]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[15]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[14]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[13]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[12]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[11]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[10]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[9]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[8]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[7]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[6]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[5]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[3]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[2]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[1]' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', a pin on submodule 'U0_BANK_GDDR6_TOP' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'bank_config_reg[0]' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_0__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_1__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_2__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_3__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_4__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_5__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_6__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_7__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_8__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_9__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_10__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_11__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_12__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_13__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_14__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'ACC_GEN_15__NORM_LOGIC' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'in_sign' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MAC' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_MUL' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecA_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_vecB_start' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bank_top_GDDR6', a pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_15', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_15', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_15', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_15', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_14', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_14', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_14', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_14', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_13', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_13', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_13', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_13', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_12', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_12', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_12', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_12', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_11', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_11', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_11', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_11', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_10', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_10', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_10', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_10', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_9', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_9', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_9', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_9', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_8', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_8', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_8', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_8', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_7', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_6', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_5', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_4', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_3', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_2', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_1', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_ADD' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'is_SUB' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecA_read_burst_r' is connected to logic 0. 
+Warning: In design 'bfloat_MAC_pipe_OPT_0', a pin on submodule 'U_MUL0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'PIM_vecB_read_burst_r' is connected to logic 0. 
+Warning: In design 'PIM_ALU_SYN_top', the same net is connected to more than one pin on submodule 'U0_BANK_GDDR6_TOP'. (LINT-33)
+   Net 'bank_config_SYN_5_' is connected to pins 'bank_config_reg[9]', 'bank_config_reg[7]'', 'bank_config_reg[6]', 'bank_config_reg[5]'.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_0__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_1__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_2__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_3__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_4__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_5__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_6__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_7__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_8__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_9__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_10__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_11__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_12__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_13__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_14__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+Warning: In design 'bank_top_GDDR6', the same net is connected to more than one pin on submodule 'BFLOAT16_ALU_15__BFLOAT_ALU'. (LINT-33)
+   Net 'n3053' is connected to pins 'is_MAC', 'is_MUL''.
+1

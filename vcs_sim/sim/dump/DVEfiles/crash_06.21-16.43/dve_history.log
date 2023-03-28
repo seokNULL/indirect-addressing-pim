@@ -1,0 +1,215 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_set_state_value -category Globals -key recent_databases -value {{gui_open_db -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd -design V1} {gui_open_db -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_SY_paper/sim/dump/Dev_top_test.vpd -design V1} {gui_open_db -file /home/kch/work/TDRAM/LUT_test/sim/dump/LUT.vpd -design V1} {gui_open_db -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd -design V2} {gui_open_db -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim/sim/dump/Dev_top_test.vpd -design V1}}
+gui_set_state_value -category Globals -key recent_sessions -value {{gui_load_session -ignore_errors -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/DVEfiles//crash_05.22-19.21/dve_session05.22-19.21.tcl} {gui_load_session -ignore_errors -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/DVEfiles//crash_05.22-11.23/dve_session05.22-11.23.tcl} {gui_load_session -ignore_errors -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/DVEfiles//crash_05.21-22.22/dve_session05.21-22.22.tcl} {gui_load_session -ignore_errors -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/DVEfiles//crash_05.21-19.09/dve_session05.21-19.09.tcl} {gui_load_session -ignore_errors -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/DVEfiles//crash_05.14-19.38/dve_session05.14-19.38.tcl}}
+gui_set_state_value -category Layout -key child_console_size_x -value 1856
+gui_set_state_value -category Layout -key child_console_size_y -value 156
+gui_set_state_value -category Layout -key child_data_coltype -value 390
+gui_set_state_value -category Layout -key child_data_colvalue -value 412
+gui_set_state_value -category Layout -key child_data_colvariable -value 565
+gui_set_state_value -category Layout -key child_data_dockstate -value right
+gui_set_state_value -category Layout -key child_data_size_x -value 1335
+gui_set_state_value -category Layout -key child_data_size_y -value 810
+gui_set_state_value -category Layout -key child_driver_size_x -value 1623
+gui_set_state_value -category Layout -key child_driver_size_y -value 179
+gui_set_state_value -category Layout -key child_hier_col3 -value {-1}
+gui_set_state_value -category Layout -key child_hier_colhier -value 451
+gui_set_state_value -category Layout -key child_hier_colpd -value 0
+gui_set_state_value -category Layout -key child_hier_coltype -value 66
+gui_set_state_value -category Layout -key child_hier_docknewline -value false
+gui_set_state_value -category Layout -key child_hier_dockstate -value undocked
+gui_set_state_value -category Layout -key child_hier_pos_x -value {-2}
+gui_set_state_value -category Layout -key child_hier_pos_y -value {-15}
+gui_set_state_value -category Layout -key child_hier_showstate -value maximized
+gui_set_state_value -category Layout -key child_hier_size_x -value 525
+gui_set_state_value -category Layout -key child_hier_size_y -value 805
+gui_set_state_value -category Layout -key child_hier_sort_order -value 1
+gui_set_state_value -category Layout -key child_list_down -value 190
+gui_set_state_value -category Layout -key child_list_right -value 441
+gui_set_state_value -category Layout -key child_source_docknewline -value false
+gui_set_state_value -category Layout -key child_source_pos_x -value {-2}
+gui_set_state_value -category Layout -key child_source_pos_y -value {-15}
+gui_set_state_value -category Layout -key child_source_size_x -value 525
+gui_set_state_value -category Layout -key child_source_size_y -value 805
+gui_set_state_value -category Layout -key child_watch_size_x -value 1919
+gui_set_state_value -category Layout -key child_watch_size_y -value 105
+gui_set_state_value -category Layout -key child_wave_colname -value 276
+gui_set_state_value -category Layout -key child_wave_colvalue -value 277
+gui_set_state_value -category Layout -key child_wave_docknewline -value false
+gui_set_state_value -category Layout -key child_wave_left -value 557
+gui_set_state_value -category Layout -key child_wave_pos_x -value {-2}
+gui_set_state_value -category Layout -key child_wave_pos_y -value {-15}
+gui_set_state_value -category Layout -key child_wave_right -value 1357
+gui_set_state_value -category Layout -key child_wave_size_x -value 1923
+gui_set_state_value -category Layout -key child_wave_size_y -value 134
+gui_set_state_value -category Layout -key main_pos_x -value 2348
+gui_set_state_value -category Layout -key main_pos_y -value 699
+gui_set_state_value -category Layout -key main_size_x -value 4204
+gui_set_state_value -category Layout -key main_size_y -value 1746
+gui_set_state_value -category Layout -key stand_list_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_list_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_list_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_list_child_size_x -value 601
+gui_set_state_value -category Layout -key stand_list_child_size_y -value 335
+gui_set_state_value -category Layout -key stand_list_top_pos_x -value 552
+gui_set_state_value -category Layout -key stand_list_top_pos_y -value 144
+gui_set_state_value -category Layout -key stand_list_top_size_x -value 1148
+gui_set_state_value -category Layout -key stand_list_top_size_y -value 640
+gui_set_state_value -category Layout -key stand_wave_child_docknewline -value false
+gui_set_state_value -category Layout -key stand_wave_child_pos_x -value {-2}
+gui_set_state_value -category Layout -key stand_wave_child_pos_y -value {-15}
+gui_set_state_value -category Layout -key stand_wave_child_size_x -value 1924
+gui_set_state_value -category Layout -key stand_wave_child_size_y -value 970
+gui_set_state_value -category Layout -key stand_wave_top_pos_x -value 1920
+gui_set_state_value -category Layout -key stand_wave_top_pos_y -value 23
+gui_set_state_value -category Layout -key stand_wave_top_size_x -value 3839
+gui_set_state_value -category Layout -key stand_wave_top_size_y -value 1079
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_create_state_key -category Widget_History -key TopLevel.1|qt_left_dock|DockWnd2|DLPane.1|pages|Data.1|hbox|textfilter -value_type string -value {*debug *replace* *debug* *_r*}
+gui_create_state_key -category Widget_History -key TopLevel.1|qt_right_dock|DockWnd1|DLPane.1|pages|Data.1|hbox|textfilter -value_type string -value {*alu* *vec* *burst* *cnt*}
+gui_create_state_key -category Widget_History -key dlgSearchValue|m_ValueComboBox -value_type string -value {1458 7 3 25}
+gui_state_default_create -off
+
+# Begin command logging
+gui_open_db -file /home/kch/work/TDRAM/run_app_platform/Device_top_sim_MAC/sim/dump/Dev_top_test.vpd -design V1
+gui_list_select -id Hier.1 -current_item_name testbench -current_item_type Scope  -selected  {  }
+gui_list_expand -id  Hier.1   testbench
+gui_list_expand -id  Hier.1   testbench.U0_DEVICE
+gui_list_select -id Hier.1 -current_item_name testbench.U0_DEVICE.U0_CHIP_TOP -current_item_type Scope  -selected  { testbench.U0_DEVICE.U0_CHIP_TOP   }
+gui_list_expand -id  Hier.1   testbench.U0_DEVICE.U0_CHIP_TOP
+gui_list_select -id Hier.1 -current_item_name {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP} -current_item_type Scope  -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP}   }
+gui_list_expand -id  Hier.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP}
+gui_list_set_filter -id Data.1 -text {*vec*}
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_0[127:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_0[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_1[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_2[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_3[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_0[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_1[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_2[127:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_3[127:0]}   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Data.1 { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_0[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_1[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_2[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecA_3[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_0[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_1[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_2[127:0]} {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_3[127:0]} } -insertionbar
+gui_zoom -window Wave.1 -full
+gui_wv_zoom_timerange -id  Wave.1 0 7464004
+gui_marker_move -id  Wave.1 C1 137000
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_marker_move -id  Wave.1 C1 157000
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_marker_move -id  Wave.1 C1 153000
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 2
+gui_zoom -window Wave.1 -factor 0.5
+gui_list_set_filter -id Data.1 -text {*norm*}
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.norm_result[0:7][15:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_marker_move -id  Wave.1 C1 151010
+gui_marker_move -id  Wave.1 C1 149905
+gui_paste_clipboard -id Wave.1
+gui_list_set_filter -id Data.1 -text {*debug*}
+gui_list_select -id Hier.1 -current_item_name {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].NORM_LOGIC} -current_item_type Scope  -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].NORM_LOGIC}   }
+gui_list_expand -id Hier.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU}
+gui_list_action -id  Hier.1 {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU}
+gui_list_select -id Hier.1 -current_item_name {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU} -current_item_type Scope  -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_r_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_ADD0_in_result_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_ADD0_in_result_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_result_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_result_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_ADD0_in_result_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_result_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_ADD0_in_result_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_r_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_result_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_ADD0_in_result_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_r_norm[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_norm[15:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_paste_clipboard -id Wave.1
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_norm[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_accO_r_norm[15:0]}   }
+gui_marker_move -id  Wave.1 C1 155000
+gui_marker_create -id  Wave.1 M1 155000
+gui_marker_move -id  Wave.1 C1 156000
+gui_marker_select -id  Wave.1 { C1 }
+gui_zoom -window Wave.1 -factor 2
+gui_list_set_filter -id Data.1 -text {*src*}
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src1[15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src0[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src1[15:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_list_select -id Wave.1 -selected  {  }
+gui_paste_clipboard -id Wave.1
+gui_marker_move -id  Wave.1 C1 154000
+gui_marker_move -id  Wave.1 C1 156201
+gui_marker_move -id  Wave.1 C1 155474
+gui_marker_move -id  Wave.1 C1 155141
+gui_marker_unselect -id  Wave.1 { C1 }
+gui_marker_select -id  Wave.1 { M1 }
+gui_marker_unselect -id  Wave.1 { M1 }
+gui_marker_select -id  Wave.1 { C1 }
+gui_marker_move -id  Wave.1 C1 155039
+gui_marker_move -id  Wave.1 C1 154927
+gui_marker_move -id  Wave.1 C1 155400
+gui_marker_move -id  Wave.1 C1 155124
+gui_marker_move -id  Wave.1 C1 155039
+gui_marker_move -id  Wave.1 C1 154955
+gui_marker_unselect -id  Wave.1 { C1 }
+gui_marker_select -id  Wave.1 { M1 }
+gui_marker_move -id  Wave.1 C1 155000
+gui_list_select -id Data.1 -selected  {  }
+gui_list_select -id Hier.1 -current_item_name {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP} -current_item_type Scope  -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}   }
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src1_r[0:7][15:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_paste_clipboard -id Wave.1
+gui_list_expand -id  Wave.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src1_r[0:7][15:0]}
+gui_list_expand -id  Wave.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src0[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}   }
+gui_list_collapse -id  Wave.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}
+gui_list_collapse -id  Wave.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src1_r[0:7][15:0]}
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src1[15:0]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src0[15:0]}   }
+gui_list_select -id Wave.1 { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.alu_src1[15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0:7][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[0][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[1][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[2][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[3][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[4][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[5][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[6][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src0_r[7][15:0]}  {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.alu_src1_r[0:7][15:0]}   }
+gui_delete_selected -id  Wave.1
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.BFLOAT16_ALU[0].BFLOAT_ALU.debug_result_norm[15:0]}   }
+gui_list_select -id Data.1 -selected  {  }
+gui_list_set_filter -id Data.1 -text {*layout*}
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_layout_case[3:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_list_select -id Wave.1 -selected  {  }
+gui_paste_clipboard -id Wave.1
+gui_wv_zoom_timerange -id  Wave.1 152485 160024
+gui_list_expand -id  Wave.1   {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_layout_case[3:0]}
+gui_marker_move -id  Wave.1 C1 153000
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_wv_scrollleft -id  Wave.1  line
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_0[127:0]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_layout_case[1]}   }
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.vecB_layout_case[0]}   }
+gui_list_set_filter -id Data.1 -text {*srcB*}
+gui_list_select -id Data.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.srcB_temp[127:0]}   }
+gui_copy_selected -id Data.1
+gui_copy_selected -id Data.1
+gui_list_select -id Wave.1 -selected  {  }
+gui_paste_clipboard -id Wave.1
+gui_list_select -id Wave.1 -selected  { {testbench.U0_DEVICE.U0_CHIP_TOP.BANK[0].U0_BANK_TOP.srcB_temp[127:0]}   }
+gui_save_session -reload -default_file

@@ -1,0 +1,444 @@
+ 
+****************************************
+Report : reference
+Design : PIM_ALU_SYN_top
+Version: M-2016.12-SP5-3
+Date   : Fri Jul 10 06:09:21 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+ADDFHX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 11.200000      17    190.399997  r
+ADDFHX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 15.680000      10    156.800003  r
+ADDFHX4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 24.000000       2     48.000000  r
+ADDFX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.960000       9     80.640000  r
+ADDFX2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.960000       6     53.760000  r
+ADDHX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000      12     61.439999  r
+ADDHX2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.440000       2     10.880000  r
+ADDHX4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.680000       8     61.439999  r
+AND2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     187    359.039992  
+AND2X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     132    253.439994  
+AND2X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      34     76.160000  
+AND2X6MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       1      3.520000  
+AND2X8MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       3     11.520000  
+AND3X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000       3      6.720000  
+AND3X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000       8     17.920000  
+AND3X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       6     23.039999  
+AND3X6MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       1      4.160000  
+AND4X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       1      2.560000  
+AND4X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       7     17.920000  
+AND4X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.480000       1      4.480000  
+AO21X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       5     12.800000  
+AO21X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      12     30.719999  
+AO22X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       2      5.760000  
+AO22X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       1      2.880000  
+AOI2B1X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      12     30.719999  
+AOI2B1X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      24     61.439999  
+AOI2B1X4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       8     30.719999  
+AOI2BB1X1MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      66    147.840001  
+AOI2BB1X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      28     62.720000  
+AOI2BB1X4MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      15     48.000001  
+AOI2BB1X8MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  6.080000       3     18.240000  
+AOI2BB2X1MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000      10     28.800001  
+AOI2BB2X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       7     20.160001  
+AOI21BX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       8     20.480000  
+AOI21BX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       2      5.760000  
+AOI21BX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000       1      3.200000  
+AOI21X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     311    597.119987  
+AOI21X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     232    445.439990  
+AOI21X3MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      16     51.200001  
+AOI21X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      50    160.000002  
+AOI21X6MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       9     37.439999  
+AOI21X8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.440000      13     70.720001  
+AOI22X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000    1057   2367.680010  
+AOI22X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     101    226.240001  
+AOI22X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       5     19.200000  
+AOI31X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      10     22.400000  
+AOI31X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      12     26.880000  
+AOI31X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       2      7.680000  
+AOI211X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      54    120.960001  
+AOI211X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      22     49.280000  
+AOI211X4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       7     26.879999  
+AOI222X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000     555   1953.599989  
+AOI222X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       7     24.640000  
+BUFX2MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000     449    574.719987  
+BUFX3MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000       9     17.280000  
+BUFX4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      29     55.679999  
+BUFX5MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000       1      2.240000  
+BUFX6MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      11     28.159999  
+BUFX8MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      18     57.600001  
+BUFX10MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       5     17.600000  
+BUFX12MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       1      4.160000  
+BUFX14MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.800000       1      4.800000  
+BUFX24MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.680000       1      7.680000  
+CLKAND2X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      42     80.639998  
+CLKNAND2X2MTR      scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000    1143   1463.039967  
+CLKNAND2X4MTR      scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      45    100.800000  
+CLKNAND2X8MTR      scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       4     15.360000  
+CLKNAND2X12MTR     scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.440000       1      5.440000  
+CLKNAND2X16MTR     scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.360000       7     51.520001  
+CLKOR2X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      69    132.479997  
+CLKOR2X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      20     38.399999  
+CLKOR2X4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       3      8.640000  
+CLKOR2X6MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       1      4.160000  
+DFFRHQX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  9.280000     193   1791.039948  n
+DFFRHQX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  9.600000     309   2966.400118  n
+DFFRHQX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 13.760000     219   3013.440050  n
+DFFRHQX8MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 17.920000      33    591.360003  n
+DFFRQX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000     600   5184.000206  n
+DFFRQX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000    1866  16122.240641  n
+DFFRQX4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000     112    967.680038  n
+DFFRX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  9.600000       6     57.600002  n
+DFFSHQX8MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                 20.799999       1     20.799999  n
+DFFSX1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.320000      24    199.679993  n
+DFFSX2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.320000       9     74.879997  n
+INVX1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  0.960000    2909   2792.639938  
+INVX2MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  0.960000    1185   1137.599975  
+INVX3MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000      54     69.119998  
+INVX4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000     165    211.199995  
+INVX5MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      10     19.200000  
+INVX6MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      35     67.199998  
+INVX8MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      24     53.760000  
+INVX10MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       6     17.280001  
+INVX12MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000       7     22.400000  
+INVX14MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       3     10.560000  
+INVX16MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       3     11.520000  
+INVX18MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       1      4.160000  
+INVX20MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.800000       9     43.200002  
+MX2X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       1      3.840000  
+MXI2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      14     44.800001  
+MXI2X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      31     99.200001  
+MXI2X3MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       1      5.120000  
+MXI2X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       2     10.240000  
+MXI2X6MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.040000       2     14.080000  
+NAND2BX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      93    178.559996  
+NAND2BX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     229    439.679990  
+NAND2BX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      60    153.599997  
+NAND2BX8MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       1      5.120000  
+NAND2X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000    1498   1917.439957  
+NAND2X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000     747    956.159979  
+NAND2X3MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      52    116.480000  
+NAND2X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     172    385.280002  
+NAND2X6MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      30     96.000001  
+NAND2X8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      18     69.119998  
+NAND2X12MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.440000       3     16.320000  
+NAND3BX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000       3      6.720000  
+NAND3BX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      60    134.400001  
+NAND3BX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000      27     95.039999  
+NAND3X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      55    105.599998  
+NAND3X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     242    464.639990  
+NAND3X3MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000       2      6.400000  
+NAND3X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      49    156.800002  
+NAND3X6MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.480000       3     13.440000  
+NAND3X8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.760000       8     46.080002  
+NAND3X12MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.320000       3     24.959999  
+NAND4BX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       2      5.120000  
+NAND4BX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       9     23.039999  
+NAND4BX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       1      5.120000  
+NAND4X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      47    105.280000  
+NAND4X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     129    288.960001  
+NAND4X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      17     65.279999  
+NOR2BX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     148    284.159994  
+NOR2BX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      84    161.279996  
+NOR2BX4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      66    168.959996  
+NOR2BX8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       4     20.480000  
+NOR2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000    1342   1717.759962  
+NOR2X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.280000     650    831.999981  
+NOR2X3MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     122    273.280001  
+NOR2X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     232    519.680002  
+NOR2X6MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      19     60.800001  
+NOR2X8MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      25     95.999998  
+NOR2X12MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.440000       3     16.320000  
+NOR3BX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      18     40.320000  
+NOR3BX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000       1      2.240000  
+NOR3BX4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       5     17.600000  
+NOR3X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      21     40.319999  
+NOR3X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000       3      5.760000  
+NOR3X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000       6     19.200000  
+NOR4BX1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       5     12.800000  
+NOR4BX2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.480000       1      4.480000  
+NOR4BX4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.640000       2     17.280001  
+NOR4X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      29     64.960000  
+NOR4X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       5     19.200000  
+OA21X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      13     33.279999  
+OA21X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      24     61.439999  
+OA21X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       6     17.280001  
+OA21X8MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       1      5.120000  
+OA22X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000      21     60.480002  
+OA22X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000      17     48.960002  
+OA22X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       1      3.520000  
+OAI2B1X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      11     28.159999  
+OAI2B1X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      66    168.959996  
+OAI2B1X4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      23     88.319998  
+OAI2B1X8MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  6.720000       4     26.879999  
+OAI2B2X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       6     17.280001  
+OAI2B2X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       6     17.280001  
+OAI2B11X1MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       9     25.920001  
+OAI2B11X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000      28     80.640003  
+OAI2B11X4MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.480000       4     17.920000  
+OAI2BB1X1MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      64    143.360001  
+OAI2BB1X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     228    510.720002  
+OAI2BB1X4MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      79    252.800004  
+OAI2BB2X1MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       8     23.040001  
+OAI2BB2X2MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000      31     89.280004  
+OAI2BB2X4MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000       7     29.119999  
+OAI2BB2X8MTR       scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.680000       2     15.360000  
+OAI21BX1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000     108    276.479994  
+OAI21BX2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000     103    263.679994  
+OAI21BX4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       2      7.680000  
+OAI21X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     312    599.039987  
+OAI21X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000     364    698.879984  
+OAI21X3MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      28     89.600001  
+OAI21X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000      34    119.679999  
+OAI21X6MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  4.160000      22     91.519997  
+OAI21X8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.760000       1      5.760000  
+OAI22X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     447   1001.280004  
+OAI22X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     216    483.840002  
+OAI22X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      10     38.399999  
+OAI31X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      55    123.200001  
+OAI31X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000      11     24.640000  
+OAI31X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000       3     11.520000  
+OAI211X1MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     172    385.280002  
+OAI211X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.240000     147    329.280001  
+OAI211X4MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.840000      28    107.519998  
+OAI211X8MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  7.680000       2     15.360000  
+OAI222X2MTR        scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000      34    119.679999  
+OR2X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000       3      5.760000  
+OR2X2MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  1.920000      70    134.399997  
+OR2X4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000       8     23.040001  
+OR3X4MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.520000       4     14.080000  
+OR4X1MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000      12     30.719999  
+OR4X2MTR           scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.560000       5     12.800000  
+XNOR2X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000     371   1068.480042  
+XNOR2X2MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000     258    825.600012  
+XNOR2X4MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000      43    220.159995  
+XNOR2X8MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.320000      55    457.599983  
+XNOR3X1MTR         scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.760000       8     46.080002  
+XOR2X1MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  2.880000     108    311.040012  
+XOR2X2MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  3.200000      22     70.400001  
+XOR2X4MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  5.120000       4     20.480000  
+XOR2X8MTR          scmetro_cmos10lp_rvt_ss_1p08v_125c_sadhm
+                                  8.320000       6     49.919998  
+-----------------------------------------------------------------------------
+Total 210 references                                66601.600671
+1
