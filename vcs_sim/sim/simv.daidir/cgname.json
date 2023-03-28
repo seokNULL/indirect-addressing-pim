@@ -9,14 +9,14 @@
         "amcQw",
         "module"
     ],
-    "testbench": [
-        "testbench",
-        "iAVhC",
-        "module"
-    ],
     "NORM_stage_DEBUG": [
         "NORM_stage_DEBUG",
         "jirwz",
+        "module"
+    ],
+    "testbench": [
+        "testbench",
+        "iAVhC",
         "module"
     ],
     "bank_top_0000": [

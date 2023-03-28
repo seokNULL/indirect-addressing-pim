@@ -9,7 +9,7 @@ Command: vcs +define+WAVE_DUMP_VCS+RTL_SIM +libext+.v -full64 -v2005 -R -timesca
 +define+VCS -l vcs.log -debug_all -sverilog -file vlist_Device_top -ucli -do dump.tcl \
 +vpdfile+dump/Dev_top_test.vpd
                          Chronologic VCS (TM)
-       Version K-2015.09-SP1_Full64 -- Tue Mar 28 13:12:13 2023
+       Version K-2015.09-SP1_Full64 -- Tue Mar 28 14:02:43 2023
                Copyright (c) 1991-2015 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -25,14 +25,18 @@ Top Level Modules:
 TimeScale is 1 ns / 10 ps
 Starting vcs inline pass...
 5 modules and 0 UDP read.
-	However, due to incremental compilation, no re-compilation is necessary.
-make[1]: Entering directory `/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim/csrc' \
+recompiling module testbench
+recompiling module bank_top
+recompiling module bfloat_MAC_pipe_OPT
+recompiling module NORM_stage_DEBUG
+All of 5 modules done
+make[1]: Entering directory `/home/sy/work/pim-versal/indirect-addressing-pim/vcs_sim/sim/csrc' \
 
 rm -f _csrc*.so linux64_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 g++  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
 -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic   amcQwB.o objs/amcQw_d.o \
-_prev_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o \
+_2071_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o \
 rmar_llvm_0_0.o          /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libzerosoft_rt_stubs.so \
 /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libvirsim.so /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/liberrorinf.so \
 /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libsnpsmalloc.so    /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libvcsnew.so \
@@ -41,12 +45,12 @@ rmar_llvm_0_0.o          /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/libzerosof
 /usr/synopsys/vcs_vK-2015.09-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm \
 -lpthread -ldl 
 ../simv up to date
-make[1]: Leaving directory `/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim/csrc' \
+make[1]: Leaving directory `/home/sy/work/pim-versal/indirect-addressing-pim/vcs_sim/sim/csrc' \
 
 Command: ./simv +define+WAVE_DUMP_VCS+RTL_SIM +libext+.v +define+VCS -a vcs.log -ucli -do dump.tcl +vpdfile+dump/Dev_top_test.vpd
 Chronologic VCS simulator copyright 1991-2015
 Contains Synopsys proprietary information.
-Compiler version K-2015.09-SP1_Full64; Runtime version K-2015.09-SP1_Full64;  Mar 28 13:12 2023
+Compiler version K-2015.09-SP1_Full64; Runtime version K-2015.09-SP1_Full64;  Mar 28 14:02 2023
 Message: From $vcdpluson at time 0 in file ./testbench.v line 1: [VCD+-SVFN]: 
 Setting VPD File by "+vpdfile+" switch to dump/Dev_top_test.vpd.
 
@@ -59,6 +63,6 @@ $finish called from file "./testbench.v", line 167.
 $finish at simulation time               825000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 8250000 ps
-CPU Time:      0.440 seconds;       Data structure size:   2.1Mb
-Tue Mar 28 13:12:15 2023
-CPU time: .407 seconds to compile + .269 seconds to elab + .076 seconds to link + .541 seconds in simulation
+CPU Time:      0.910 seconds;       Data structure size:   2.9Mb
+Tue Mar 28 14:02:46 2023
+CPU time: .656 seconds to compile + .275 seconds to elab + .076 seconds to link + 1.007 seconds in simulation

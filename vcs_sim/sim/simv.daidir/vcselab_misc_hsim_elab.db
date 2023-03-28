@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
 psLogFileName                      	vcs.log
-pDaiDir                            	/home/kch/work/TDRAM/run_app_platform/Device_top_sim_GDDR6_TASK/sim/simv.daidir
+pDaiDir                            	/home/sy/work/pim-versal/indirect-addressing-pim/vcs_sim/sim/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 hsMainFileCount                    	0

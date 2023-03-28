@@ -1,0 +1,103 @@
+{
+    "Modules": {
+        "NORM_stage_DEBUG": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "testbench": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bank_top_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "bfloat_MAC_pipe_OPT": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_2071_archive_1.a",
+            "objects": [
+                [
+                    "reYIK_d.o",
+                    35035
+                ],
+                [
+                    "iAVhC_d.o",
+                    257613
+                ],
+                [
+                    "mjfYv_d.o",
+                    213279
+                ],
+                [
+                    "jEMCn_d.o",
+                    65116
+                ],
+                [
+                    "jirwz_d.o",
+                    19424
+                ]
+            ],
+            "size": 590467
+        }
+    ],
+    "CompUnits": {
+        "jEMCn_d": {
+            "mod": "bfloat_MAC_pipe_OPT",
+            "mode": 4,
+            "out": "jEMCn_d.o",
+            "bytes": 65116,
+            "archive": "archive.0/_2071_archive_1.a",
+            "checksum": 4294967295
+        },
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "mode": 4,
+            "out": "objs/amcQw_d.o",
+            "bytes": 7468,
+            "checksum": 4294967295
+        },
+        "reYIK_d": {
+            "mod": "std",
+            "mode": 4,
+            "out": "reYIK_d.o",
+            "bytes": 35035,
+            "archive": "archive.0/_2071_archive_1.a",
+            "checksum": 4294967295
+        },
+        "iAVhC_d": {
+            "mod": "testbench",
+            "mode": 4,
+            "out": "iAVhC_d.o",
+            "bytes": 257613,
+            "archive": "archive.0/_2071_archive_1.a",
+            "checksum": 4294967295
+        },
+        "mjfYv_d": {
+            "mod": "bank_top_0000",
+            "mode": 4,
+            "out": "mjfYv_d.o",
+            "bytes": 213279,
+            "archive": "archive.0/_2071_archive_1.a",
+            "checksum": 4294967295
+        },
+        "jirwz_d": {
+            "mod": "NORM_stage_DEBUG",
+            "mode": 4,
+            "out": "jirwz_d.o",
+            "bytes": 19424,
+            "archive": "archive.0/_2071_archive_1.a",
+            "checksum": 4294967295
+        }
+    },
+    "reusePaths": {}
+}

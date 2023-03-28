@@ -317,14 +317,15 @@ assign PIM_desc_range = PIM_desc_base_addr + PIM_desc_addr_size;
 assign diff_desc_addr0 = (PIM_desc_range - 1 - ui_addr);
 assign diff_desc_addr1 = (ui_addr - PIM_desc_base_addr);
 
+(* keep = "true", mark_debug = "true" *) reg [31:0] current_desc_addr;
+(* keep = "true", mark_debug = "true" *) reg [31:0] next_desc_addr;
+(* keep = "true", mark_debug = "true" *) wire       desc_incr_enable;
 
 assign is_desc_clr_TEST   = (ui_addr[5:0] == 6'b011100) && AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_write_req ? 1'b1 : 1'b0;
 assign is_desc_range_incr = (desc_incr_enable) && (ui_addr[5:0] == 6'b000000) && AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_read_req ? 1'b1 : 1'b0;
 
 
-(* keep = "true", mark_debug = "true" *) reg [31:0] current_desc_addr;
-(* keep = "true", mark_debug = "true" *) reg [31:0] next_desc_addr;
-(* keep = "true", mark_debug = "true" *) wire       desc_incr_enable;
+
 
 always @(posedge clk or negedge rst_x) begin
   if( (~rst_x)| req_AIM_WORKING) begin
@@ -544,6 +545,11 @@ end
 (* keep = "true", mark_debug = "true" *) wire check_dstC_desc_done;
 
 (* keep = "true", mark_debug = "true" *) reg check_current_desc_done;
+(* keep = "true", mark_debug = "true" *) reg check_current_desc_done_r;
+(* keep = "true", mark_debug = "true" *) reg check_current_desc_done_rr;
+(* keep = "true", mark_debug = "true" *) reg check_current_desc_done_rrr;
+(* keep = "true", mark_debug = "true" *) reg check_current_desc_done_rrrr;
+
 
 `else
 
@@ -561,7 +567,28 @@ wire check_srcB_desc_done;
 wire check_dstC_desc_done;
 
 reg check_current_desc_done;
+reg check_current_desc_done_r;
+reg check_current_desc_done_rr;
+reg check_current_desc_done_rrr;
+reg check_current_desc_done_rrrr;
 `endif
+
+
+always @(posedge clk or negedge rst_x) begin 
+  if(~rst_x)begin
+              check_current_desc_done_r              <=1'b0;
+              check_current_desc_done_rr             <=1'b0;
+              check_current_desc_done_rrr            <=1'b0;
+              check_current_desc_done_rrrr           <=1'b0;    
+  end
+  else begin
+              check_current_desc_done_r              <=check_current_desc_done;
+              check_current_desc_done_rr             <=check_current_desc_done_r;
+              check_current_desc_done_rrr            <=check_current_desc_done_rr;
+              check_current_desc_done_rrrr           <=check_current_desc_done_rrr;  
+  end
+end
+
 
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x)                                     PIM_req_A_cnt <= 'b0;
@@ -587,7 +614,8 @@ end
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x)                                     PIM_opcode_match_ptr <= 'b0;
     else if(HPC_clear_sig)                          PIM_opcode_match_ptr <= 'b0;
-    else if(check_current_desc_done)                PIM_opcode_match_ptr <= PIM_opcode_match_ptr + 1;
+    // else if(check_current_desc_done)                PIM_opcode_match_ptr <= PIM_opcode_match_ptr + 1;
+    else if(check_current_desc_done_rrrr)                PIM_opcode_match_ptr <= PIM_opcode_match_ptr + 1;
 end
 
 
