@@ -1,26 +1,17 @@
-`define PCIE_VER
 `define HPC_EN
 
-//`define DEBUG_KEEP
-//`define SYN_FAST_NOT_COMPUTE
-//`define BANK0_ONLY
+`define DEBUG_KEEP
+// `define SYN_FAST_NOT_COMPUTE
+// `define BANK0_ONLY
 
 module Device_top
 (
     clk,
     rst_x,
 
-    //app_en,
-    //app_rdy,
-    //app_cmd,
-    //app_addr,
-    //app_wdf_data,
-    //app_wdf_wren,
-
     read_en,
     write_en,
     addr_in,
-    //data_in,
 
     rd_data_valid,
     data_bus_from_memory,
@@ -29,35 +20,14 @@ module Device_top
     PIM_result_to_DRAM
 );
 
-localparam BANK_NUM = 16;
+localparam BANK_NUM           = 16;
+localparam DESC_ADDR_BASE     = 32'h0000_0000;
+localparam DESC_ADDR_SIZE     = 32'h0000_0100;
+localparam AIM_WORK_SIG       = 32'h0000_4000;
+localparam HPC_CLR_SIG        = 32'h0000_5000;
+localparam RSV_DESC_MEM_BASE  = 32'h0080_0000;
+localparam RSV_DESC_MEM_SIZE  = 32'h0080_0000;
 
-`ifdef PCIE_VER
-    localparam DESC_ADDR_BASE     = 32'h0000_0000;
-    localparam DESC_ADDR_SIZE     = 32'h0000_0100;
-
-    localparam AIM_WORK_SIG       = 32'h0000_4000;
-    localparam HPC_CLR_SIG        = 32'h0000_5000;
-    //localparam MM_VECA_WRITE      = 24'h0000_6;
-    //localparam MM_VECA_BROADCAST  = 24'h0000_7;
-
-    //localparam PROF_SIG           = 32'h0000_8000; 
-
-    localparam RSV_DESC_MEM_BASE = 32'h0080_0000;
-    localparam RSV_DESC_MEM_SIZE = 32'h0080_0000;
-`else
-    localparam DESC_ADDR_BASE     = 32'h0000_0000;
-    localparam DESC_ADDR_SIZE     = 32'h0000_0100;
-
-    localparam AIM_WORK_SIG       = 32'h0000_4000;
-    localparam HPC_CLR_SIG        = 32'h0000_5000;
-    //localparam MM_VECA_WRITE      = 24'h0000_6;
-    //localparam MM_VECA_BROADCAST  = 24'h0000_7;
-
-    //localparam PROF_SIG           = 32'h0000_8000; 
-
-    localparam RSV_DESC_MEM_BASE = 32'h0080_0000;
-    localparam RSV_DESC_MEM_SIZE = 32'h0080_0000;
-`endif
 
 input                              clk;
 input                              rst_x;
@@ -76,7 +46,7 @@ output [255:0]                     PIM_result_to_DRAM;
 genvar i;
 
 
-//{is_desc_range, is_desc_clr, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
+//{is_desc_range_incr, is_desc_clr_TEST, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
 // 1             +1           +1                      +1                      +1            +1           +32      (6+32)
 wire [37:0] CAS_rw_queue_entry;
 wire [37:0] CAS_rw_queue_head;
@@ -98,28 +68,22 @@ wire CAS_read_data_QUEUE_rd_en;
 //enqueue data
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-wire [31:0] ui_addr = addr_in;
+(* keep = "true", mark_debug = "true" *)wire [31:0] ui_addr = addr_in;
 
-wire ui_write_req = write_en;
-wire ui_read_req  = read_en;
+(* keep = "true", mark_debug = "true" *)wire ui_write_req = write_en;
+(* keep = "true", mark_debug = "true" *)wire ui_read_req  = read_en;
 
 wire PIM_src_A_pass_reg_tot;
 wire PIM_src_B_pass_reg_tot;
 wire PIM_dst_C_pass_reg_tot;
 
-wire is_desc_range;
-wire is_desc_clr;
 
-wire is_desc_range_TEST;
 wire is_desc_clr_TEST;
-
+wire is_desc_range_incr;
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//assign CAS_rw_queue_entry = {is_desc_range, is_desc_clr, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, data_in, ui_addr};
-//1+1+1+1+1+1+256+32 = 294
-//assign CAS_rw_queue_entry = {is_desc_range, is_desc_clr, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
-assign CAS_rw_queue_entry = {is_desc_range_TEST, is_desc_clr_TEST, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
+assign CAS_rw_queue_entry = {is_desc_range_incr, is_desc_clr_TEST, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
 //1+1+1+1+1+1+32 = 38
 
 assign CAS_rw_queue_wr_en = (ui_read_req || (ui_write_req && !PIM_dst_C_pass_reg_tot));
@@ -127,7 +91,7 @@ assign CAS_rw_queue_wr_en = (ui_read_req || (ui_write_req && !PIM_dst_C_pass_reg
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //RW queue
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-ddr4_v2_2_4_axi_fifo #(.C_WIDTH(38), .C_AWIDTH(9), .C_DEPTH(512)) U0_CAS_RW_QUEUE(
+ddr4_v2_2_4_axi_fifo #(.C_WIDTH(38), .C_AWIDTH(12), .C_DEPTH(4096)) U0_CAS_RW_QUEUE(
     .clk                    (clk                        ),
     .rst                    (!rst_x                     ), 
     .wr_en                  (CAS_rw_queue_wr_en         ),
@@ -147,7 +111,7 @@ assign CAS_read_data_QUEUE_wr_en = rd_data_valid;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Read data queue (timing sync)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-ddr4_v2_2_4_axi_fifo #(.C_WIDTH(257), .C_AWIDTH(5), .C_DEPTH(32)) U0_CAS_R_DATA_QUEUE(
+ddr4_v2_2_4_axi_fifo #(.C_WIDTH(257), .C_AWIDTH(9), .C_DEPTH(512)) U0_CAS_R_DATA_QUEUE(
     .clk                    (clk                        ),
     .rst                    (!rst_x                     ), 
     .wr_en                  (CAS_read_data_QUEUE_wr_en  ),
@@ -164,8 +128,6 @@ ddr4_v2_2_4_axi_fifo #(.C_WIDTH(257), .C_AWIDTH(5), .C_DEPTH(32)) U0_CAS_R_DATA_
 //Dequeue siganl decision
 // CAS_queue_head_r / DRAM_data <-- final dequeue data
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//{is_desc_range, is_desc_clr, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, data_in, ui_addr};
 //wire [294:0] CAS_rw_queue_head;
 
 wire         ui_is_desc_range = CAS_rw_queue_head[37] && !CAS_rw_queue_empty;
@@ -208,15 +170,15 @@ always @(posedge clk or negedge rst_x) begin
     else                                                         CAS_queue_head_r <= 'b0;
 end
 
-(* keep = "true", mark_debug = "true" *) reg [255:0] DRAM_data;
+reg [255:0] DRAM_data;
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x)                               DRAM_data <= 'b0;
     else if(CAS_read_data_QUEUE_rd_en)        DRAM_data <= ui_read_data;
 end
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-reg            req_is_desc_range;
-reg            req_is_desc_clr;
+(* keep = "true", mark_debug = "true" *) reg            req_is_desc_range;
+(* keep = "true", mark_debug = "true" *) reg            req_is_desc_clr;
 reg            req_srcA_pass;
 reg            req_srcB_pass;
 reg            req_dstC_pass;
@@ -274,12 +236,10 @@ end
 (* keep = "true", mark_debug = "true" *) reg debug_PIM_src_A_pass_reg_tot_r;
 (* keep = "true", mark_debug = "true" *) reg debug_PIM_src_B_pass_reg_tot_r;
 (* keep = "true", mark_debug = "true" *) reg debug_PIM_dst_C_pass_reg_tot_r;
-(* keep = "true", mark_debug = "true" *) reg debug_is_desc_range_r;
-(* keep = "true", mark_debug = "true" *) reg debug_is_desc_clr_r;
 
-(* keep = "true", mark_debug = "true" *) reg debug_is_desc_range_TEST;
+
 (* keep = "true", mark_debug = "true" *) reg debug_is_desc_clr_TEST;
-
+(* keep = "true", mark_debug = "true" *) reg debug_is_desc_range_incr;
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x) begin
                                                     debug_ui_write_req_r         <= 'b0;
@@ -288,11 +248,9 @@ always @(posedge clk or negedge rst_x) begin
                                                     debug_PIM_src_A_pass_reg_tot_r <= 'b0;
                                                     debug_PIM_src_B_pass_reg_tot_r <= 'b0;
                                                     debug_PIM_dst_C_pass_reg_tot_r <= 'b0;
-                                                    debug_is_desc_range_r <= 'b0;
-                                                    debug_is_desc_clr_r <= 'b0;
 
-                                                    debug_is_desc_range_TEST <= 'b0;
                                                     debug_is_desc_clr_TEST <= 'b0;
+                                                    debug_is_desc_range_incr <= 'b0;
     end
     else begin
                                                     debug_ui_write_req_r <= ui_write_req;
@@ -301,11 +259,9 @@ always @(posedge clk or negedge rst_x) begin
                                                     debug_PIM_src_A_pass_reg_tot_r <= PIM_src_A_pass_reg_tot;
                                                     debug_PIM_src_B_pass_reg_tot_r <= PIM_src_B_pass_reg_tot;
                                                     debug_PIM_dst_C_pass_reg_tot_r <= PIM_dst_C_pass_reg_tot;
-                                                    debug_is_desc_range_r <= is_desc_range;
-                                                    debug_is_desc_clr_r <= is_desc_clr;
 
-                                                    debug_is_desc_range_TEST <= is_desc_range_TEST;
                                                     debug_is_desc_clr_TEST <= is_desc_clr_TEST;
+                                                    debug_is_desc_range_incr <= is_desc_range_incr;
     end
 end
 `else
@@ -322,74 +278,28 @@ end
 //DESC_ADDR_SIZE     = 32'hx000_0100;
 //AIM_WORK_SIG       = 32'hx000_4000;
 //HPC_CLR_SIG        = 32'hx000_5000;
-//MM_VECA_WRITE      = 24'hx000_6;
-//MM_VECA_BROADCAST  = 24'hx000_7;
-`ifdef DEBUG_KEEP
-//(* keep = "true", mark_debug = "true" *) wire req_DESC_ADDR_BASE;
-//(* keep = "true", mark_debug = "true" *) wire req_DESC_ADDR_SIZE;
-(* keep = "true", mark_debug = "true" *) wire req_AIM_WORKING;
-(* keep = "true", mark_debug = "true" *) wire req_HPC_CLR_SIG;
-//(* keep = "true", mark_debug = "true" *) wire req_MM_vecA_write;
-//(* keep = "true", mark_debug = "true" *) wire req_MM_vecA_broadcast;
 
-//(* keep = "true", mark_debug = "true" *) wire req_PROF_SIG;
-`else
-//wire req_DESC_ADDR_BASE;
-//wire req_DESC_ADDR_SIZE;
+
 wire req_AIM_WORKING;
 wire req_HPC_CLR_SIG;
-//wire req_MM_vecA_write;
-//wire req_MM_vecA_broadcast;
 
-//wire req_PROF_SIG;
-`endif
-
-//assign req_DESC_ADDR_BASE    = (( req_addr[31:0]  == DESC_ADDR_BASE   ) && req_wr)                 ? 1'b1 : 1'b0;
-//assign req_DESC_ADDR_SIZE    = (( req_addr[31:0]  == DESC_ADDR_SIZE   ) && req_wr)                 ? 1'b1 : 1'b0;
 assign req_AIM_WORKING       = (( req_addr[31:0]  == AIM_WORK_SIG     ) && req_wr)                 ? 1'b1 : 1'b0;
 assign req_HPC_CLR_SIG       = (( req_addr[31:0]  == HPC_CLR_SIG      ) && req_wr)                 ? 1'b1 : 1'b0;
-//assign req_MM_vecA_write     = (( req_addr[31:12] == MM_VECA_WRITE    ) && req_wr)                 ? 1'b1 : 1'b0;
-//assign req_MM_vecA_broadcast = (( req_addr[31:12] == MM_VECA_BROADCAST) && req_wr)                 ? 1'b1 : 1'b0;
-
-
-//assign req_PROF_SIG          = ((req_addr[31:0]  == PROF_SIG          ) && req_wr)                 ? 1'b1 : 1'b0;
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //HOST desc config memory-mapped reg (addr/size) 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(* keep = "true", mark_debug = "true" *)reg [31:0] PIM_desc_base_addr;
+(* keep = "true", mark_debug = "true" *)reg [31:0] PIM_desc_addr_size;
 
-`ifdef DEBUG_KEEP
-(* keep = "true", mark_debug = "true" *) reg [31:0] PIM_desc_base_addr;
-(* keep = "true", mark_debug = "true" *) reg [31:0] PIM_desc_addr_size;
-`else
-reg [31:0] PIM_desc_base_addr;
-reg [31:0] PIM_desc_addr_size;
-`endif
-
-wire [31:0] PIM_desc_range;
-wire [32:0] diff_desc_addr0;
-wire [32:0] diff_desc_addr1;
+(* keep = "true", mark_debug = "true" *)wire [31:0] PIM_desc_range;
+(* keep = "true", mark_debug = "true" *)wire [32:0] diff_desc_addr0;
+(* keep = "true", mark_debug = "true" *)wire [32:0] diff_desc_addr1;
 
 (* keep = "true", mark_debug = "true" *) reg HPC_clear_sig;
 (* keep = "true", mark_debug = "true" *) reg AIM_working;
-
-//always @(posedge clk or negedge rst_x) begin
-//    if (~rst_x) begin
-//                                                                PIM_desc_base_addr <= 'b0;
-//                                                                PIM_desc_addr_size <= 'b0;
-//    end
-//    else if(HPC_clear_sig) begin
-//                                                                PIM_desc_base_addr <= 'b0;
-//                                                                PIM_desc_addr_size <= 'b0;
-//    end
-//    else begin
-//        if     (req_DESC_ADDR_BASE)                             PIM_desc_base_addr <= req_data[31:0];
-//        else if(req_DESC_ADDR_SIZE)                             PIM_desc_addr_size <= req_data[31:0];
-//    end
-//end
 
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x) begin
@@ -407,11 +317,33 @@ assign PIM_desc_range = PIM_desc_base_addr + PIM_desc_addr_size;
 assign diff_desc_addr0 = (PIM_desc_range - 1 - ui_addr);
 assign diff_desc_addr1 = (ui_addr - PIM_desc_base_addr);
 
-assign is_desc_range = AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_read_req ? 1'b1 : 1'b0;
-assign is_desc_clr   = AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_write_req ? 1'b1 : 1'b0;
 
-assign is_desc_range_TEST = (ui_addr[5:0] == 6'b000000) && AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_read_req ? 1'b1 : 1'b0;
 assign is_desc_clr_TEST   = (ui_addr[5:0] == 6'b011100) && AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_write_req ? 1'b1 : 1'b0;
+assign is_desc_range_incr = (desc_incr_enable) && (ui_addr[5:0] == 6'b000000) && AIM_working && (!diff_desc_addr0[32]) && (!diff_desc_addr1[32]) && ui_read_req ? 1'b1 : 1'b0;
+
+
+(* keep = "true", mark_debug = "true" *) reg [31:0] current_desc_addr;
+(* keep = "true", mark_debug = "true" *) reg [31:0] next_desc_addr;
+(* keep = "true", mark_debug = "true" *) wire       desc_incr_enable;
+
+always @(posedge clk or negedge rst_x) begin
+  if( (~rst_x)| req_AIM_WORKING) begin
+          current_desc_addr                         <= 'b0;
+          next_desc_addr                            <= 'b0;
+  end
+  else if(HPC_clear_sig) begin
+          current_desc_addr                         <= RSV_DESC_MEM_BASE;
+          next_desc_addr                            <= RSV_DESC_MEM_BASE + 32'h0000_0040;
+          
+  end
+  else if(ui_addr==next_desc_addr) begin
+          current_desc_addr                         <= ui_addr;
+          next_desc_addr                            <= ui_addr + 32'h0000_0040;
+  end
+end
+assign desc_incr_enable = ((ui_addr==RSV_DESC_MEM_BASE)||(ui_addr==next_desc_addr))? 1'b1 : 1'b0;
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -481,26 +413,15 @@ generate
   end
 endgenerate
 
-// PIM_INFO_from_desc[0] --> 0: src / 1: dst
-// PIM_INFO_from_desc[3:1] --> a,b,c pass [1] [2] [3]
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Desc address matching logic
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-`ifdef DEBUG_KEEP
-(* keep = "true", mark_debug = "true" *) wire [31:0] PIM_base_addr_reg[0:7];
-(* keep = "true", mark_debug = "true" *) wire [31:0] PIM_base_addr_size_reg[0:7];
-(* keep = "true", mark_debug = "true" *) wire [2:0]  PIM_base_addr_type_reg[0:7];
-(* keep = "true", mark_debug = "true" *) wire [31:0] PIM_range_reg[0:7];
-`else
 wire [31:0] PIM_base_addr_reg[0:7];
 wire [31:0] PIM_base_addr_size_reg[0:7];
 wire [2:0]  PIM_base_addr_type_reg[0:7];
 wire [31:0] PIM_range_reg[0:7];
-`endif
 
 wire [32:0] diff_addr0_reg[0:7];
 wire [32:0] diff_addr1_reg[0:7];
@@ -588,15 +509,9 @@ wire AIM_working = 1'b0;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Bank config timing
-`ifdef DEBUG_KEEP
-(* keep = "true", mark_debug = "true" *) reg req_is_desc_range_r;
-(* keep = "true", mark_debug = "true" *) reg [2:0] PIM_addr_match_wr_ptr_r;
-(* keep = "true", mark_debug = "true" *) reg [27:0] bank_config_reg;
-`else
-reg req_is_desc_range_r;
-reg [2:0] PIM_addr_match_wr_ptr_r;
+(* keep = "true", mark_debug = "true" *)reg req_is_desc_range_r;
+(* keep = "true", mark_debug = "true" *)reg [2:0] PIM_addr_match_wr_ptr_r;
 reg [27:0] bank_config_reg;
-`endif
 
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x)                 req_is_desc_range_r <= 'b0;
@@ -775,40 +690,6 @@ always @(posedge clk or negedge rst_x) begin
 end
 
 `else
-
-//important debug_sig
-(* keep = "true", mark_debug = "true" *) reg  [31:0]    debug_req_addr_r;
-(* keep = "true", mark_debug = "true" *) reg            debug_req_valid_r;
-(* keep = "true", mark_debug = "true" *) reg            debug_req_wr_r;
-(* keep = "true", mark_debug = "true" *) reg            debug_req_rd_r;
-
-(* keep = "true", mark_debug = "true" *) reg            debug_req_srcA_pass_r;
-(* keep = "true", mark_debug = "true" *) reg            debug_req_srcB_pass_r;
-(* keep = "true", mark_debug = "true" *) reg            debug_req_dstC_pass_r;
-
-always @(posedge clk or negedge rst_x) begin
-  if (~rst_x) begin
-                                                debug_req_addr_r <= 'b0;
-                                                debug_req_valid_r <= 'b0;
-                                                debug_req_wr_r <= 'b0;
-                                                debug_req_rd_r <= 'b0;
-
-                                                debug_req_srcA_pass_r <= 'b0;
-                                                debug_req_srcB_pass_r <= 'b0;
-                                                debug_req_dstC_pass_r <= 'b0;
-  end
-  else begin
-                                                debug_req_addr_r <= req_addr;
-                                                debug_req_valid_r <= req_valid;
-                                                debug_req_wr_r <= req_wr;
-                                                debug_req_rd_r <= req_rd;
-
-                                                debug_req_srcA_pass_r <= req_srcA_pass;
-                                                debug_req_srcB_pass_r <= req_srcB_pass;
-                                                debug_req_dstC_pass_r <= req_dstC_pass;
-  end
-end
-
 `endif
 
 
@@ -928,55 +809,6 @@ assign src_A_RD_pass_mux = (is_vecA_rd_broadcast && srcA_RD_pass_en) ? 16'hffff 
 assign src_B_RD_pass_mux = (is_vecB_rd_broadcast && srcB_RD_pass_en) ? 16'hffff : src_B_RD_pass;
 
 wire is_PIM_result = |dst_C_WR_pass;
-
-//req_MM_vecA_write timing
-//reg         req_MM_vecA_write_r;
-//reg         req_MM_vecA_broadcast_r;
-//reg [1:0]   req_bg_r;
-//reg [1:0]   req_bk_r;
-//
-//always @(posedge clk or negedge rst_x) begin
-//    if (~rst_x) begin
-//                                                //req_MM_vecA_write_r <= 'b0;
-//                                                //req_MM_vecA_broadcast_r <= 'b0;
-//                                                req_bg_r <= 'b0;
-//                                                req_bk_r <= 'b0;
-//    end
-//    else begin
-//                                                //req_MM_vecA_write_r <= req_MM_vecA_write;
-//                                                //req_MM_vecA_broadcast_r <= req_MM_vecA_broadcast;
-//                                                req_bg_r <= req_bg;
-//                                                req_bk_r <= req_bk;
-//    end
-//end
-
-//reg [15:0] req_MM_vecA_write_per_bank;
-//
-//always@(*) begin
-//  if(req_MM_vecA_write_r) begin
-//    case({req_bg_r,req_bk_r}) // synopsys parallel_case full_case
-//        4'b0000 : req_MM_vecA_write_per_bank = 16'b0000000000000001;
-//        4'b0001 : req_MM_vecA_write_per_bank = 16'b0000000000000010;
-//        4'b0010 : req_MM_vecA_write_per_bank = 16'b0000000000000100;
-//        4'b0011 : req_MM_vecA_write_per_bank = 16'b0000000000001000;
-//        4'b0100 : req_MM_vecA_write_per_bank = 16'b0000000000010000;
-//        4'b0101 : req_MM_vecA_write_per_bank = 16'b0000000000100000;
-//        4'b0110 : req_MM_vecA_write_per_bank = 16'b0000000001000000;
-//        4'b0111 : req_MM_vecA_write_per_bank = 16'b0000000010000000;
-//        4'b1000 : req_MM_vecA_write_per_bank = 16'b0000000100000000;
-//        4'b1001 : req_MM_vecA_write_per_bank = 16'b0000001000000000;
-//        4'b1010 : req_MM_vecA_write_per_bank = 16'b0000010000000000;
-//        4'b1011 : req_MM_vecA_write_per_bank = 16'b0000100000000000;
-//        4'b1100 : req_MM_vecA_write_per_bank = 16'b0001000000000000;
-//        4'b1101 : req_MM_vecA_write_per_bank = 16'b0010000000000000;
-//        4'b1110 : req_MM_vecA_write_per_bank = 16'b0100000000000000;
-//        4'b1111 : req_MM_vecA_write_per_bank = 16'b1000000000000000;
-//    endcase
-//  end
-//  else if(req_MM_vecA_broadcast_r)
-//                  req_MM_vecA_write_per_bank = 16'b1111111111111111;
-//  else            req_MM_vecA_write_per_bank = 16'b0;
-//end
 
 
 `ifdef SYN_FAST_NOT_COMPUTE
@@ -1151,17 +983,17 @@ always @(posedge clk or negedge rst_x) begin
     end
 end
 
-(* keep = "true", mark_debug = "true" *) wire is_CLR_vecA                 = is_CLR_vecA_config;
-(* keep = "true", mark_debug = "true" *) wire is_CLR_vecB                 = is_CLR_vecB_config;
-(* keep = "true", mark_debug = "true" *) wire is_CLR_ACC                  = is_CLR_ACC_config;
-(* keep = "true", mark_debug = "true" *) wire is_CLR_CTRL_reg             = is_CLR_CTRL_reg_config;
-(* keep = "true", mark_debug = "true" *) wire is_DUP                      = is_DUP_config_r;
-(* keep = "true", mark_debug = "true" *) wire is_ADD                      = is_ADD_config_rr;
-(* keep = "true", mark_debug = "true" *) wire is_SUB                      = is_SUB_config_rr;
-(* keep = "true", mark_debug = "true" *) wire is_MUL                      = is_MUL_config_rr;
-(* keep = "true", mark_debug = "true" *) wire is_MAC                      = is_MAC_config_rr;
-(* keep = "true", mark_debug = "true" *) wire is_vecA_start               = is_vecA_start_config_rr;
-(* keep = "true", mark_debug = "true" *) wire is_vecB_start               = is_vecB_start_config_rr;
+wire is_CLR_vecA                 = is_CLR_vecA_config;
+wire is_CLR_vecB                 = is_CLR_vecB_config;
+wire is_CLR_ACC                  = is_CLR_ACC_config;
+wire is_CLR_CTRL_reg             = is_CLR_CTRL_reg_config;
+wire is_DUP                      = is_DUP_config_r;
+wire is_ADD                      = is_ADD_config_rr;
+wire is_SUB                      = is_SUB_config_rr;
+wire is_MUL                      = is_MUL_config_rr;
+wire is_MAC                      = is_MAC_config_rr;
+wire is_vecA_start               = is_vecA_start_config_rr;
+wire is_vecB_start               = is_vecB_start_config_rr;
 
 wire req_AIM_RD;
 wire req_AIM_WR;
@@ -1169,17 +1001,6 @@ wire req_AIM_WR;
 assign req_AIM_RD = (src_A_RD_pass || src_B_RD_pass); // && is_AIM_enable;//&& rd_cmd && is_AIM_enable;
 assign req_AIM_WR = (dst_C_WR_pass                 ); // && is_AIM_enable;//&& wr_cmd && is_AIM_enable;
 
-//`ifdef DEBUG_KEEP
-//(* keep = "true", mark_debug = "true" *) reg req_AIM_RD_r;
-//(* keep = "true", mark_debug = "true" *) reg req_AIM_WR_r;
-//(* keep = "true", mark_debug = "true" *) reg src_A_RD_pass_r;
-//(* keep = "true", mark_debug = "true" *) reg src_B_RD_pass_r;
-//`else
-//reg req_AIM_RD_r;
-//reg req_AIM_WR_r;
-//reg src_A_RD_pass_r;
-//reg src_B_RD_pass_r;
-//`endif
 reg req_AIM_RD_r;
 reg req_AIM_WR_r;
 reg src_A_RD_pass_r;
@@ -1203,29 +1024,15 @@ end
 /////////////////////////////////////////////////////////////
 
 //RF control signal
-
-`ifdef DEBUG_KEEP
-(* keep = "true", mark_debug = "true" *) wire PIM_RD_A_sig = (req_AIM_RD_r && src_A_RD_pass_r);
-(* keep = "true", mark_debug = "true" *) wire PIM_RD_B_sig = req_AIM_RD_r && src_B_RD_pass_r;
-(* keep = "true", mark_debug = "true" *) wire PIM_WR_C_sig = req_AIM_WR;
-
-(* keep = "true", mark_debug = "true" *) reg [3:0] global_burst_cnt_SCAL_gran;
-(* keep = "true", mark_debug = "true" *) reg       PIM_vecA_read_burst;
-(* keep = "true", mark_debug = "true" *) reg       PIM_vecB_read_burst;
-(* keep = "true", mark_debug = "true" *) reg       PIM_write_burst;
-(* keep = "true", mark_debug = "true" *) wire      PIM_result_WB_done;
-`else
 wire      PIM_RD_A_sig = (req_AIM_RD_r && src_A_RD_pass_r);
 wire      PIM_RD_B_sig = req_AIM_RD_r && src_B_RD_pass_r;
 wire      PIM_WR_C_sig = req_AIM_WR;
-
 
 reg [3:0] global_burst_cnt_SCAL_gran;
 reg       PIM_vecA_read_burst;
 reg       PIM_vecB_read_burst;
 reg       PIM_write_burst;
 wire      PIM_result_WB_done;
-`endif
 
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x)                                     PIM_vecA_read_burst <= 1'b0;
@@ -1290,7 +1097,7 @@ reg PIM_ALU_proc_rrr;
 reg PIM_ALU_proc_rrrr;
 reg PIM_ALU_proc_rrrrr;
 
-reg [3:0] global_burst_cnt_SCAL_gran_r;
+(* keep = "true", mark_debug = "true" *)  reg [3:0] global_burst_cnt_SCAL_gran_r;
 reg [3:0] global_burst_cnt_SCAL_gran_rr;
 reg [3:0] global_burst_cnt_SCAL_gran_rrr;
 reg [3:0] global_burst_cnt_SCAL_gran_rrrr;
@@ -1567,23 +1374,7 @@ generate
 endgenerate
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//FPGA interface limit,,,
-
-`ifdef DEBUG_KEEP
-//(* keep = "true", mark_debug = "true" *) reg [127:0] PIM_result0;
-//(* keep = "true", mark_debug = "true" *) reg [127:0] PIM_result1;
-//(* keep = "true", mark_debug = "true" *) reg [127:0] PIM_result2;
-//(* keep = "true", mark_debug = "true" *) reg [127:0] PIM_result3;
-
 (* keep = "true", mark_debug = "true" *) reg [255:0] PIM_result;
-`else
-//reg [127:0] PIM_result0;
-//reg [127:0] PIM_result1;
-//reg [127:0] PIM_result2;
-//reg [127:0] PIM_result3;
-
-(* keep = "true", mark_debug = "true" *) reg [255:0] PIM_result;
-`endif
 
 assign norm_result_vec = {
                             norm_result[15],
@@ -1623,12 +1414,10 @@ end
 wire [15:0] alu_src0[0:15];
 wire [15:0] alu_src1[0:15];
 
+reg [15:0] alu_src0_r[0:15];
+reg [15:0] alu_src1_r[0:15];
+
 ////////////////////////////////////////////////////////////////////////////////////
-
-(* keep = "true", mark_debug = "true" *) reg [15:0] alu_src0_r[0:15];
-(* keep = "true", mark_debug = "true" *) reg [15:0] alu_src1_r[0:15];
-
-//debug
 
 generate
   for(i=0;i<16;i=i+1) begin : DELAY_SRC_REG
