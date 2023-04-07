@@ -1,0 +1,31 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.d
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+pim_mem
+log
+test_main
+mem_init.c
+pim_memory/
+run_test
+
+# Driver object files
+drv_src/*.ko
+drv_src/*.cmd
+drv_src/.tmp_versions/
+drv_src/*.mk
+drv_src/*.mod.*
+drv_src/*.mod
+drv_src/*.order
+drv_src/*.o.*

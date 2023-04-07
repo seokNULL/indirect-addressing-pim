@@ -19,7 +19,7 @@ module Device_top
 
 `ifdef SUPPORT_INDIRECT_ADDRESSING
     indirect_addr_out,
-    // indirect_addr_valid,
+    indirect_addr_valid,
 `endif
 
     is_PIM_result,
@@ -48,7 +48,7 @@ input  [31:0]                      addr_in;
 
 `ifdef SUPPORT_INDIRECT_ADDRESSING
 output  [31:0]                     indirect_addr_out;
-// output                             indirect_addr_valid;
+output                             indirect_addr_valid;
 `endif
 
 input                              rd_data_valid;
@@ -429,7 +429,7 @@ always @(*)begin
 end
 
 assign indirect_addr_out = base_in + offset_in;
-
+assign indirect_addr_valid = is_indirect;
 // output  [31:0]                     indirect_addr_out;
 // output                             indirect_addr_valid;
 
