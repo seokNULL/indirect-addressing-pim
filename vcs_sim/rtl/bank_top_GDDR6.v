@@ -1,8 +1,9 @@
-`define HPC_EN
-
+`define ENABLE_HPC
 `define DEBUG_KEEP
 // `define SYN_FAST_NOT_COMPUTE
 // `define BANK0_ONLY
+
+`define SUPPORT_INDIRECT_ADDRESSING
 
 module Device_top
 (
@@ -16,6 +17,11 @@ module Device_top
     rd_data_valid,
     data_bus_from_memory,
 
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+    indirect_addr_out,
+    // indirect_addr_valid,
+`endif
+
     is_PIM_result,
     PIM_result_to_DRAM
 );
@@ -28,6 +34,10 @@ localparam HPC_CLR_SIG        = 32'h0000_5000;
 localparam RSV_DESC_MEM_BASE  = 32'h0080_0000;
 localparam RSV_DESC_MEM_SIZE  = 32'h0080_0000;
 
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+localparam MM_INDIRECT_ARGS = 32'h0000_1000;
+
+`endif
 
 input                              clk;
 input                              rst_x;
@@ -35,7 +45,11 @@ input                              rst_x;
 input                              read_en;
 input                              write_en;
 input  [31:0]                      addr_in;
-//input  [255:0]                     data_in;
+
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+output  [31:0]                     indirect_addr_out;
+// output                             indirect_addr_valid;
+`endif
 
 input                              rd_data_valid;
 input  [255:0]                     data_bus_from_memory;
@@ -80,7 +94,6 @@ wire PIM_dst_C_pass_reg_tot;
 
 wire is_desc_clr_TEST;
 wire is_desc_range_incr;
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 assign CAS_rw_queue_entry = {is_desc_range_incr, is_desc_clr_TEST, PIM_src_A_pass_reg_tot, PIM_src_B_pass_reg_tot, ui_write_req, ui_read_req, ui_addr};
@@ -161,8 +174,7 @@ reg [37:0] CAS_queue_head_r;
 wire CAS_queue_head_r_valid = (CAS_queue_head_r[33] || CAS_queue_head_r[32]);
 
 always @(posedge clk or negedge rst_x) begin
-    if (~rst_x)                                                  CAS_queue_head_r <= 'b0;
-    else if(!PIM_dst_C_pass_reg_tot) begin
+    if (~rst_x)                                                  CAS_queue_head_r <= 'b0;    else if(!PIM_dst_C_pass_reg_tot) begin
         if(ui_write_valid ||CAS_read_data_QUEUE_rd_en)           CAS_queue_head_r <= {ui_is_desc_range, ui_is_desc_clr, ui_srcA_pass, ui_srcB_pass, ui_write_valid, ui_read_valid, ui_addr_data};
         else                                                     CAS_queue_head_r <= 'b0;
     end
@@ -243,8 +255,7 @@ end
 always @(posedge clk or negedge rst_x) begin
     if (~rst_x) begin
                                                     debug_ui_write_req_r         <= 'b0;
-                                                    debug_ui_read_req_r          <= 'b0;
-                                                    debug_ui_addr_r              <= 'b0;
+                                                    debug_ui_read_req_r          <= 'b0;                                                    debug_ui_addr_r              <= 'b0;
                                                     debug_PIM_src_A_pass_reg_tot_r <= 'b0;
                                                     debug_PIM_src_B_pass_reg_tot_r <= 'b0;
                                                     debug_PIM_dst_C_pass_reg_tot_r <= 'b0;
@@ -345,6 +356,88 @@ end
 assign desc_incr_enable = ((ui_addr==RSV_DESC_MEM_BASE)||(ui_addr==next_desc_addr))? 1'b1 : 1'b0;
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//// Support indirect addressing mode 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+
+wire is_read_descr;
+  assign is_read_descr = is_desc_range_incr;
+// Determine if instruction's source address need to be calculated with indirect mode.
+wire is_indirect;
+  assign is_indirect = is_read_descr && AIM_working && (data_bus_from_memory[0]==1'b1);
+// Determine whete is the offset of source address.
+wire is_offset_immediate;
+wire is_offset_register;
+  assign is_offset_immediate =  is_read_descr && AIM_working && (data_bus_from_memory[1]==1'b1);
+  assign is_offset_register  =  is_read_descr && AIM_working && (data_bus_from_memory[2]==1'b1);
+
+
+//Indirect address's base value
+wire req_MM_args;
+assign req_MM_args = (( ui_addr[31:0]  == MM_INDIRECT_ARGS) && ui_write_req) ? 1'b1 : 1'b0;
+reg [31:0] args_reg_A;
+reg [31:0] args_reg_B;
+reg [31:0] args_reg_C;
+
+always @(posedge clk or negedge rst_x) begin
+    if(~rst_x) begin
+                                         args_reg_A <= 'b0;
+                                         args_reg_B <= 'b0;
+                                         args_reg_C <= 'b0;
+    end
+    else if(req_HPC_CLR_SIG) begin
+                                         args_reg_A <= 'b0;
+                                         args_reg_B <= 'b0;
+                                         args_reg_C <= 'b0;    
+    end
+    else if(req_MM_args) begin
+                                        args_reg_A <= data_bus_from_memory[32*1-1: 32*0];
+                                        args_reg_B <= data_bus_from_memory[32*2-1: 32*1];
+                                        args_reg_C <= data_bus_from_memory[32*3-1: 32*2];
+    end
+end
+
+//Indirect address's offset value (Immediate). Immediate value comes from instruction(descriptor's source address)
+wire [31:0] offset_immdediate;
+  //Need to be modified afeter LUT operation enable, right now, just temporally wiring source address from descriptor
+  assign offset_immdediate = (req_is_desc_range && is_offset_immediate) ? data_bus_from_memory[32*3-1 :32*2] : 'b0;
+
+wire [31:0] current_pim_opcode;
+  // [3]=>C [2]=>B [1]=>A
+  assign current_pim_opcode = (req_is_desc_range)? data_bus_from_memory[32*8-1 :32*7] : 'b0;
+wire is_desc_A;
+wire is_desc_B;
+wire is_desc_C;
+  assign is_desc_A = current_pim_opcode[0];
+  assign is_desc_B = current_pim_opcode[1];
+  assign is_desc_C = current_pim_opcode[2];
+
+reg [31:0] offset_in;
+reg [31:0] base_in;
+always @(*)begin
+  if(is_offset_immediate && is_desc_A)             base_in = args_reg_A;
+  else if(is_offset_immediate && is_desc_B)        base_in = args_reg_B;
+  else if(is_offset_immediate && is_desc_C)        base_in = args_reg_C;
+  else                                             base_in = 'b0;
+end
+
+always @(*)begin
+  if(is_offset_immediate)                          offset_in = offset_immdediate;
+  else                                             offset_in = 'b0;
+end
+
+assign indirect_addr_out = base_in + offset_in;
+
+// output  [31:0]                     indirect_addr_out;
+// output                             indirect_addr_valid;
+
+
+`endif
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -405,7 +498,11 @@ generate
                                                                           PIM_INFO_from_desc_reg[i]     <= 'b0;
       end
       else if(req_is_desc_range && (PIM_addr_match_wr_ptr == i)) begin
+                                                                          `ifdef SUPPORT_INDIRECT_ADDRESSING
+                                                                          PIM_SRC_ADDR_from_desc_reg[i] <= indirect_addr_out;
+                                                                          `else
                                                                           PIM_SRC_ADDR_from_desc_reg[i] <= DRAM_data[32*3-1 :32*2];
+                                                                          `endif
                                                                           PIM_DST_ADDR_from_desc_reg[i] <= DRAM_data[32*5-1 :32*4];
                                                                           PIM_SIZE_from_desc_reg[i]     <= DRAM_data[32*7-1 :32*6];
                                                                           PIM_INFO_from_desc_reg[i]     <= DRAM_data[32*8-1 :32*7];
@@ -461,7 +558,7 @@ assign PIM_dst_C_pass_reg_tot = (|PIM_dst_C_pass_reg) && ui_write_req;
 //HPC signal
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-`ifdef HPC_EN
+`ifdef ENABLE_HPC
 reg [127:0] AIM_processing_cycle;
 //reg [127:0] AIM_prof_cnt;
 
@@ -503,7 +600,10 @@ wire HPC_clear_sig = 1'b0;
 wire AIM_working = 1'b0;
 `endif
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Bank configuration regs

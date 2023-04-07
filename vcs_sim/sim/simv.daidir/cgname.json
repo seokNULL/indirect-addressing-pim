@@ -1,17 +1,12 @@
 {
-    "std": [
-        "std",
-        "reYIK",
-        "module"
-    ],
     "...MASTER...": [
         "SIM",
         "amcQw",
         "module"
     ],
-    "NORM_stage_DEBUG": [
-        "NORM_stage_DEBUG",
-        "jirwz",
+    "std": [
+        "std",
+        "reYIK",
         "module"
     ],
     "testbench": [
@@ -27,6 +22,11 @@
     "bfloat_MAC_pipe_OPT": [
         "bfloat_MAC_pipe_OPT",
         "jEMCn",
+        "module"
+    ],
+    "NORM_stage_DEBUG": [
+        "NORM_stage_DEBUG",
+        "jirwz",
         "module"
     ]
 }
