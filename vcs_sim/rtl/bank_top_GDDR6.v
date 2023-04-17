@@ -499,7 +499,7 @@ generate
       end
       else if(req_is_desc_range && (PIM_addr_match_wr_ptr == i)) begin
                                                                           `ifdef SUPPORT_INDIRECT_ADDRESSING
-                                                                          PIM_SRC_ADDR_from_desc_reg[i] <= indirect_addr_out;
+                                                                          PIM_SRC_ADDR_from_desc_reg[i] <= is_indirect? indirect_addr_out:DRAM_data[32*3-1 :32*2];
                                                                           `else
                                                                           PIM_SRC_ADDR_from_desc_reg[i] <= DRAM_data[32*3-1 :32*2];
                                                                           `endif
