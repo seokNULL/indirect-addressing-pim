@@ -41,6 +41,8 @@ int _matmul_silent(pim_args *pim_args)
     uint64_t srcA_va, srcB_va, dstC_va;
     uint32_t A_len, B_len, C_len;
 
+    // uint32_t B_iter;
+
     A_len = BURST_SIZE;
     B_len = REG_SIZE * PIM_WIDTH;
     C_len = PIM_WIDTH;
@@ -60,6 +62,8 @@ int _matmul_silent(pim_args *pim_args)
     A_base = 0x0ULL;
     B_base = 0x0ULL;
     C_base = 0x0ULL;
+    // B_iter = 0;
+
     PIM_MATH_LOG("%s: p:%d, q:%d, r:%d\n", __func__, p_size, q_size, r_size);
     for (p = 0; p < p_size; p++) {
         for(r = 0; r < r_loop_var; r++){
@@ -68,7 +72,8 @@ int _matmul_silent(pim_args *pim_args)
                 A_off = (q * TYPE_SIZE) + (p * (q_size * TYPE_SIZE));
                 if ((A_off % HUGE_PAGE_SIZE) == 0) {
                     A_base = VA2PA(srcA_va + A_off);
-                    A_pa = A_base;
+                    // A_pa = A_base;
+                    A_pa = A_base + (A_off % HUGE_PAGE_SIZE);
                 } else {
                     A_pa = A_base + A_off;
                 }
@@ -77,7 +82,8 @@ int _matmul_silent(pim_args *pim_args)
                     B_base = VA2PA(srcB_va + B_off);
                     B_pa = B_base;
                 } else {
-                    B_pa = B_base + B_off;
+                    // B_pa = B_base + B_off;
+                    B_pa = B_base + (B_off % HUGE_PAGE_SIZE);
                 }
                 /* 
                  * DMA bus width is 512. The transfer size of RD_A is the same as BURST_SIZE. 
@@ -93,7 +99,8 @@ int _matmul_silent(pim_args *pim_args)
                 C_base = VA2PA(dstC_va + C_off);
                 C_pa = C_base;
             } else {
-                C_pa = C_base + C_off;
+                // C_pa = C_base + C_off;
+                C_pa = C_base + (C_off % HUGE_PAGE_SIZE);
             }
 	    PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
         }
@@ -166,14 +173,16 @@ int _gemm_silent(pim_args *pim_args)
                     src0_base = VA2PA(src0_va + src0_off);
                     src0_pa = src0_base;
                 } else {
-                    src0_pa = src0_base + src0_off;
+                    // src0_pa = src0_base + src0_off;
+                    src0_pa = src0_base + (src0_off % HUGE_PAGE_SIZE);
                 }
                 src1_off = (q_size * PIM_WIDTH * r) + (q * PIM_WIDTH);
                 if ((src1_off % HUGE_PAGE_SIZE) == 0) {
                     src1_base = VA2PA(src1_va + src1_off);
                     src1_pa = src1_base;
                 } else {
-                    src1_pa = src1_base + src1_off;
+                    // src1_pa = src1_base + src1_off;
+                    src1_pa = src1_base + (src1_off % HUGE_PAGE_SIZE);
                 }
                 PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, BRAM_DUMMY + (src0_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL << 0x4));
                 PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, BRAM_DUMMY + (src1_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL << 0x4));
@@ -334,14 +343,16 @@ int _matmul_decoupled(pim_args *pim_args)
                     B_base = VA2PA(B_va);
                     B_pa = B_base;            
                 } else {
-                    B_pa = B_base + B_off;
+                    // B_pa = B_base + B_off;
+                    B_pa = B_base + (B_off % HUGE_PAGE_SIZE);
                 }
                 if ((A_off % HUGE_PAGE_SIZE) == 0) {
                     A_va = srcA_va + A_off;
                     A_base = VA2PA(A_va);
                     A_pa = A_base;
                 } else {
-                    A_pa = A_base + A_off;
+                    // A_pa = A_base + A_off;
+                    A_pa = A_base + (A_off % HUGE_PAGE_SIZE);
                 }
                 cnt_B += 256;
                 cnt_A += REG_SIZE * REG_SIZE;
@@ -354,7 +365,8 @@ int _matmul_decoupled(pim_args *pim_args)
                 C_base = VA2PA(C_va);
                 C_pa = C_base;
             } else {
-                C_pa = C_base + C_off;
+                // C_pa = C_base + C_off;
+                C_pa = C_base + (C_off % HUGE_PAGE_SIZE);
             }
             cnt_C += REG_SIZE * NUM_BANKS;
             PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
@@ -417,7 +429,8 @@ int _gemm_decoupled(pim_args *pim_args)
                     B_base = VA2PA(B_va);
                     B_pa = B_base;          
                 } else {
-                    B_pa = B_base + B_off;
+                    // B_pa = B_base + B_off;
+                    B_pa = B_base + (B_off % HUGE_PAGE_SIZE);
                 }
                 cnt_B += 256;
 
@@ -427,7 +440,8 @@ int _gemm_decoupled(pim_args *pim_args)
                     A_base = VA2PA(A_va);
                     A_pa = A_base;
                 } else {
-                    A_pa = A_base + A_off;
+                    // A_pa = A_base + A_off;
+                    A_pa = A_base + (A_off % HUGE_PAGE_SIZE);
                 }
                 cnt_A += REG_SIZE * REG_SIZE;
 
@@ -440,7 +454,8 @@ int _gemm_decoupled(pim_args *pim_args)
                 C_base = VA2PA(C_va);
                 C_pa = C_base;
             } else {
-                C_pa = C_base + C_off;
+                // C_pa = C_base + C_off;
+                C_pa = C_base + (C_off % HUGE_PAGE_SIZE);
             }
             cnt_C += REG_SIZE * NUM_BANKS;
             PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
