@@ -98,6 +98,7 @@ irqreturn_t pl_dma_irq_handler(int irq, void *data)
     status = dma_ctrl_read(CDMA_REG_SR);
     if (status & CDMA_REG_SR_ERR_IRQ) {
         printk("ERR IRQ - SR: %x, OPCODE: %x", status, cdma_dev->opcode);
+        switch (status)
         if (status & CDMA_REG_SR_SG_DEC_ERR)
             printk(KERN_ERR " PL_DMA] DMA SG-Decoding error ");
         if (status & CDMA_REG_SR_SG_SLV_ERR)
@@ -291,7 +292,7 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
     uint32_t *clr_signal;
     uint32_t *pim_signal;
 
-    clr_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_HPC_CLEAR;
+    clr_signal = (void *)cdma_dev->config_reg + 0x5000;
     pim_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_AIM_WORKING;
     arg_ptr = (void __user *) arg;
     if (copy_from_user((void *)&pim_args, (void __user *)arg, sizeof(pim_args))) {
@@ -318,13 +319,23 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
                 printk(KERN_ERR " PL_DMA] ERROR copy_from_user descriptor");
                 return -EIOCTL;
             }
+            //check descriptor
+            //uint32_t *tmp = (uint32_t *)cdma_dev->desc_pim;  //0080_0000  //0000_0000
+	    //int k;							    
+            //for (k = 0; k < 16*6; k++) {
+            //    if(k%16==0) printk("%d descriptor chunk\n", k);
+            //    printk("desc_idx[%d]=%x\n", k, tmp[k]);
+            //}   
 
+            //#define CONF_OFFSET_HPC_CLR 0x5000
+            //#define CONF_OFFSET_AIM_WORKING 0x4000
             
             clr_signal[0] = 0;
             pim_signal[0] = 0;
 
             /* Start DMA transaction */
-            if (dma_sg_tx(pim_args.desc_idx, pim_args.desc_last) < 0) {
+            //if (dma_sg_tx(pim_args.desc_idx, pim_args.desc_last) < 0) {
+            if (dma_sg_tx(pim_args.desc_idx, pim_args.desc_last + 1) < 0) {
                 printk(KERN_ERR " PL_DMA] Error transactions");
                 return -EDMA_TX;
             }

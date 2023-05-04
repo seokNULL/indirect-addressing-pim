@@ -29,7 +29,7 @@ void close_pim_drv(void) {
 
 int init_pim_drv(void) {
     if (dma_fd == 0) {
-        pim_isa = (pim_isa_t *)malloc(sizeof(pim_isa_t) * 1024*1024); /* 2048 is temporal maximum descriptor */
+        pim_isa = (pim_isa_t *)malloc(sizeof(pim_isa_t) * 2048); /* 2048 is temporal maximum descriptor */
         dma_fd = open(PL_DMA_DRV, O_RDWR, 0);
         if (dma_fd < 0) {
             printf("\033[0;31m Couldn't open device: %s (%d) \033[0m\n", PL_DMA_DRV, dma_fd);

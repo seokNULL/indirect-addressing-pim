@@ -5,16 +5,17 @@
 /* For PIM memory management */
 #define __PIM_MALLOC__ /* If this define is disabled, pim_malloc is changed to standard malloc function */
 #define __FPGA__ /* If this define is enabled, PIM driver MUST BE loaded into the kernel */
-// #define __PIM_MEM_KER__ /* Enable this define when OS buddy manages PIM memory */
+//#define __PIM_MEM_KER__ /* Enable this define when OS buddy manages PIM memory */
 
 /* For DMA */
-// #define INTR_ENABLE /* Enable interrupt. If this define is disabled, polling mode */
-// #define PERF_TIME /* For time measurement */
+//#define INTR_ENABLE /* Enable interrupt. If this define is disabled, polling mode */
+//#define PERF_TIME /* For time measurement */
 
 /* For debugging */
-// #define DEBUG_PL_DMA /* Xilinx CDMA debugging */
-// #define DEBUG_PIM_MEM /* PIM MemPool debugging */
-#define DEBUG_PIM_MATH /* PIM Math library debugging */
+//#define DEBUG_PL_DMA /* Xilinx CDMA debugging */
+//#define DEBUG_PIM_MEM /* PIM MemPool debugging */
+//#define DEBUG_PIM_MATH /* PIM Math library debugging */
+
 
 #define BILLION 1000000000L
 
@@ -61,7 +62,6 @@ typedef struct
     uint64_t va;
     uint64_t pa;
 } __attribute__ ((packed)) pim_args;
-// } pim_args;
 
 
 typedef uint16_t Bfloat16;
@@ -131,7 +131,6 @@ extern void *pim_malloc(size_t size);
 extern void pim_free(void *addr);
 extern int init_pim_drv(void);
 extern int matmul(pim_args *pim_args);
-extern int matmul_tiled(pim_args *pim_args);
 extern int gemm(pim_args *pim_args);
 extern int matmul_fusion(pim_args *pim_args);
 extern int elewise_add(pim_args *pim_args);

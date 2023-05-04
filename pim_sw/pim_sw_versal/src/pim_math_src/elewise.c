@@ -33,9 +33,10 @@ int _elewise(pim_args *pim_args, uint32_t opcode)
 {
 	uint32_t desc_idx, next_desc, p_loop_var, r_loop_var, p, r;
 	uint32_t p_size, r_size;
-    uint64_t A_pa, B_pa, C_pa, offset;
+    uint64_t A_pa, B_pa, C_pa, r_size_aligned, offset;
     uint64_t A_base, B_base, C_base;
 	uint64_t srcA_va, srcB_va, dstC_va;
+	bool r_need_align;
 
 	srcA_va = pim_args->srcA_va;
     srcB_va = pim_args->srcB_va;
@@ -49,16 +50,22 @@ int _elewise(pim_args *pim_args, uint32_t opcode)
 
     p_loop_var = p_size;
     r_loop_var = r_size;
+    r_need_align = ( (r_size & 0x1F)) ? 1 : 0;
+
+    if (r_need_align)
+        r_size_aligned = (r_size / 32 + 1) * 32;
+    else
+        r_size_aligned = r_size;
+
     A_base = 0x0ULL;
     B_base = 0x0ULL;
     C_base = 0x0ULL;
-    
+
     PIM_MATH_LOG("%s: p:%d, r:%d\n", __func__, p_size, r_size);
     for (p = 0; p < p_loop_var; p++){
         for(r = 0; r < r_loop_var; r = r + (REG_SIZE * NUM_BANKS)){
             PIM_MATH_LOG("[p:%d, r:%d] \n", p, r);
-            // offset = (p * r_size_aligned * TYPE_SIZE) + (r * TYPE_SIZE);
-            offset = (p * r_size * TYPE_SIZE) + (r * TYPE_SIZE);
+            offset = (p * r_size_aligned * TYPE_SIZE) + (r * TYPE_SIZE);
             if ((offset % HUGE_PAGE_SIZE) == 0) {
                 A_base = VA2PA(srcA_va + offset);
                 B_base = VA2PA(srcB_va + offset);
@@ -89,9 +96,10 @@ int _bias_op(pim_args *pim_args, uint32_t opcode)
 {
     uint32_t desc_idx, next_desc, r_loop_var, q_loop_var, q, r;
     uint32_t q_size, r_size;
-    uint32_t A_pa, B_pa, C_pa, offset, A_off;
+    uint32_t A_pa, B_pa, C_pa, r_size_aligned, offset, A_off;
     uint64_t A_base, B_base, C_base;
     uint64_t srcA_va, srcB_va, dstC_va;
+    bool r_need_align;
 
     srcA_va = pim_args->srcA_va;
     srcB_va = pim_args->srcB_va;
@@ -105,6 +113,12 @@ int _bias_op(pim_args *pim_args, uint32_t opcode)
 
     q_loop_var = q_size;
     r_loop_var = r_size;
+    r_need_align = ((r_size & 0x1F)) ? 1 : 0;
+
+    if (r_need_align)
+        r_size_aligned = (r_size / 32 + 1) * 32;
+    else
+        r_size_aligned = r_size;
 
     A_base = 0x0ULL;
     B_base = 0x0ULL;
@@ -121,7 +135,7 @@ int _bias_op(pim_args *pim_args, uint32_t opcode)
             } else {
                 A_pa = A_base + A_off;
             }
-            offset = (q * r_size * TYPE_SIZE) + (r * TYPE_SIZE);
+            offset = (q * r_size_aligned * TYPE_SIZE) + (r * TYPE_SIZE);
             if ((offset % HUGE_PAGE_SIZE) == 0) {
                 B_base = VA2PA(srcB_va + offset);
                 C_base = VA2PA(dstC_va + offset);

@@ -18,12 +18,13 @@
 #include "../../include/pim.h"
 
 #define OPCODE_MAT_MUL 0x851F
-#define OPCODE_MAT_MUL_DECOUPLED_8x4  0x1051F
+#define OPCODE_MAT_MUL_DECOUPLED_32x1 0x1051F
+#define OPCODE_MAT_MUL_DECOUPLED_8x4  0x3051F
 #define OPCODE_ELE_ADD 0x42F
-#define OPCODE_GEMM_ADD 0x1042F
-
 #define OPCODE_ELE_SUB 0x44F
 #define OPCODE_ELE_MUL 0x48F
+#define OPCODE_ACT_SIG 0x150F
+#define OPCODE_ACT_TAN 0xd0f
 #define OPCODE_PROF 0x100000
 
 #define BURST_SIZE 32 /* Byte size */
@@ -32,6 +33,7 @@
 #define vecA_SIZE 32
 #define vACC_SIZE 32
 #define NUM_BANKS 16
+#define COMPUTE_WAY 8 /* For Decoupled-PIM */
 #define PIM_WIDTH (REG_SIZE * NUM_BANKS * TYPE_SIZE)
 
 #define RD_A_ATTR 0x2
@@ -63,7 +65,7 @@
 #define CDMA_REG_BYTETRANS   0x28
 
 #define BRAM_DUMMY 0xd0000000
-//#define CONF_OFFSET_HPC_CLR 0x5000
+#define CONF_OFFSET_HPC_CLR 0x5000
 
 extern uint64_t desc_base;
 extern uint64_t dram_base;
@@ -79,8 +81,7 @@ typedef struct
 	/* CDMA_DESC_DA_H   */ uint32_t dst_h;
 	/* CDMA_DESC_LEN    */ uint32_t len;
 	/* CDMA_DESC_STATUS */ uint32_t status;
-} __attribute__((aligned(64))) pim_isa_t;
-// } pim_isa_t;
+} __attribute__ ((aligned(64))) pim_isa_t;
 extern pim_isa_t *pim_isa;
 
 static inline char *decode_opcode(int opcode) {
@@ -90,8 +91,8 @@ static inline char *decode_opcode(int opcode) {
 		case (RD_A_ATTR | OPCODE_MAT_MUL << 0x4): return "MAT_MUL_SILENT_RD_A";
 		case (RD_B_ATTR | OPCODE_MAT_MUL << 0x4): return "MAT_MUL_SILENT_RD_B";
 		case (WR_C_ATTR | OPCODE_MAT_MUL << 0x4): return "MAT_MUL_SILENT_WR_C";
-		case (RD_A_ATTR | OPCODE_MAT_MUL_DECOUPLED_8x4 << 0x4): return "MAT_MUL_DECOUPLED_RD_BANK_PRIVATE";
-		case (RD_B_ATTR | OPCODE_MAT_MUL_DECOUPLED_8x4 << 0x4): return "MAT_MUL_DECOUPLED_RD_BANK_SHARED";
+		case (RD_A_ATTR | OPCODE_MAT_MUL_DECOUPLED_8x4 << 0x4): return "MAT_MUL_DECOUPLED_RD_A";
+		case (RD_B_ATTR | OPCODE_MAT_MUL_DECOUPLED_8x4 << 0x4): return "MAT_MUL_DECOUPLED_RD_B";
 		case (WR_C_ATTR | OPCODE_MAT_MUL_DECOUPLED_8x4 << 0x4): return "MAT_MUL_DECOUPLED_WR_C";
 		case (RD_A_ATTR | OPCODE_ELE_ADD<<0x4): return "ELE_ADD_RD_A";
 		case (RD_B_ATTR | OPCODE_ELE_ADD<<0x4): return "ELE_ADD_RD_B";
@@ -109,8 +110,7 @@ static inline char *decode_opcode(int opcode) {
 static inline void PIM_RD_INSTR(uint32_t *idx, uint32_t *next, 
 							 uint32_t src, uint32_t dst, uint32_t length, uint32_t opcode) 
 {
-  	// pim_isa[*idx].next_l = *next|0x1;
-	pim_isa[*idx].next_l = *next;
+  	pim_isa[*idx].next_l = *next;
 	pim_isa[*idx].next_h = HIGH_ADDR;
 	pim_isa[*idx].src_l = src;
 	pim_isa[*idx].src_h = HIGH_ADDR;
