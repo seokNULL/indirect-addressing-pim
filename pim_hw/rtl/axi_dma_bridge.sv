@@ -62,6 +62,10 @@ module axi_bridge (
   output  logic [31:0] o_args_reg_A,
   output  logic [31:0] o_args_reg_B,
   output  logic [31:0] o_args_reg_C,
+    `ifdef SUPPORT_LUT_DATAPATH
+      output logic         o_lut_load_x_sig,
+      output logic [255:0] o_lut_load_x_data,
+    `endif
   `endif
 
   output logic axbr_orde_rdy,                       // AXI-DMA Bridge ready
@@ -124,7 +128,10 @@ module axi_bridge (
   assign  o_args_reg_A = w_args_reg_A;
   assign  o_args_reg_B = w_args_reg_B;
   assign  o_args_reg_C = w_args_reg_C;
-
+    `ifdef SUPPORT_LUT_DATAPATH
+      assign o_lut_load_x_sig  = w_lut_load_x_sig;
+      assign o_lut_load_x_data = w_lut_load_x_data;
+    `endif
   `endif
   // =============================== Read Address Channel ==============================
 
@@ -375,6 +382,11 @@ module axi_bridge (
   (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_A;
   (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_B;
   (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_C;
+
+  `ifdef SUPPORT_LUT_DATAPATH
+    wire [255:0] w_lut_load_x_data;
+    wire         w_lut_load_x_sig;
+  `endif
 `endif
   // ============================= Read Response Forwarding ============================
 
@@ -564,11 +576,12 @@ module axi_bridge (
         .data_bus_from_memory                 (data_bus_from_memory     ),
 
         `ifdef SUPPORT_INDIRECT_ADDRESSING
-            // .i_indirect_addr                   (w_indirect_addr),
-            // .i_indirect_addr_valid             (bus_is_read_descr_r),
             .o_PIM_dev_working                 (w_PIM_dev_working),
             .o_HPC_clear                       (w_HPC_clear),
-            // .o_desc_range_valid                (w_desc_range_valid),
+          `ifdef SUPPORT_LUT_DATAPATH
+            .o_lut_load_x_sig                  (w_lut_load_x_sig),
+            .o_lut_load_x_data                 (w_lut_load_x_data),
+          `endif
         `endif
 
 

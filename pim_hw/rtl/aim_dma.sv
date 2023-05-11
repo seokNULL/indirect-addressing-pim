@@ -137,6 +137,10 @@ module aim_dma (
   logic [31:0] o_args_reg_A;
   logic [31:0] o_args_reg_B;
   logic [31:0] o_args_reg_C;
+    `ifdef SUPPORT_LUT_DATAPATH
+      logic         o_lut_load_x_sig;
+      logic [255:0] o_lut_load_x_data;
+    `endif
 `endif
   // =================================== AXI Bridge ====================================
   axi_bridge axi_bridge (
@@ -196,6 +200,10 @@ module aim_dma (
       .o_args_reg_A,
       .o_args_reg_B,
       .o_args_reg_C,
+      `ifdef SUPPORT_LUT_DATAPATH
+      .o_lut_load_x_sig,
+      .o_lut_load_x_data,
+      `endif
     `endif
     .axbr_orde_rdy,
     .orde_axbr_pkt_valid,
@@ -354,6 +362,10 @@ module aim_dma (
           .i_args_reg_A(o_args_reg_A),
           .i_args_reg_B(o_args_reg_B),
           .i_args_reg_C(o_args_reg_C),
+            `ifdef SUPPORT_LUT_DATAPATH
+              .i_lut_load_x_sig (o_lut_load_x_sig),
+              .i_lut_load_x_data(o_lut_load_x_data), 
+            `endif
           `endif
         .orde_axbr_pkt
         `endif                   

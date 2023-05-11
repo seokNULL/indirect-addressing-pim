@@ -86,6 +86,10 @@ module ordr_engine #(
     input [31:0] i_args_reg_A,
     input [31:0] i_args_reg_B,
     input [31:0] i_args_reg_C,
+      `ifdef SUPPORT_LUT_DATAPATH
+       input         i_lut_load_x_sig,
+       input [255:0] i_lut_load_x_data, 
+      `endif
     `endif
   output trx_t                            orde_axbr_pkt
   `endif  
@@ -383,6 +387,10 @@ module ordr_engine #(
     .i_reg_A_data(i_args_reg_A),
     .i_reg_B_data(i_args_reg_B),
     .i_reg_C_data(i_args_reg_C),
+      `ifdef SUPPORT_LUT_DATAPATH
+        .i_lut_load_sig (i_lut_load_x_sig),
+        .i_lut_target_bank_x_data(i_lut_load_x_data), 
+      `endif
     `endif
     .buffer_data_mem_out(buffer_data_mem_out));
 

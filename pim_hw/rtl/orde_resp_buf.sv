@@ -16,9 +16,14 @@ module orde_resp_buf #(
 
   input  logic                                data_pop,
   `ifdef SUPPORT_INDIRECT_ADDRESSING
-    input [31:0] i_reg_A_data,
-    input [31:0] i_reg_B_data,
-    input [31:0] i_reg_C_data,  
+    input logic [31:0] i_reg_A_data,
+    input logic [31:0] i_reg_B_data,
+    input logic [31:0] i_reg_C_data,  
+
+    `ifdef SUPPORT_LUT_DATAPATH
+      input  logic         i_lut_load_sig,
+      input  logic [255:0] i_lut_target_bank_x_data,
+    `endif
   `endif
   output logic [DATA_WIDTH-1:0]               buffer_data_mem_out
 );
@@ -77,12 +82,9 @@ module orde_resp_buf #(
 
   wire [255:0] w_buffer_data_mem;
     assign w_buffer_data_mem = buffer_data_mem[data_pop_ptr_next];
-      // assign bus_desc_addr_l = icnt_orde_pkt.data[32*1-1: 32*0];
-      // assign bus_desc_addr_h = icnt_orde_pkt.data[32*2-1: 32*1];
-      // assign bus_desc_pim_opcode = icnt_orde_pkt.data[32*8-1:32*7];
-      assign bus_desc_addr_l = w_buffer_data_mem[32*1-1: 32*0];
-      assign bus_desc_addr_h = w_buffer_data_mem[32*2-1: 32*1];
-      assign bus_desc_pim_opcode = w_buffer_data_mem[32*8-1:32*7];      
+    assign bus_desc_addr_l = w_buffer_data_mem[32*1-1: 32*0];
+    assign bus_desc_addr_h = w_buffer_data_mem[32*2-1: 32*1];
+    assign bus_desc_pim_opcode = w_buffer_data_mem[32*8-1:32*7];      
 
 
 (* keep = "true", mark_debug = "true" *)wire descr_enable;
@@ -100,25 +102,68 @@ module orde_resp_buf #(
     assign is_desc_C = descr_enable && bus_desc_pim_opcode[3];
 
 (* keep = "true", mark_debug = "true" *)wire is_indirect;
+(* keep = "true", mark_debug = "true" *)wire is_immediate;
+(* keep = "true", mark_debug = "true" *)wire is_register;
     assign is_indirect = descr_enable && w_buffer_data_mem[0];
+    assign is_immediate = descr_enable && w_buffer_data_mem[1];
+    assign is_register = descr_enable && w_buffer_data_mem[2];
+
+`ifdef SUPPORT_LUT_DATAPATH
+(* keep = "true", mark_debug = "true" *)reg  [255:0] lut_x_from_memory;
+(* keep = "true", mark_debug = "true" *)wire [3:0]   lut_acc_index;
+  assign lut_acc_index = bus_desc_pim_opcode[24:21];
+
+always@(posedge clk,  posedge rst )begin
+  if(rst)                    lut_x_from_memory <= 'b0;
+  else if(is_desc_C)         lut_x_from_memory <= 'b0;
+  else if(i_lut_load_sig)    lut_x_from_memory <= i_lut_target_bank_x_data;                
+end
+
+reg [11:0] lut_offset_in;
+always @(*) begin
+  if(is_register) begin
+    if(lut_acc_index == 4'b0000)       lut_offset_in = lut_x_from_memory[(16*1-1):(16*0)+4];
+    else if(lut_acc_index == 4'b0001)  lut_offset_in = lut_x_from_memory[(16*2-1):(16*1)+4];
+    else if(lut_acc_index == 4'b0010)  lut_offset_in = lut_x_from_memory[(16*3-1):(16*2)+4];
+    else if(lut_acc_index == 4'b0011)  lut_offset_in = lut_x_from_memory[(16*4-1):(16*3)+4];
+    else if(lut_acc_index == 4'b0100)  lut_offset_in = lut_x_from_memory[(16*5-1):(16*4)+4];
+    else if(lut_acc_index == 4'b0101)  lut_offset_in = lut_x_from_memory[(16*6-1):(16*5)+4];
+    else if(lut_acc_index == 4'b0110)  lut_offset_in = lut_x_from_memory[(16*7-1):(16*6)+4];
+    else if(lut_acc_index == 4'b0111)  lut_offset_in = lut_x_from_memory[(16*8-1):(16*7)+4];
+    else if(lut_acc_index == 4'b1000)  lut_offset_in = lut_x_from_memory[(16*9-1):(16*8)+4];
+    else if(lut_acc_index == 4'b1001)  lut_offset_in = lut_x_from_memory[(16*10-1):(16*9)+4];
+    else if(lut_acc_index == 4'b1010)  lut_offset_in = lut_x_from_memory[(16*11-1):(16*10)+4];
+    else if(lut_acc_index == 4'b1011)  lut_offset_in = lut_x_from_memory[(16*12-1):(16*11)+4];
+    else if(lut_acc_index == 4'b1100)  lut_offset_in = lut_x_from_memory[(16*13-1):(16*12)+4];
+    else if(lut_acc_index == 4'b1101)  lut_offset_in = lut_x_from_memory[(16*14-1):(16*13)+4];
+    else if(lut_acc_index == 4'b1110)  lut_offset_in = lut_x_from_memory[(16*15-1):(16*14)+4];
+    else if(lut_acc_index == 4'b1111)  lut_offset_in = lut_x_from_memory[(16*16-1):(16*15)+4];
+  end
+  else                                 lut_offset_in ='b0;
+end
+`endif 
 
 //Indirect address calculation
 (* keep = "true", mark_debug = "true" *)reg [31:0] offset_in;
+(* keep = "true", mark_debug = "true" *)reg [31:0] base_in;
 always @(*) begin
-    if(is_indirect && is_desc_A )           offset_in = w_buffer_data_mem[32*3-1 :32*2];
-    else if(is_indirect && is_desc_B )      offset_in = w_buffer_data_mem[32*3-1 :32*2];
-    else if(is_indirect && is_desc_C )      offset_in = w_buffer_data_mem[32*5-1 :32*4];
-    // else if(is_indirect  && is_desc_B )     offset_in = w_buffer_data_mem[32*3-1 :32*2];    
+    if(is_indirect && is_desc_A  && is_immediate)           offset_in = w_buffer_data_mem[32*3-1 :32*2];
+    else if(is_indirect && is_desc_B && is_immediate)       offset_in = w_buffer_data_mem[32*3-1 :32*2];
+    else if(is_indirect && is_desc_C && is_immediate)       offset_in = w_buffer_data_mem[32*5-1 :32*4];
+    `ifdef SUPPORT_LUT_DATAPATH
+    else if(is_indirect && is_desc_B && is_register)        offset_in = {'b0, lut_offset_in, 4'b0000};
+    `endif
     else                                    offset_in = 'b0;
 end
 
-(* keep = "true", mark_debug = "true" *)reg [31:0] base_in;
 always @(*) begin
-    if(is_indirect && is_desc_A)           base_in = i_reg_A_data; 
-    else if(is_indirect && is_desc_B)      base_in = i_reg_B_data; 
-    else if(is_indirect && is_desc_C)      base_in = i_reg_C_data; 
-    // else if(is_indirect)                   base_in = i_reg_B_data; 
-    else                                   base_in = 'b0;
+    if(is_indirect && is_desc_A && is_immediate)           base_in = i_reg_A_data; 
+    else if(is_indirect && is_desc_B  && is_immediate)     base_in = i_reg_B_data; 
+    else if(is_indirect && is_desc_C  && is_immediate)     base_in = i_reg_C_data; 
+    `ifdef SUPPORT_LUT_DATAPATH
+    else if(is_indirect && is_desc_B  && is_register)      base_in = i_reg_B_data; 
+    `endif
+    else                                                   base_in = 'b0;
 end
 
 (* keep = "true", mark_debug = "true" *)wire [31:0] indirect_address;
@@ -127,10 +172,6 @@ end
 
 wire [255:0] modified_buffer_data_mem;
 (* keep = "true", mark_debug = "true" *)reg [255:0] tmp_indirect_data_mem;
-// (* keep = "true", mark_debug = "true" *)wire [191:0] tmp_indirect_data_mem_h;
-// (* keep = "true", mark_debug = "true" *)wire [31:0] tmp_indirect_data_mem_l;
-  // assign tmp_indirect_data_mem_h = w_buffer_data_mem[32*8-1 :32*2];
-  // assign tmp_indirect_data_mem_l = w_buffer_data_mem[32*2-1 :32*0];
   
 always @(*) begin
   if(is_indirect) begin
@@ -139,7 +180,6 @@ always @(*) begin
   end                                   
   else                              tmp_indirect_data_mem = 'b0;
 end
-  // assign tmp_indirect_data_mem = {tmp_indirect_data_mem_h, indirect_address, tmp_indirect_data_mem_l};
   assign modified_buffer_data_mem = descr_enable? tmp_indirect_data_mem: w_buffer_data_mem;
 
 (* keep = "true", mark_debug = "true" *)reg [255:0] modified_buffer_data_mem_r;//Timing Latch

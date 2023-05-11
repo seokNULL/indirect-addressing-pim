@@ -16,6 +16,7 @@ package aimc_lib;
   //
 
 `define SUPPORT_INDIRECT_ADDRESSING
+`define SUPPORT_LUT_DATAPATH
 
 
 

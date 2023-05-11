@@ -1,9 +1,10 @@
 `define ENABLE_HPC
 `define DEBUG_KEEP
 // `define SYN_FAST_NOT_COMPUTE
-`define BANK0_ONLY
+// `define BANK0_ONLY
 
 `define SUPPORT_INDIRECT_ADDRESSING
+  `define SUPPORT_LUT_DATAPATH
 
 module Device_top
 (
@@ -19,11 +20,12 @@ module Device_top
     data_bus_from_memory,
 
 `ifdef SUPPORT_INDIRECT_ADDRESSING
-    // i_indirect_addr,
-    // i_indirect_addr_valid,
     o_PIM_dev_working,
     o_HPC_clear,
-    // o_desc_range_valid,
+    `ifdef SUPPORT_LUT_DATAPATH
+      o_lut_load_x_sig,
+      o_lut_load_x_data,
+    `endif
 `endif
 
     is_PIM_result,
@@ -52,12 +54,12 @@ input                              rd_data_valid;
 input  [255:0]                     data_bus_from_memory;
 
 `ifdef SUPPORT_INDIRECT_ADDRESSING
-// input  [31:0]                      i_indirect_addr;
-// input                              i_indirect_addr_valid;
-
 output                             o_PIM_dev_working;
 output                             o_HPC_clear;
-// output                             o_desc_range_valid;
+    `ifdef SUPPORT_LUT_DATAPATH
+      output                       o_lut_load_x_sig;
+      output [255:0]               o_lut_load_x_data;
+    `endif
 `endif
 
 output                             is_PIM_result;
@@ -407,29 +409,6 @@ always @(posedge clk or negedge rst_x) begin
     else if(req_is_desc_clr)    PIM_addr_match_clr_ptr <= PIM_addr_match_clr_ptr + 1;
 end
 
-`ifdef SUPPORT_INDIRECT_ADDRESSING
-// reg [31:0] i_indirect_addr_r;
-// reg        i_indirect_addr_valid_r;
-// reg        i_indirect_addr_valid_rr;
-
-// always @(posedge clk or negedge rst_x) begin
-//   if(~rst_x)       i_indirect_addr_r <= 'b0;
-//   else             i_indirect_addr_r <= i_indirect_addr;
-// end
-
-// always @(posedge clk or negedge rst_x) begin
-//   if(~rst_x)begin
-//                   i_indirect_addr_valid_r  <=1'b0;
-//                   i_indirect_addr_valid_rr <=1'b0;
-//   end
-//   else begin
-//                   i_indirect_addr_valid_r  <=i_indirect_addr_valid;
-//                   i_indirect_addr_valid_rr <=i_indirect_addr_valid_r;
-//   end
-// end
-
-
-`endif
 generate 
   for(i = 0; i < 8; i = i + 1) begin: GEN_PIM_INFO_REG
     always @(posedge clk or negedge rst_x) begin
@@ -549,16 +528,6 @@ end
 `else
 wire HPC_clear_sig = 1'b0;
 wire AIM_working = 1'b0;
-`endif
-
-
-
-
-`ifdef SUPPORT_INDIRECT_ADDRESSING
-assign o_PIM_dev_working = AIM_working;
-assign o_HPC_clear = HPC_clear_sig;
-// assign o_desc_range_valid = is_desc_range_incr;
-// assign o_desc_range_valid = is_desc_range_incr;
 `endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -860,6 +829,7 @@ reg  [255:0] PIM_result_to_DRAM;
     `endif
 `endif
 
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -916,7 +886,7 @@ wire is_PIM_result = |dst_C_WR_pass;
           .dst_C_WR_pass                  (dst_C_WR_pass[0]           ),
     
           //.req_MM_vecA_write              (req_MM_vecA_write_per_bank[0] ),
-    
+
           .bank_config_reg                (bank_config_reg            ),
           .PIM_result                     (PIM_result_per_bank[0]     )
         );
@@ -937,8 +907,8 @@ wire is_PIM_result = |dst_C_WR_pass;
     
               .src_A_RD_pass                  (src_A_RD_pass_mux[i]       ),
               .src_B_RD_pass                  (src_B_RD_pass_mux[i]       ),
-              .dst_C_WR_pass                  (dst_C_WR_pass[i]           ),
-    
+              .dst_C_WR_pass                  (dst_C_WR_pass[i]           ),  
+
               //.req_MM_vecA_write              (req_MM_vecA_write_per_bank[i] ),
 
               .bank_config_reg                (bank_config_reg            ),
@@ -948,6 +918,19 @@ wire is_PIM_result = |dst_C_WR_pass;
         endgenerate
     `endif
 `endif
+
+
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+assign o_PIM_dev_working = AIM_working;
+assign o_HPC_clear = HPC_clear_sig;
+
+  `ifdef SUPPORT_LUT_DATAPATH
+    assign o_lut_load_x_sig  = srcA_RD_pass_en;
+    assign o_lut_load_x_data = DRAM_data;
+  `endif
+
+`endif
+
 
 endmodule
 
@@ -993,6 +976,21 @@ genvar i,j;
 
 ///DECODING///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  // wire is_vecA_rd_broadcast_config = bank_config_reg[15];
+  // wire is_vecB_rd_broadcast_config = bank_config_reg[16];
+
+/*
+  PIM Opcode Decode
+  * bank_config_reg[3:0]   = A, B, C base address type
+  * bank_config_reg[4]     = Enable datalayout for vecA
+  * bank_config_reg[8:5]   = MAC, MUL, SUB, ADD
+  * bank_config_reg[10:9]  = Which read enable signal is starting computation (A/B)
+
+  * bank_config_reg[11]    = Enable LUT datapath
+  * bank_config_reg[20:17] = Index of LUT target's acc
+
+  * bank_config_reg[16:15] = Enable all-bank broadcasting switch (Decoupled PIM)
+*/
 
 //pipe 0
 wire is_CLR_vecA_config          = HPC_clear_sig;
@@ -1015,6 +1013,11 @@ wire is_MAC_config               = bank_config_reg[8];
 wire is_vecA_start_config        = bank_config_reg[9];
 wire is_vecB_start_config        = bank_config_reg[10];
 
+`ifdef SUPPORT_LUT_DATAPATH
+(* keep = "true", mark_debug = "true" *)wire is_LUT_ops_config           = bank_config_reg[11];
+(* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[20:17];
+`endif
+
 reg is_ADD_config_r;
 reg is_SUB_config_r;
 reg is_MUL_config_r;
@@ -1029,6 +1032,11 @@ reg is_MAC_config_rr;
 reg is_vecA_start_config_rr;
 reg is_vecB_start_config_rr;
 
+`ifdef SUPPORT_LUT_DATAPATH
+reg is_LUT_ops_r;
+reg is_LUT_ops_rr;
+
+`endif
 always @(posedge clk or negedge rst_x) begin
     if(!rst_x) begin
                         is_ADD_config_r         <= 'b0;
@@ -1037,6 +1045,9 @@ always @(posedge clk or negedge rst_x) begin
                         is_MAC_config_r         <= 'b0;
                         is_vecA_start_config_r  <= 'b0;
                         is_vecB_start_config_r  <= 'b0;
+                        `ifdef SUPPORT_LUT_DATAPATH
+                        is_LUT_ops_r            <= 'b0;
+                        `endif
     end
     else begin
                         is_ADD_config_r         <= is_ADD_config;
@@ -1045,6 +1056,9 @@ always @(posedge clk or negedge rst_x) begin
                         is_MAC_config_r         <= is_MAC_config;
                         is_vecA_start_config_r  <= is_vecA_start_config;
                         is_vecB_start_config_r  <= is_vecB_start_config;
+                        `ifdef SUPPORT_LUT_DATAPATH
+                        is_LUT_ops_r            <= is_LUT_ops_config;
+                        `endif                        
     end
 end
 
@@ -1056,6 +1070,9 @@ always @(posedge clk or negedge rst_x) begin
                         is_MAC_config_rr         <= 'b0;
                         is_vecA_start_config_rr  <= 'b0;
                         is_vecB_start_config_rr  <= 'b0;
+                        `ifdef SUPPORT_LUT_DATAPATH
+                        is_LUT_ops_rr            <= 'b0;
+                        `endif                        
     end
     else begin
                         is_ADD_config_rr         <= is_ADD_config_r;
@@ -1064,6 +1081,9 @@ always @(posedge clk or negedge rst_x) begin
                         is_MAC_config_rr         <= is_MAC_config_r;
                         is_vecA_start_config_rr  <= is_vecA_start_config_r;
                         is_vecB_start_config_rr  <= is_vecB_start_config_r;
+                        `ifdef SUPPORT_LUT_DATAPATH
+                        is_LUT_ops_rr            <= is_LUT_ops_r;
+                        `endif                         
     end
 end
 
@@ -1079,6 +1099,9 @@ wire is_MAC                      = is_MAC_config_rr;
 wire is_vecA_start               = is_vecA_start_config_rr;
 wire is_vecB_start               = is_vecB_start_config_rr;
 
+`ifdef SUPPORT_LUT_DATAPATH
+wire is_LUT_ops                  = is_LUT_ops_rr;
+`endif
 wire req_AIM_RD;
 wire req_AIM_WR;
 
@@ -1407,18 +1430,93 @@ assign vecB_temp = FE_vecB_burst_delay ? vecB : 256'b0;
 
 ////vACC LOAD//////////////////////////////////////
 wire vACC_burst = EX1_burst;
-wire [2:0] acc_case[0:15];
 wire acc_rst = is_CLR_ACC || PIM_result_WB_done;
 wire acc_result_en = EX1_burst;
 wire [15:0] acc_keep;
 
+`ifdef SUPPORT_LUT_DATAPATH
+wire [63:0] w_acc_offset_vec;
+  assign w_acc_offset_vec = {vACC[15][3:0],
+                             vACC[14][3:0],
+                             vACC[13][3:0],
+                             vACC[12][3:0],                                                                                 
+                             vACC[11][3:0],
+                             vACC[10][3:0],
+                             vACC[9][3:0],
+                             vACC[8][3:0],
+                             vACC[7][3:0],
+                             vACC[6][3:0],
+                             vACC[5][3:0],
+                             vACC[4][3:0],
+                             vACC[3][3:0],
+                             vACC[2][3:0],
+                             vACC[1][3:0],
+                             vACC[0][3:0]
+                           };
+
+wire [3:0] w_acc_idx;
+  assign w_acc_idx = LUT_acc_index;
+wire [255:0] w_lut_data_in;
+  assign w_lut_data_in = data_burst_rr;
+
+(* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_result;
+(* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_acc_enable_sig;
+
+PIM_lut_comp U0_PIM_LUT_COMPUTE(
+                      .clk                 (clk),
+                      .rst_x               (rst_x),
+
+                      .i_acc_offset        (w_acc_offset_vec), 
+                      .i_acc_idx           (w_acc_idx),
+                      .i_data              (w_lut_data_in),
+
+                      .o_lut_result        (w_lut_result),
+                      .o_lut_result_enable (w_lut_acc_enable_sig)
+);
+
+wire [15:0] acc_lut_update;
+
+generate
+  for(i=0;i<16;i=i+1) begin : ACC_LUT
+    assign acc_lut_update[i] = w_lut_acc_enable_sig[i] && acc_result_en;
+  end
+endgenerate
+
+(* keep = "true", mark_debug = "true" *) wire acc_lut_load_x;
+  assign acc_lut_load_x = vecA_load & is_LUT_ops;
+
+wire [4:0] acc_case[0:15];
+generate
+  for(i=0;i<16;i=i+1) begin : ACC_CTRL
+    assign acc_keep[i] = !(acc_result_en || acc_rst || acc_lut_load_x || acc_lut_update[i]);
+  end
+endgenerate
+
+generate
+  for(i=0;i<16;i=i+1) begin : ACC_CASE
+
+    assign acc_case[i] = {acc_keep[i], acc_lut_update[i], acc_lut_load_x, acc_result_en, acc_rst};
+
+    always@(*) begin
+      casez(acc_case[i]) // synopsys full_case parallel_case
+        5'b????1 : vACC_in[i] = 22'b0;
+        5'b???1? : vACC_in[i] = {alu_result_sign[i],alu_result_exp[i],alu_result_mant[i]};
+        5'b??1?? : vACC_in[i] = {6'b0, data_burst_rr[16*(i+1)-1:16*i]};
+        5'b?1??? : vACC_in[i] = {6'b0, w_lut_result};
+        5'b1???? : vACC_in[i] = vACC[i];
+      endcase
+    end
+  end
+endgenerate
+
+`else
+wire [2:0] acc_case[0:15];
 generate
   for(i=0;i<16;i=i+1) begin : ACC_CTRL
     assign acc_keep[i] = !(acc_result_en || acc_rst);
   end
 endgenerate
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 generate
   for(i=0;i<16;i=i+1) begin : ACC_CASE
 
@@ -1433,6 +1531,8 @@ generate
     end
   end
 endgenerate
+`endif
+
 
 generate
   for(i=0;i<16;i=i+1) begin : ACC_GEN
@@ -1479,6 +1579,30 @@ assign norm_result_vec = {
                             norm_result[0 ]
                           };
 
+`ifdef SUPPORT_LUT_DATAPATH
+wire [255:0] PIM_LUT_result;
+  assign PIM_LUT_result = {
+                            vACC[15][15:0],
+                            vACC[14][15:0],
+                            vACC[13][15:0],
+                            vACC[12][15:0],
+                            vACC[11][15:0],
+                            vACC[10][15:0],
+                            vACC[9][15:0],
+                            vACC[8][15:0],
+                            vACC[7][15:0],
+                            vACC[6][15:0],
+                            vACC[5][15:0],
+                            vACC[4][15:0],
+                            vACC[3][15:0],
+                            vACC[2][15:0],
+                            vACC[1][15:0],
+                            vACC[0][15:0]                                                                                                                
+  };
+
+`endif
+
+
 always @(posedge clk or negedge rst_x) begin
   if (~rst_x) begin
                                                     PIM_result <= 'b0;
@@ -1487,9 +1611,18 @@ always @(posedge clk or negedge rst_x) begin
                                                     PIM_result <= 'b0;
   end
   else begin
+    `ifdef SUPPORT_LUT_DATAPATH
+    if(WB_burst && !is_LUT_ops) begin
+                                                    PIM_result <= norm_result_vec;
+    end    
+    else if(WB_burst && is_LUT_ops) begin
+                                                    PIM_result <= PIM_LUT_result;
+    end        
+    `else
     if(WB_burst) begin
                                                     PIM_result <= norm_result_vec;
     end
+    `endif
   end
 end
 
