@@ -22,10 +22,6 @@ module Device_top
 `ifdef SUPPORT_INDIRECT_ADDRESSING
     o_PIM_dev_working,
     o_HPC_clear,
-    `ifdef SUPPORT_LUT_DATAPATH
-      o_lut_load_x_sig,
-      o_lut_load_x_data,
-    `endif
 `endif
 
     is_PIM_result,
@@ -56,10 +52,6 @@ input  [255:0]                     data_bus_from_memory;
 `ifdef SUPPORT_INDIRECT_ADDRESSING
 output                             o_PIM_dev_working;
 output                             o_HPC_clear;
-    `ifdef SUPPORT_LUT_DATAPATH
-      output                       o_lut_load_x_sig;
-      output [255:0]               o_lut_load_x_data;
-    `endif
 `endif
 
 output                             is_PIM_result;
@@ -414,7 +406,7 @@ generate
     always @(posedge clk or negedge rst_x) begin
       if (~rst_x) begin
                                                                           PIM_SRC_ADDR_from_desc_reg[i] <= 'b0;
-                                                                          PIM_DST_ADDR_from_desc_reg[i] <= 'b0;
+                                                                         PIM_DST_ADDR_from_desc_reg[i] <= 'b0;
                                                                           PIM_SIZE_from_desc_reg[i]     <= 'b0;
                                                                           PIM_INFO_from_desc_reg[i]     <= 'b0;
       end
@@ -924,11 +916,6 @@ wire is_PIM_result = |dst_C_WR_pass;
 assign o_PIM_dev_working = AIM_working;
 assign o_HPC_clear = HPC_clear_sig;
 
-  `ifdef SUPPORT_LUT_DATAPATH
-    assign o_lut_load_x_sig  = srcA_RD_pass_en;
-    assign o_lut_load_x_data = DRAM_data;
-  `endif
-
 `endif
 
 
@@ -987,7 +974,7 @@ genvar i,j;
   * bank_config_reg[10:9]  = Which read enable signal is starting computation (A/B)
 
   * bank_config_reg[11]    = Enable LUT datapath
-  * bank_config_reg[20:17] = Index of LUT target's acc
+  * bank_config_reg[23:20] = Index of LUT target's acc
 
   * bank_config_reg[16:15] = Enable all-bank broadcasting switch (Decoupled PIM)
 */
@@ -1015,7 +1002,7 @@ wire is_vecB_start_config        = bank_config_reg[10];
 
 `ifdef SUPPORT_LUT_DATAPATH
 (* keep = "true", mark_debug = "true" *)wire is_LUT_ops_config           = bank_config_reg[11];
-(* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[20:17];
+(* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[23:20];
 `endif
 
 reg is_ADD_config_r;
@@ -1136,8 +1123,8 @@ wire      PIM_RD_B_sig = req_AIM_RD_r && src_B_RD_pass_r;
 wire      PIM_WR_C_sig = req_AIM_WR;
 
 reg [3:0] global_burst_cnt_SCAL_gran;
-reg       PIM_vecA_read_burst;
-reg       PIM_vecB_read_burst;
+(* keep = "true", mark_debug = "true" *)reg       PIM_vecA_read_burst;
+(* keep = "true", mark_debug = "true" *)reg       PIM_vecB_read_burst;
 reg       PIM_write_burst;
 wire      PIM_result_WB_done;
 
@@ -1204,7 +1191,7 @@ reg PIM_ALU_proc_rrr;
 reg PIM_ALU_proc_rrrr;
 reg PIM_ALU_proc_rrrrr;
 
-(* keep = "true", mark_debug = "true" *)  reg [3:0] global_burst_cnt_SCAL_gran_r;
+reg [3:0] global_burst_cnt_SCAL_gran_r;
 reg [3:0] global_burst_cnt_SCAL_gran_rr;
 reg [3:0] global_burst_cnt_SCAL_gran_rrr;
 reg [3:0] global_burst_cnt_SCAL_gran_rrrr;
@@ -1271,7 +1258,7 @@ wire [255:0] data_burst;
 assign data_burst = DRAM_data;
 
 reg [255:0] data_burst_r;
-reg [255:0] data_burst_rr;
+(* keep = "true", mark_debug = "true" *)reg [255:0] data_burst_rr;
 
 always @(posedge clk or negedge rst_x) begin
   if (~rst_x) begin
@@ -1435,29 +1422,40 @@ wire acc_result_en = EX1_burst;
 wire [15:0] acc_keep;
 
 `ifdef SUPPORT_LUT_DATAPATH
+(* keep = "true", mark_debug = "true" *) wire acc_lut_load_x;
+  assign acc_lut_load_x = vecA_load & is_LUT_ops;
+
+
 wire [63:0] w_acc_offset_vec;
-  assign w_acc_offset_vec = {vACC[15][3:0],
-                             vACC[14][3:0],
-                             vACC[13][3:0],
-                             vACC[12][3:0],                                                                                 
-                             vACC[11][3:0],
-                             vACC[10][3:0],
-                             vACC[9][3:0],
-                             vACC[8][3:0],
-                             vACC[7][3:0],
-                             vACC[6][3:0],
-                             vACC[5][3:0],
-                             vACC[4][3:0],
-                             vACC[3][3:0],
-                             vACC[2][3:0],
-                             vACC[1][3:0],
-                             vACC[0][3:0]
+  assign w_acc_offset_vec = {data_burst_rr[(16*16-1)-12:(16*15)],
+                             data_burst_rr[(16*15-1)-12:(16*14)],
+                             data_burst_rr[(16*14-1)-12:(16*13)],
+                             data_burst_rr[(16*13-1)-12:(16*12)],                                                                                 
+                             data_burst_rr[(16*12-1)-12:(16*11)],
+                             data_burst_rr[(16*11-1)-12:(16*10)],
+                             data_burst_rr[(16*10-1)-12:(16*9)],
+                             data_burst_rr[(16*9-1)-12:(16*8)],
+                             data_burst_rr[(16*8-1)-12:(16*7)],
+                             data_burst_rr[(16*7-1)-12:(16*6)],
+                             data_burst_rr[(16*6-1)-12:(16*5)],
+                             data_burst_rr[(16*5-1)-12:(16*4)],
+                             data_burst_rr[(16*4-1)-12:(16*3)],
+                             data_burst_rr[(16*3-1)-12:(16*2)],
+                             data_burst_rr[(16*2-1)-12:(16*1)],
+                             data_burst_rr[(16*1-1)-12:(16*0)]
                            };
 
+(* keep = "true", mark_debug = "true" *)reg [63:0] acc_offset_vec;
+always @(posedge clk or negedge rst_x) begin
+  if (~rst_x)               acc_offset_vec <='b0;
+  else if(acc_rst)          acc_offset_vec <='b0;
+  else if(acc_lut_load_x)   acc_offset_vec <=w_acc_offset_vec;
+end
+
 wire [3:0] w_acc_idx;
-  assign w_acc_idx = LUT_acc_index;
+  assign w_acc_idx = PIM_vecB_read_burst? LUT_acc_index: 'b0;
 wire [255:0] w_lut_data_in;
-  assign w_lut_data_in = data_burst_rr;
+  assign w_lut_data_in = PIM_vecB_read_burst? data_burst_rr:'b0;
 
 (* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_result;
 (* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_acc_enable_sig;
@@ -1466,7 +1464,7 @@ PIM_lut_comp U0_PIM_LUT_COMPUTE(
                       .clk                 (clk),
                       .rst_x               (rst_x),
 
-                      .i_acc_offset        (w_acc_offset_vec), 
+                      .i_acc_offset        (acc_offset_vec), 
                       .i_acc_idx           (w_acc_idx),
                       .i_data              (w_lut_data_in),
 
@@ -1474,18 +1472,15 @@ PIM_lut_comp U0_PIM_LUT_COMPUTE(
                       .o_lut_result_enable (w_lut_acc_enable_sig)
 );
 
-wire [15:0] acc_lut_update;
+(* keep = "true", mark_debug = "true" *)wire [15:0] acc_lut_update;
 
 generate
   for(i=0;i<16;i=i+1) begin : ACC_LUT
-    assign acc_lut_update[i] = w_lut_acc_enable_sig[i] && acc_result_en;
+    assign acc_lut_update[i] = is_LUT_ops && w_lut_acc_enable_sig[i] && PIM_vecB_read_burst_r;
   end
 endgenerate
 
-(* keep = "true", mark_debug = "true" *) wire acc_lut_load_x;
-  assign acc_lut_load_x = vecA_load & is_LUT_ops;
-
-wire [4:0] acc_case[0:15];
+wire [3:0] acc_case[0:15];
 generate
   for(i=0;i<16;i=i+1) begin : ACC_CTRL
     assign acc_keep[i] = !(acc_result_en || acc_rst || acc_lut_load_x || acc_lut_update[i]);
@@ -1495,15 +1490,15 @@ endgenerate
 generate
   for(i=0;i<16;i=i+1) begin : ACC_CASE
 
-    assign acc_case[i] = {acc_keep[i], acc_lut_update[i], acc_lut_load_x, acc_result_en, acc_rst};
+    assign acc_case[i] = {acc_keep[i], acc_lut_update[i], acc_result_en, acc_rst};
 
     always@(*) begin
       casez(acc_case[i]) // synopsys full_case parallel_case
-        5'b????1 : vACC_in[i] = 22'b0;
-        5'b???1? : vACC_in[i] = {alu_result_sign[i],alu_result_exp[i],alu_result_mant[i]};
-        5'b??1?? : vACC_in[i] = {6'b0, data_burst_rr[16*(i+1)-1:16*i]};
-        5'b?1??? : vACC_in[i] = {6'b0, w_lut_result};
-        5'b1???? : vACC_in[i] = vACC[i];
+        4'b???1 : vACC_in[i] = 22'b0;
+        4'b??1? : vACC_in[i] = {alu_result_sign[i],alu_result_exp[i],alu_result_mant[i]};
+        // 5'b??1?? : vACC_in[i] = {6'b0, data_burst_rr[16*(i+1)-1:16*i]};
+        4'b?1?? : vACC_in[i] = {6'b0, w_lut_result};
+        4'b1??? : vACC_in[i] = vACC[i];
       endcase
     end
   end

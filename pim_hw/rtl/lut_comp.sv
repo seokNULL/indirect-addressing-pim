@@ -15,7 +15,7 @@ input           clk;
 input           rst_x;
 
 input [63:0]    i_acc_offset;        // 16 Accs x 4-bit
-input [3:0]     i_acc_idx;        // 16 Accs 
+input [3:0]     i_acc_idx;           // 16 Accs 
 input [255:0]   i_data;              // Latched data from memory
 
 output [15:0]   o_lut_result;        // searched data from i_data

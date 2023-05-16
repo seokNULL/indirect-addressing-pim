@@ -19,11 +19,11 @@ module orde_resp_buf #(
     input logic [31:0] i_reg_A_data,
     input logic [31:0] i_reg_B_data,
     input logic [31:0] i_reg_C_data,  
-
-    `ifdef SUPPORT_LUT_DATAPATH
-      input  logic         i_lut_load_sig,
-      input  logic [255:0] i_lut_target_bank_x_data,
-    `endif
+    input logic [255:0] i_reg_LUT_data[15:0],
+    // `ifdef SUPPORT_LUT_DATAPATH
+    //   // input  logic         i_lut_load_sig,
+    //   input  logic [255:0] i_lut_target_bank_x_data[15:0],
+    // `endif
   `endif
   output logic [DATA_WIDTH-1:0]               buffer_data_mem_out
 );
@@ -87,73 +87,92 @@ module orde_resp_buf #(
     assign bus_desc_pim_opcode = w_buffer_data_mem[32*8-1:32*7];      
 
 
-(* keep = "true", mark_debug = "true" *)wire descr_enable;
+wire descr_enable;
     assign descr_enable = //(pkt_insert_valid) && 
                           (bus_desc_addr_h[31:16] == 16'h0000) && 
                           (bus_desc_addr_h[15:0]  == 16'h0004) && 
                           ((bus_desc_addr_l[5:0]  == 6'b000011)||(bus_desc_addr_l[5:0]   == 6'b000101)) &&
                           (bus_desc_addr_l[23:20] ==4'b1???) &&
                           (bus_desc_addr_l[31:24] ==8'h00);
-(* keep = "true", mark_debug = "true" *)wire is_desc_A;
-(* keep = "true", mark_debug = "true" *)wire is_desc_B;
-(* keep = "true", mark_debug = "true" *)wire is_desc_C;
+wire is_desc_A;
+wire is_desc_B;
+wire is_desc_C;
     assign is_desc_A = descr_enable && bus_desc_pim_opcode[1];
     assign is_desc_B = descr_enable && bus_desc_pim_opcode[2];
     assign is_desc_C = descr_enable && bus_desc_pim_opcode[3];
 
-(* keep = "true", mark_debug = "true" *)wire is_indirect;
-(* keep = "true", mark_debug = "true" *)wire is_immediate;
-(* keep = "true", mark_debug = "true" *)wire is_register;
+wire is_indirect;
+wire is_immediate;
+wire is_register;
     assign is_indirect = descr_enable && w_buffer_data_mem[0];
     assign is_immediate = descr_enable && w_buffer_data_mem[1];
     assign is_register = descr_enable && w_buffer_data_mem[2];
 
 `ifdef SUPPORT_LUT_DATAPATH
-(* keep = "true", mark_debug = "true" *)reg  [255:0] lut_x_from_memory;
-(* keep = "true", mark_debug = "true" *)wire [3:0]   lut_acc_index;
-  assign lut_acc_index = bus_desc_pim_opcode[24:21];
+reg  [255:0] lut_x_mem;
+wire [3:0]   acc_index;
+wire [3:0]   bank_index;
+  assign acc_index =  bus_desc_pim_opcode[27:24];
+  assign bank_index = bus_desc_pim_opcode[31:28];
 
 always@(posedge clk,  posedge rst )begin
-  if(rst)                    lut_x_from_memory <= 'b0;
-  else if(is_desc_C)         lut_x_from_memory <= 'b0;
-  else if(i_lut_load_sig)    lut_x_from_memory <= i_lut_target_bank_x_data;                
+  if(rst)                             lut_x_mem <= 'b0;
+  else if(is_indirect&&is_register) begin
+    if(bank_index==4'b0000)            lut_x_mem <= i_reg_LUT_data[0];
+    else if(bank_index==4'b0001)       lut_x_mem <= i_reg_LUT_data[1];
+    else if(bank_index==4'b0010)       lut_x_mem <= i_reg_LUT_data[2];
+    else if(bank_index==4'b0011)       lut_x_mem <= i_reg_LUT_data[3];
+    else if(bank_index==4'b0100)       lut_x_mem <= i_reg_LUT_data[4];
+    else if(bank_index==4'b0101)       lut_x_mem <= i_reg_LUT_data[5];
+    else if(bank_index==4'b0110)       lut_x_mem <= i_reg_LUT_data[6];
+    else if(bank_index==4'b0111)       lut_x_mem <= i_reg_LUT_data[7];
+    else if(bank_index==4'b1000)       lut_x_mem <= i_reg_LUT_data[8];
+    else if(bank_index==4'b1001)       lut_x_mem <= i_reg_LUT_data[9];
+    else if(bank_index==4'b1010)       lut_x_mem <= i_reg_LUT_data[10];
+    else if(bank_index==4'b1011)       lut_x_mem <= i_reg_LUT_data[11];
+    else if(bank_index==4'b1100)       lut_x_mem <= i_reg_LUT_data[12];
+    else if(bank_index==4'b1101)       lut_x_mem <= i_reg_LUT_data[13];
+    else if(bank_index==4'b1110)       lut_x_mem <= i_reg_LUT_data[14];
+    else if(bank_index==4'b1111)       lut_x_mem <= i_reg_LUT_data[15];
+  end
+  else                                lut_x_mem <='b0;
 end
 
 reg [11:0] lut_offset_in;
 always @(*) begin
-  if(is_register) begin
-    if(lut_acc_index == 4'b0000)       lut_offset_in = lut_x_from_memory[(16*1-1):(16*0)+4];
-    else if(lut_acc_index == 4'b0001)  lut_offset_in = lut_x_from_memory[(16*2-1):(16*1)+4];
-    else if(lut_acc_index == 4'b0010)  lut_offset_in = lut_x_from_memory[(16*3-1):(16*2)+4];
-    else if(lut_acc_index == 4'b0011)  lut_offset_in = lut_x_from_memory[(16*4-1):(16*3)+4];
-    else if(lut_acc_index == 4'b0100)  lut_offset_in = lut_x_from_memory[(16*5-1):(16*4)+4];
-    else if(lut_acc_index == 4'b0101)  lut_offset_in = lut_x_from_memory[(16*6-1):(16*5)+4];
-    else if(lut_acc_index == 4'b0110)  lut_offset_in = lut_x_from_memory[(16*7-1):(16*6)+4];
-    else if(lut_acc_index == 4'b0111)  lut_offset_in = lut_x_from_memory[(16*8-1):(16*7)+4];
-    else if(lut_acc_index == 4'b1000)  lut_offset_in = lut_x_from_memory[(16*9-1):(16*8)+4];
-    else if(lut_acc_index == 4'b1001)  lut_offset_in = lut_x_from_memory[(16*10-1):(16*9)+4];
-    else if(lut_acc_index == 4'b1010)  lut_offset_in = lut_x_from_memory[(16*11-1):(16*10)+4];
-    else if(lut_acc_index == 4'b1011)  lut_offset_in = lut_x_from_memory[(16*12-1):(16*11)+4];
-    else if(lut_acc_index == 4'b1100)  lut_offset_in = lut_x_from_memory[(16*13-1):(16*12)+4];
-    else if(lut_acc_index == 4'b1101)  lut_offset_in = lut_x_from_memory[(16*14-1):(16*13)+4];
-    else if(lut_acc_index == 4'b1110)  lut_offset_in = lut_x_from_memory[(16*15-1):(16*14)+4];
-    else if(lut_acc_index == 4'b1111)  lut_offset_in = lut_x_from_memory[(16*16-1):(16*15)+4];
+  if(is_indirect&&is_register) begin
+    if(acc_index == 4'b0000)       lut_offset_in = lut_x_mem[(16*1-1):(16*0)+4];
+    else if(acc_index == 4'b0001)  lut_offset_in = lut_x_mem[(16*2-1):(16*1)+4];
+    else if(acc_index == 4'b0010)  lut_offset_in = lut_x_mem[(16*3-1):(16*2)+4];
+    else if(acc_index == 4'b0011)  lut_offset_in = lut_x_mem[(16*4-1):(16*3)+4];
+    else if(acc_index == 4'b0100)  lut_offset_in = lut_x_mem[(16*5-1):(16*4)+4];
+    else if(acc_index == 4'b0101)  lut_offset_in = lut_x_mem[(16*6-1):(16*5)+4];
+    else if(acc_index == 4'b0110)  lut_offset_in = lut_x_mem[(16*7-1):(16*6)+4];
+    else if(acc_index == 4'b0111)  lut_offset_in = lut_x_mem[(16*8-1):(16*7)+4];
+    else if(acc_index == 4'b1000)  lut_offset_in = lut_x_mem[(16*9-1):(16*8)+4];
+    else if(acc_index == 4'b1001)  lut_offset_in = lut_x_mem[(16*10-1):(16*9)+4];
+    else if(acc_index == 4'b1010)  lut_offset_in = lut_x_mem[(16*11-1):(16*10)+4];
+    else if(acc_index == 4'b1011)  lut_offset_in = lut_x_mem[(16*12-1):(16*11)+4];
+    else if(acc_index == 4'b1100)  lut_offset_in = lut_x_mem[(16*13-1):(16*12)+4];
+    else if(acc_index == 4'b1101)  lut_offset_in = lut_x_mem[(16*14-1):(16*13)+4];
+    else if(acc_index == 4'b1110)  lut_offset_in = lut_x_mem[(16*15-1):(16*14)+4];
+    else if(acc_index == 4'b1111)  lut_offset_in = lut_x_mem[(16*16-1):(16*15)+4];
   end
-  else                                 lut_offset_in ='b0;
+  else                             lut_offset_in ='b0;
 end
 `endif 
 
 //Indirect address calculation
-(* keep = "true", mark_debug = "true" *)reg [31:0] offset_in;
-(* keep = "true", mark_debug = "true" *)reg [31:0] base_in;
+reg [31:0] offset_in;
+reg [31:0] base_in;
 always @(*) begin
     if(is_indirect && is_desc_A  && is_immediate)           offset_in = w_buffer_data_mem[32*3-1 :32*2];
     else if(is_indirect && is_desc_B && is_immediate)       offset_in = w_buffer_data_mem[32*3-1 :32*2];
     else if(is_indirect && is_desc_C && is_immediate)       offset_in = w_buffer_data_mem[32*5-1 :32*4];
     `ifdef SUPPORT_LUT_DATAPATH
-    else if(is_indirect && is_desc_B && is_register)        offset_in = {'b0, lut_offset_in, 4'b0000};
+    else if(is_indirect && is_desc_B && is_register)        offset_in = {15'b0, lut_offset_in, 5'b00000};
     `endif
-    else                                    offset_in = 'b0;
+    else                                                    offset_in = 'b0;
 end
 
 always @(*) begin
@@ -166,12 +185,12 @@ always @(*) begin
     else                                                   base_in = 'b0;
 end
 
-(* keep = "true", mark_debug = "true" *)wire [31:0] indirect_address;
+wire [31:0] indirect_address;
   // assign indirect_address = is_indirect ? offset_in | base_in : 'b0;
   assign indirect_address = is_indirect ? (offset_in + base_in) : 'b0;
 
 wire [255:0] modified_buffer_data_mem;
-(* keep = "true", mark_debug = "true" *)reg [255:0] tmp_indirect_data_mem;
+reg [255:0] tmp_indirect_data_mem;
   
 always @(*) begin
   if(is_indirect) begin
@@ -182,7 +201,7 @@ always @(*) begin
 end
   assign modified_buffer_data_mem = descr_enable? tmp_indirect_data_mem: w_buffer_data_mem;
 
-(* keep = "true", mark_debug = "true" *)reg [255:0] modified_buffer_data_mem_r;//Timing Latch
+reg [255:0] modified_buffer_data_mem_r;//Timing Latch
 always@(posedge clk,  posedge rst )begin
   if(rst)               modified_buffer_data_mem_r <= 'b0;
   else                  modified_buffer_data_mem_r <= modified_buffer_data_mem;
@@ -204,7 +223,8 @@ end
       else if(buffer_meta_mem_out_valid)           buffer_meta_mem_out_valid <= 0;
 
       `ifdef SUPPORT_INDIRECT_ADDRESSING
-      buffer_data_mem_out  <= descr_enable? modified_buffer_data_mem_r:w_buffer_data_mem;
+      // buffer_data_mem_out  <= descr_enable? modified_buffer_data_mem_r:w_buffer_data_mem;
+      buffer_data_mem_out  <= is_indirect? modified_buffer_data_mem_r:buffer_data_mem[data_pop_ptr_next];
       // buffer_data_mem_out  <= buffer_data_mem[data_pop_ptr_next];
       `else
       buffer_data_mem_out  <= buffer_data_mem[data_pop_ptr_next];
@@ -247,5 +267,76 @@ end
     pop_pkt_valid            = 0;  
     pop_pkt_valid_r          = 0;  
   end
+
+
+//Debug signal generation
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_descr_enable;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_desc_A;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_desc_B;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_desc_C;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_indirect;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_immediate;
+(* keep = "true", mark_debug = "true" *)reg         debug_orde_is_register;
+// (* keep = "true", mark_debug = "true" *)reg  [255:0] debug_orde_lut_x_from_memory;
+// (* keep = "true", mark_debug = "true" *)reg [3:0]   debug_orde_lut_acc_index;
+(* keep = "true", mark_debug = "true" *)reg [31:0]   debug_orde_offset_in;
+(* keep = "true", mark_debug = "true" *)reg [31:0]   debug_orde_base_in;
+(* keep = "true", mark_debug = "true" *)reg [31:0]  debug_orde_indirect_address;
+(* keep = "true", mark_debug = "true" *)reg [255:0]  debug_orde_tmp_indirect_data_mem;
+(* keep = "true", mark_debug = "true" *)reg [255:0]  debug_orde_modified_buffer_data_mem_r;//Timing Latch
+
+
+(* keep = "true", mark_debug = "true" *) reg  [255:0] debug_lut_x_mem;
+(* keep = "true", mark_debug = "true" *) reg  [3:0]   debug_acc_index;
+(* keep = "true", mark_debug = "true" *) reg  [3:0]   debug_bank_index;
+(* keep = "true", mark_debug = "true" *) reg  [11:0]  debug_lut_offset_in;
+
+always@(posedge clk,  posedge rst )begin
+  if(rst) begin                 
+                        debug_orde_descr_enable               <='b0;                       
+                        debug_orde_is_desc_A                  <='b0;                     
+                        debug_orde_is_desc_B                  <='b0;                     
+                        debug_orde_is_desc_C                  <='b0;                     
+                        debug_orde_is_indirect                <='b0;                       
+                        debug_orde_is_immediate               <='b0;                       
+                        debug_orde_is_register                <='b0;                       
+                        // debug_orde_lut_x_from_memory          <='b0;                 
+                        // debug_orde_lut_acc_index              <='b0;                 
+                        debug_orde_offset_in                  <='b0;                  
+                        debug_orde_base_in                    <='b0;                  
+                        debug_orde_indirect_address           <='b0;                 
+                        debug_orde_tmp_indirect_data_mem      <='b0;                           
+                        debug_orde_modified_buffer_data_mem_r <='b0; 
+
+                        debug_lut_x_mem                       <='b0; 
+                        debug_acc_index                       <='b0; 
+                        debug_bank_index                      <='b0; 
+                        debug_lut_offset_in                   <='b0;                                                          
+  end
+  else begin
+                        debug_orde_descr_enable               <= descr_enable;
+                        debug_orde_is_desc_A                  <= is_desc_A;
+                        debug_orde_is_desc_B                  <= is_desc_B;
+                        debug_orde_is_desc_C                  <= is_desc_C;
+                        debug_orde_is_indirect                <= is_indirect;
+                        debug_orde_is_immediate               <= is_immediate;
+                        debug_orde_is_register                <= is_register;
+                        // debug_orde_lut_x_from_memory          <= lut_x_from_memory;
+                        // debug_orde_lut_acc_index              <= lut_acc_index;
+                        debug_orde_offset_in                  <= offset_in;
+                        debug_orde_base_in                    <= base_in;
+                        debug_orde_indirect_address           <= indirect_address;
+                        debug_orde_tmp_indirect_data_mem      <= tmp_indirect_data_mem;
+                        debug_orde_modified_buffer_data_mem_r <= modified_buffer_data_mem_r;
+                        
+                        debug_lut_x_mem                       <=lut_x_mem; 
+                        debug_acc_index                       <=acc_index; 
+                        debug_bank_index                      <=bank_index; 
+                        debug_lut_offset_in                   <=lut_offset_in;                                                          
+
+  end            
+  
+end
+
 
 endmodule

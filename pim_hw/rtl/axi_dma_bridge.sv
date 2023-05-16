@@ -62,10 +62,7 @@ module axi_bridge (
   output  logic [31:0] o_args_reg_A,
   output  logic [31:0] o_args_reg_B,
   output  logic [31:0] o_args_reg_C,
-    `ifdef SUPPORT_LUT_DATAPATH
-      output logic         o_lut_load_x_sig,
-      output logic [255:0] o_lut_load_x_data,
-    `endif
+  output  logic [255:0] o_args_reg_LUT_x[15:0],
   `endif
 
   output logic axbr_orde_rdy,                       // AXI-DMA Bridge ready
@@ -128,10 +125,7 @@ module axi_bridge (
   assign  o_args_reg_A = w_args_reg_A;
   assign  o_args_reg_B = w_args_reg_B;
   assign  o_args_reg_C = w_args_reg_C;
-    `ifdef SUPPORT_LUT_DATAPATH
-      assign o_lut_load_x_sig  = w_lut_load_x_sig;
-      assign o_lut_load_x_data = w_lut_load_x_data;
-    `endif
+  assign  o_args_reg_LUT_x = w_args_LUT_x;
   `endif
   // =============================== Read Address Channel ==============================
 
@@ -379,14 +373,10 @@ module axi_bridge (
   wire           w_PIM_dev_working;
   wire           w_HPC_clear;
 
-  (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_A;
-  (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_B;
-  (* keep = "true", mark_debug = "true" *)wire [31:0]    w_args_reg_C;
-
-  `ifdef SUPPORT_LUT_DATAPATH
-    wire [255:0] w_lut_load_x_data;
-    wire         w_lut_load_x_sig;
-  `endif
+  wire [31:0]    w_args_reg_A;
+  wire [31:0]    w_args_reg_B;
+  wire [31:0]    w_args_reg_C;
+  wire [255:0]   w_args_LUT_x[15:0];
 `endif
   // ============================= Read Response Forwarding ============================
 
@@ -578,10 +568,6 @@ module axi_bridge (
         `ifdef SUPPORT_INDIRECT_ADDRESSING
             .o_PIM_dev_working                 (w_PIM_dev_working),
             .o_HPC_clear                       (w_HPC_clear),
-          `ifdef SUPPORT_LUT_DATAPATH
-            .o_lut_load_x_sig                  (w_lut_load_x_sig),
-            .o_lut_load_x_data                 (w_lut_load_x_data),
-          `endif
         `endif
 
 
@@ -605,7 +591,8 @@ module axi_bridge (
 
     .o_args_reg_A                            (w_args_reg_A),
     .o_args_reg_B                            (w_args_reg_B),
-    .o_args_reg_C                            (w_args_reg_C)
+    .o_args_reg_C                            (w_args_reg_C),
+    .o_args_reg_LUT_x                        (w_args_LUT_x)
   );
 `endif
 
