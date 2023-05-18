@@ -691,6 +691,31 @@ wire is_vecB_rd_broadcast_config = bank_config_reg[16];
 wire is_vecA_rd_broadcast = is_vecA_rd_broadcast_config;
 wire is_vecB_rd_broadcast = is_vecB_rd_broadcast_config;
 
+`ifdef SUPPORT_LUT_DATAPATH
+wire [3:0] bank_idx_from_config;
+  assign bank_idx_from_config = bank_config_reg[27:24];
+reg [15:0] lut_target_bank_enable;
+always@(*) begin
+  case({bank_idx_from_config}) // synopsys parallel_case full_case
+      4'b0000 : lut_target_bank_enable = 16'b0000000000000001;
+      4'b0001 : lut_target_bank_enable = 16'b0000000000000010;
+      4'b0010 : lut_target_bank_enable = 16'b0000000000000100;
+      4'b0011 : lut_target_bank_enable = 16'b0000000000001000;
+      4'b0100 : lut_target_bank_enable = 16'b0000000000010000;
+      4'b0101 : lut_target_bank_enable = 16'b0000000000100000;
+      4'b0110 : lut_target_bank_enable = 16'b0000000001000000;
+      4'b0111 : lut_target_bank_enable = 16'b0000000010000000;
+      4'b1000 : lut_target_bank_enable = 16'b0000000100000000;
+      4'b1001 : lut_target_bank_enable = 16'b0000001000000000;
+      4'b1010 : lut_target_bank_enable = 16'b0000010000000000;
+      4'b1011 : lut_target_bank_enable = 16'b0000100000000000;
+      4'b1100 : lut_target_bank_enable = 16'b0001000000000000;
+      4'b1101 : lut_target_bank_enable = 16'b0010000000000000;
+      4'b1110 : lut_target_bank_enable = 16'b0100000000000000;
+      4'b1111 : lut_target_bank_enable = 16'b1000000000000000;
+  endcase
+end
+`endif
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 reg  [BANK_NUM-1:0] bank_access;
 wire [BANK_NUM-1:0] rd_cmd;
@@ -876,7 +901,6 @@ wire is_PIM_result = |dst_C_WR_pass;
           .src_A_RD_pass                  (src_A_RD_pass_mux[0]       ),
           .src_B_RD_pass                  (src_B_RD_pass_mux[0]       ),
           .dst_C_WR_pass                  (dst_C_WR_pass[0]           ),
-    
           //.req_MM_vecA_write              (req_MM_vecA_write_per_bank[0] ),
 
           .bank_config_reg                (bank_config_reg            ),
@@ -890,19 +914,14 @@ wire is_PIM_result = |dst_C_WR_pass;
               .rst_x                          (rst_x                      ),
     
               .HPC_clear_sig                  (HPC_clear_sig              ),
-
-              //.req_row                        (req_row                    ),
-              //.req_col                        (req_col                    ),
-              //.req_data                       (req_data                   ),
-    
               .DRAM_data                      (DRAM_data                  ),
     
               .src_A_RD_pass                  (src_A_RD_pass_mux[i]       ),
               .src_B_RD_pass                  (src_B_RD_pass_mux[i]       ),
               .dst_C_WR_pass                  (dst_C_WR_pass[i]           ),  
-
-              //.req_MM_vecA_write              (req_MM_vecA_write_per_bank[i] ),
-
+              `ifdef SUPPORT_LUT_DATAPATH
+              .lut_bank_enable                (lut_target_bank_enable[i]  ),
+              `endif
               .bank_config_reg                (bank_config_reg            ),
               .PIM_result                     (PIM_result_per_bank[i]     )
             );
@@ -934,8 +953,9 @@ module bank_top(
   src_B_RD_pass,
   dst_C_WR_pass,
 
-  //req_MM_vecA_write,
-
+`ifdef SUPPORT_LUT_DATAPATH
+  lut_bank_enable,
+`endif
   bank_config_reg,
 
   PIM_result
@@ -952,9 +972,9 @@ input  [255:0]                  DRAM_data;
 input                           src_A_RD_pass;
 input                           src_B_RD_pass;
 input                           dst_C_WR_pass;
-
-//input                           req_MM_vecA_write;
-
+`ifdef SUPPORT_LUT_DATAPATH
+  input lut_bank_enable;
+`endif
 input [27:0]                    bank_config_reg;
 
 output [255:0]                  PIM_result;
@@ -1003,6 +1023,7 @@ wire is_vecB_start_config        = bank_config_reg[10];
 `ifdef SUPPORT_LUT_DATAPATH
 (* keep = "true", mark_debug = "true" *)wire is_LUT_ops_config           = bank_config_reg[11];
 (* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[23:20];
+// (* keep = "true", mark_debug = "true" *)wire [3:0] LUT_bank_index        = bank_config_reg[27:24];
 `endif
 
 reg is_ADD_config_r;
@@ -1417,8 +1438,9 @@ assign vecB_temp = FE_vecB_burst_delay ? vecB : 256'b0;
 
 ////vACC LOAD//////////////////////////////////////
 wire vACC_burst = EX1_burst;
-wire acc_rst = is_CLR_ACC || PIM_result_WB_done;
-wire acc_result_en = EX1_burst;
+(* keep = "true", mark_debug = "true" *)wire acc_rst = is_CLR_ACC || PIM_result_WB_done;
+// (* keep = "true", mark_debug = "true" *)wire acc_result_en = EX1_burst;
+(* keep = "true", mark_debug = "true" *)wire acc_result_en = is_LUT_ops? 1'b0: EX1_burst;
 wire [15:0] acc_keep;
 
 `ifdef SUPPORT_LUT_DATAPATH
@@ -1453,9 +1475,19 @@ always @(posedge clk or negedge rst_x) begin
 end
 
 wire [3:0] w_acc_idx;
-  assign w_acc_idx = PIM_vecB_read_burst? LUT_acc_index: 'b0;
+  // assign w_acc_idx = PIM_vecB_read_burst? LUT_acc_index: 'b0;
+  assign w_acc_idx = LUT_acc_index;
+wire bank_enable;
+  assign bank_enable = lut_bank_enable;
+reg bank_enable_r;
+always @(posedge clk or negedge rst_x) begin
+  if (~rst_x)               bank_enable_r <= 'b0;
+  else                      bank_enable_r <= bank_enable;
+end
+
+
 wire [255:0] w_lut_data_in;
-  assign w_lut_data_in = PIM_vecB_read_burst? data_burst_rr:'b0;
+  assign w_lut_data_in = (PIM_vecB_read_burst && bank_enable)? data_burst_rr:'b0;
 
 (* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_result;
 (* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_acc_enable_sig;
@@ -1476,7 +1508,7 @@ PIM_lut_comp U0_PIM_LUT_COMPUTE(
 
 generate
   for(i=0;i<16;i=i+1) begin : ACC_LUT
-    assign acc_lut_update[i] = is_LUT_ops && w_lut_acc_enable_sig[i] && PIM_vecB_read_burst_r;
+    assign acc_lut_update[i] = is_LUT_ops && w_lut_acc_enable_sig[i] && PIM_vecB_read_burst_r && bank_enable_r;
   end
 endgenerate
 
@@ -1595,6 +1627,11 @@ wire [255:0] PIM_LUT_result;
                             vACC[0][15:0]                                                                                                                
   };
 
+(* keep = "true", mark_debug = "true" *)reg [255:0] debug_PIM_LUT_result;
+always @(posedge clk or negedge rst_x) begin
+  if (~rst_x) debug_PIM_LUT_result <=  'b0;
+  else        debug_PIM_LUT_result <=  PIM_LUT_result;
+end
 `endif
 
 

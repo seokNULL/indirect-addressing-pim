@@ -94,6 +94,9 @@ wire descr_enable;
                           ((bus_desc_addr_l[5:0]  == 6'b000011)||(bus_desc_addr_l[5:0]   == 6'b000101)) &&
                           (bus_desc_addr_l[23:20] ==4'b1???) &&
                           (bus_desc_addr_l[31:24] ==8'h00);
+
+
+
 wire is_desc_A;
 wire is_desc_B;
 wire is_desc_C;
@@ -115,28 +118,56 @@ wire [3:0]   bank_index;
   assign acc_index =  bus_desc_pim_opcode[27:24];
   assign bank_index = bus_desc_pim_opcode[31:28];
 
-always@(posedge clk,  posedge rst )begin
-  if(rst)                             lut_x_mem <= 'b0;
-  else if(is_indirect&&is_register) begin
-    if(bank_index==4'b0000)            lut_x_mem <= i_reg_LUT_data[0];
-    else if(bank_index==4'b0001)       lut_x_mem <= i_reg_LUT_data[1];
-    else if(bank_index==4'b0010)       lut_x_mem <= i_reg_LUT_data[2];
-    else if(bank_index==4'b0011)       lut_x_mem <= i_reg_LUT_data[3];
-    else if(bank_index==4'b0100)       lut_x_mem <= i_reg_LUT_data[4];
-    else if(bank_index==4'b0101)       lut_x_mem <= i_reg_LUT_data[5];
-    else if(bank_index==4'b0110)       lut_x_mem <= i_reg_LUT_data[6];
-    else if(bank_index==4'b0111)       lut_x_mem <= i_reg_LUT_data[7];
-    else if(bank_index==4'b1000)       lut_x_mem <= i_reg_LUT_data[8];
-    else if(bank_index==4'b1001)       lut_x_mem <= i_reg_LUT_data[9];
-    else if(bank_index==4'b1010)       lut_x_mem <= i_reg_LUT_data[10];
-    else if(bank_index==4'b1011)       lut_x_mem <= i_reg_LUT_data[11];
-    else if(bank_index==4'b1100)       lut_x_mem <= i_reg_LUT_data[12];
-    else if(bank_index==4'b1101)       lut_x_mem <= i_reg_LUT_data[13];
-    else if(bank_index==4'b1110)       lut_x_mem <= i_reg_LUT_data[14];
-    else if(bank_index==4'b1111)       lut_x_mem <= i_reg_LUT_data[15];
+// always@(posedge clk,  posedge rst )begin
+//   if(rst)                             lut_x_mem <= 'b0;
+//   else if(is_indirect&&is_register) begin
+//     if(bank_index==4'b0000)            lut_x_mem <= i_reg_LUT_data[0];
+//     else if(bank_index==4'b0001)       lut_x_mem <= i_reg_LUT_data[1];
+//     else if(bank_index==4'b0010)       lut_x_mem <= i_reg_LUT_data[2];
+//     else if(bank_index==4'b0011)       lut_x_mem <= i_reg_LUT_data[3];
+//     else if(bank_index==4'b0100)       lut_x_mem <= i_reg_LUT_data[4];
+//     else if(bank_index==4'b0101)       lut_x_mem <= i_reg_LUT_data[5];
+//     else if(bank_index==4'b0110)       lut_x_mem <= i_reg_LUT_data[6];
+//     else if(bank_index==4'b0111)       lut_x_mem <= i_reg_LUT_data[7];
+//     else if(bank_index==4'b1000)       lut_x_mem <= i_reg_LUT_data[8];
+//     else if(bank_index==4'b1001)       lut_x_mem <= i_reg_LUT_data[9];
+//     else if(bank_index==4'b1010)       lut_x_mem <= i_reg_LUT_data[10];
+//     else if(bank_index==4'b1011)       lut_x_mem <= i_reg_LUT_data[11];
+//     else if(bank_index==4'b1100)       lut_x_mem <= i_reg_LUT_data[12];
+//     else if(bank_index==4'b1101)       lut_x_mem <= i_reg_LUT_data[13];
+//     else if(bank_index==4'b1110)       lut_x_mem <= i_reg_LUT_data[14];
+//     else if(bank_index==4'b1111)       lut_x_mem <= i_reg_LUT_data[15];
+//   end
+//   else                                lut_x_mem <='b0;
+// end
+
+// reg [31:0] current_desc_addr;
+// wire       is_start;
+//   assign is_start = acc_index
+
+
+always@(*)begin
+  if(is_indirect&&is_register) begin
+    if(bank_index==4'b0000)            lut_x_mem = i_reg_LUT_data[0];
+    else if(bank_index==4'b0001)       lut_x_mem = i_reg_LUT_data[1];
+    else if(bank_index==4'b0010)       lut_x_mem = i_reg_LUT_data[2];
+    else if(bank_index==4'b0011)       lut_x_mem = i_reg_LUT_data[3];
+    else if(bank_index==4'b0100)       lut_x_mem = i_reg_LUT_data[4];
+    else if(bank_index==4'b0101)       lut_x_mem = i_reg_LUT_data[5];
+    else if(bank_index==4'b0110)       lut_x_mem = i_reg_LUT_data[6];
+    else if(bank_index==4'b0111)       lut_x_mem = i_reg_LUT_data[7];
+    else if(bank_index==4'b1000)       lut_x_mem = i_reg_LUT_data[8];
+    else if(bank_index==4'b1001)       lut_x_mem = i_reg_LUT_data[9];
+    else if(bank_index==4'b1010)       lut_x_mem = i_reg_LUT_data[10];
+    else if(bank_index==4'b1011)       lut_x_mem = i_reg_LUT_data[11];
+    else if(bank_index==4'b1100)       lut_x_mem = i_reg_LUT_data[12];
+    else if(bank_index==4'b1101)       lut_x_mem = i_reg_LUT_data[13];
+    else if(bank_index==4'b1110)       lut_x_mem = i_reg_LUT_data[14];
+    else if(bank_index==4'b1111)       lut_x_mem = i_reg_LUT_data[15];
   end
-  else                                lut_x_mem <='b0;
+  else                                  lut_x_mem ='b0;
 end
+
 
 reg [11:0] lut_offset_in;
 always @(*) begin
