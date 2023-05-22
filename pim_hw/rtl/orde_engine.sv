@@ -87,6 +87,7 @@ module ordr_engine #(
     input [31:0] i_args_reg_B,
     input [31:0] i_args_reg_C,
     input [255:0] i_args_reg_LUT_x[15:0],
+    input logic  i_HPC_clear,
     `endif
   output trx_t                            orde_axbr_pkt
   `endif  
@@ -385,6 +386,7 @@ module ordr_engine #(
     .i_reg_B_data(i_args_reg_B),
     .i_reg_C_data(i_args_reg_C),
     .i_reg_LUT_data(i_args_reg_LUT_x),
+    .i_HPC_clear(i_HPC_clear),
     `endif
     .buffer_data_mem_out(buffer_data_mem_out));
 

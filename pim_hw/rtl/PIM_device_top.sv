@@ -1279,7 +1279,7 @@ wire [255:0] data_burst;
 assign data_burst = DRAM_data;
 
 reg [255:0] data_burst_r;
-(* keep = "true", mark_debug = "true" *)reg [255:0] data_burst_rr;
+reg [255:0] data_burst_rr;
 
 always @(posedge clk or negedge rst_x) begin
   if (~rst_x) begin
@@ -1467,7 +1467,7 @@ wire [63:0] w_acc_offset_vec;
                              data_burst_rr[(16*1-1)-12:(16*0)]
                            };
 
-(* keep = "true", mark_debug = "true" *)reg [63:0] acc_offset_vec;
+reg [63:0] acc_offset_vec;
 always @(posedge clk or negedge rst_x) begin
   if (~rst_x)               acc_offset_vec <='b0;
   else if(acc_rst)          acc_offset_vec <='b0;
@@ -1489,8 +1489,8 @@ end
 wire [255:0] w_lut_data_in;
   assign w_lut_data_in = (PIM_vecB_read_burst && bank_enable)? data_burst_rr:'b0;
 
-(* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_result;
-(* keep = "true", mark_debug = "true" *)wire [15:0] w_lut_acc_enable_sig;
+wire [15:0] w_lut_result;
+wire [15:0] w_lut_acc_enable_sig;
 
 PIM_lut_comp U0_PIM_LUT_COMPUTE(
                       .clk                 (clk),
@@ -1504,7 +1504,7 @@ PIM_lut_comp U0_PIM_LUT_COMPUTE(
                       .o_lut_result_enable (w_lut_acc_enable_sig)
 );
 
-(* keep = "true", mark_debug = "true" *)wire [15:0] acc_lut_update;
+wire [15:0] acc_lut_update;
 
 generate
   for(i=0;i<16;i=i+1) begin : ACC_LUT
@@ -1627,11 +1627,11 @@ wire [255:0] PIM_LUT_result;
                             vACC[0][15:0]                                                                                                                
   };
 
-(* keep = "true", mark_debug = "true" *)reg [255:0] debug_PIM_LUT_result;
-always @(posedge clk or negedge rst_x) begin
-  if (~rst_x) debug_PIM_LUT_result <=  'b0;
-  else        debug_PIM_LUT_result <=  PIM_LUT_result;
-end
+// (* keep = "true", mark_debug = "true" *)reg [255:0] debug_PIM_LUT_result;
+// always @(posedge clk or negedge rst_x) begin
+//   if (~rst_x) debug_PIM_LUT_result <=  'b0;
+//   else        debug_PIM_LUT_result <=  PIM_LUT_result;
+// end
 `endif
 
 

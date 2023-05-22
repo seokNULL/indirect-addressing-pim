@@ -63,6 +63,7 @@ module axi_bridge (
   output  logic [31:0] o_args_reg_B,
   output  logic [31:0] o_args_reg_C,
   output  logic [255:0] o_args_reg_LUT_x[15:0],
+  output logic  o_HPC_clear,
   `endif
 
   output logic axbr_orde_rdy,                       // AXI-DMA Bridge ready
@@ -126,6 +127,7 @@ module axi_bridge (
   assign  o_args_reg_B = w_args_reg_B;
   assign  o_args_reg_C = w_args_reg_C;
   assign  o_args_reg_LUT_x = w_args_LUT_x;
+  assign  o_HPC_clear = w_HPC_clear;
   `endif
   // =============================== Read Address Channel ==============================
 

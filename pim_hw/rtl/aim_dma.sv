@@ -138,6 +138,7 @@ module aim_dma (
   logic [31:0] o_args_reg_B;
   logic [31:0] o_args_reg_C;
   logic [255:0] o_args_reg_LUT_x[15:0];
+  logic         o_HPC_clear;
 
 `endif
   // =================================== AXI Bridge ====================================
@@ -199,6 +200,7 @@ module aim_dma (
       .o_args_reg_B,
       .o_args_reg_C,
       .o_args_reg_LUT_x,
+      .o_HPC_clear,
     `endif
     .axbr_orde_rdy,
     .orde_axbr_pkt_valid,
@@ -358,6 +360,7 @@ module aim_dma (
           .i_args_reg_B(o_args_reg_B),
           .i_args_reg_C(o_args_reg_C),
           .i_args_reg_LUT_x(o_args_reg_LUT_x),
+          .i_HPC_clear(o_HPC_clear),
           `endif
         .orde_axbr_pkt
         `endif                   

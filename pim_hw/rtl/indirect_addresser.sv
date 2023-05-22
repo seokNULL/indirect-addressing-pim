@@ -50,13 +50,13 @@ end
 //Generation valid signal for indirect addressing calculation
 
 // Added logic for generate indirect address
-(* keep = "true", mark_debug = "true" *) wire req_MM_args_A;
-(* keep = "true", mark_debug = "true" *) wire req_MM_args_B;
-(* keep = "true", mark_debug = "true" *) wire req_MM_args_C;
+wire req_MM_args_A;
+wire req_MM_args_B;
+wire req_MM_args_C;
 
-(* keep = "true", mark_debug = "true" *) reg req_MM_args_A_r;
-(* keep = "true", mark_debug = "true" *) reg req_MM_args_B_r;
-(* keep = "true", mark_debug = "true" *) reg req_MM_args_C_r;
+reg req_MM_args_A_r;
+reg req_MM_args_B_r;
+reg req_MM_args_C_r;
 
     assign req_MM_args_A = ((i_addr[31:0] == MM_INDIRECT_ARGS_A) && i_write_en) ? 1'b1: 1'b0;
     assign req_MM_args_B = ((i_addr[31:0] == MM_INDIRECT_ARGS_B) && i_write_en) ? 1'b1: 1'b0;
@@ -77,9 +77,9 @@ end
 
 
 
-(* keep = "true", mark_debug = "true" *)reg [31:0] args_reg_A;
-(* keep = "true", mark_debug = "true" *)reg [31:0] args_reg_B;
-(* keep = "true", mark_debug = "true" *)reg [31:0] args_reg_C;
+reg [31:0] args_reg_A;
+reg [31:0] args_reg_B;
+reg [31:0] args_reg_C;
 
 always @(posedge clk or negedge rst_x) begin
     if(~rst_x) begin
@@ -110,12 +110,12 @@ wire [1:0] req_bk;
     assign req_bg = i_addr[8:7];
     assign req_bk = i_addr[6:5];
 
-(* keep = "true", mark_debug = "true" *)wire req_MM_LUT_X;
+wire req_MM_LUT_X;
 assign req_MM_LUT_X = ((i_addr[31:9] == MM_INDIRECT_ARGS_LUT_X) && i_write_en) ? 1'b1: 1'b0;
 
 reg  [16-1:0] lut_bank_access;
 wire [16-1:0] lut_wr_cmd;
-(* keep = "true", mark_debug = "true" *)reg  [16-1:0] lut_wr_cmd_r;
+reg  [16-1:0] lut_wr_cmd_r;
 always@(*) begin
   case({req_bg,req_bk}) // synopsys parallel_case full_case
       4'b0000 : lut_bank_access = 16'b0000000000000001;
@@ -159,19 +159,19 @@ generate
 endgenerate
 
 
-(* keep = "true", mark_debug = "true" *)reg [255:0]  debug_bank0_x;
-(* keep = "true", mark_debug = "true" *)reg [255:0]  debug_bank15_x;
-always @(posedge clk or negedge rst_x) begin
-    if(~rst_x)    begin
-                                           debug_bank0_x    <='b0;
-                                           debug_bank15_x   <='b0;
-    end
-    else  begin
-                                           debug_bank0_x    <= buffer_lut_x_mem[0];
-                                           debug_bank15_x   <= buffer_lut_x_mem[15];
-    end
+// (* keep = "true", mark_debug = "true" *)reg [255:0]  debug_bank0_x;
+// (* keep = "true", mark_debug = "true" *)reg [255:0]  debug_bank15_x;
+// always @(posedge clk or negedge rst_x) begin
+//     if(~rst_x)    begin
+//                                            debug_bank0_x    <='b0;
+//                                            debug_bank15_x   <='b0;
+//     end
+//     else  begin
+//                                            debug_bank0_x    <= buffer_lut_x_mem[0];
+//                                            debug_bank15_x   <= buffer_lut_x_mem[15];
+//     end
 
-end
+// end
 
 
 //Output signal generation
