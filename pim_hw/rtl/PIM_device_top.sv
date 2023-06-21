@@ -406,7 +406,7 @@ generate
     always @(posedge clk or negedge rst_x) begin
       if (~rst_x) begin
                                                                           PIM_SRC_ADDR_from_desc_reg[i] <= 'b0;
-                                                                         PIM_DST_ADDR_from_desc_reg[i] <= 'b0;
+                                                                          PIM_DST_ADDR_from_desc_reg[i] <= 'b0;
                                                                           PIM_SIZE_from_desc_reg[i]     <= 'b0;
                                                                           PIM_INFO_from_desc_reg[i]     <= 'b0;
       end
@@ -692,12 +692,14 @@ wire is_vecA_rd_broadcast = is_vecA_rd_broadcast_config;
 wire is_vecB_rd_broadcast = is_vecB_rd_broadcast_config;
 
 `ifdef SUPPORT_LUT_DATAPATH
-wire [3:0] bank_idx_from_config;
-  assign bank_idx_from_config = bank_config_reg[27:24];
-reg [15:0] lut_target_bank_enable;
+(* keep = "true", mark_debug = "true" *)wire [3:0] bank_idx_from_config;
+  assign bank_idx_from_config  = bank_config_reg[24:21];
+
+(* keep = "true", mark_debug = "true" *)reg [15:0] lut_target_bank_enable;
 always@(*) begin
   case({bank_idx_from_config}) // synopsys parallel_case full_case
-      4'b0000 : lut_target_bank_enable = 16'b0000000000000001;
+  // case({req_bg,req_bk}) // synopsys parallel_case full_case
+      4'b0000 : lut_target_bank_enable = 16'b0000000000000001; //Bank0
       4'b0001 : lut_target_bank_enable = 16'b0000000000000010;
       4'b0010 : lut_target_bank_enable = 16'b0000000000000100;
       4'b0011 : lut_target_bank_enable = 16'b0000000000001000;
@@ -983,8 +985,8 @@ genvar i,j;
 
 ///DECODING///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  // wire is_vecA_rd_broadcast_config = bank_config_reg[15];
-  // wire is_vecB_rd_broadcast_config = bank_config_reg[16];
+  // wire is_vecA_rd_broadcast_config = bank_config_reg[15]; //bit-location 19
+  // wire is_vecB_rd_broadcast_config = bank_config_reg[16]; //bit-location 20
 
 /*
   PIM Opcode Decode
@@ -993,10 +995,13 @@ genvar i,j;
   * bank_config_reg[8:5]   = MAC, MUL, SUB, ADD
   * bank_config_reg[10:9]  = Which read enable signal is starting computation (A/B)
 
-  * bank_config_reg[11]    = Enable LUT datapath
-  * bank_config_reg[23:20] = Index of LUT target's acc
-
   * bank_config_reg[16:15] = Enable all-bank broadcasting switch (Decoupled PIM)
+
+  * bank_config_reg[11]    = Enable LUT datapath
+  * bank_config_reg[20:17] = Index of LUT target's acc
+  * bank_config_reg[24:21] = Index of LUT target's bank
+
+  
 */
 
 //pipe 0
@@ -1022,7 +1027,7 @@ wire is_vecB_start_config        = bank_config_reg[10];
 
 `ifdef SUPPORT_LUT_DATAPATH
 (* keep = "true", mark_debug = "true" *)wire is_LUT_ops_config           = bank_config_reg[11];
-(* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[23:20];
+(* keep = "true", mark_debug = "true" *)wire [3:0] LUT_acc_index         = bank_config_reg[20:17];
 // (* keep = "true", mark_debug = "true" *)wire [3:0] LUT_bank_index        = bank_config_reg[27:24];
 `endif
 

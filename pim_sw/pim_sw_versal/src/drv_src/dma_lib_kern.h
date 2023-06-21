@@ -111,6 +111,13 @@
 
 #define CONF_OFFSET_PROF_START 0x8000
 #define CONF_OFFSET_PROF_CLR   0x9000
+#define CONF_OFFSET_HPC_CLR    0x5000
+
+#define CONF_OFFSET_ARGS_MM_A   0x1000
+#define CONF_OFFSET_ARGS_MM_B   0x2000
+#define CONF_OFFSET_ARGS_MM_C   0x3000
+
+#define CONF_OFFSET_ARGS_MM_LUT 0x00008000
 
 #ifdef __x86_64__
 #define CPY_CHUNK_SIZE 0x100000 /* In x86 platform, if the size of temporal buffer is too large, it is not allocated */
@@ -140,14 +147,14 @@
 #endif
 
 #ifdef PERF_TIME
-    #define PERF_START(start) ktime_get_ts(&start);
+    #define PERF_START(start) ktime_get_ts64(&start);
 #else
     #define PERF_START(start)
 #endif
 
 #ifdef PERF_TIME
     #define PERF_END(start, end, time) \
-        ktime_get_ts(&end); \
+        ktime_get_ts64(&end); \
         time = time + BILLION * (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec);
 
     #define ADD_VAR(var, cnt) \

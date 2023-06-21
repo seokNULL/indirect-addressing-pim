@@ -275,29 +275,30 @@ int main(int argc, char *argv[])
     union converter a;
     union converter b;
 
-    printf("Correctness check!\n\n");
-    printf("       HOST       |  ARM\n");
-    for(int i=0; i<dstC_size; i++){ 
-        a.f_val = dst_C_DRAM[i];
+    // printf("Correctness check!\n\n");
+    // printf("       HOST       |  ARM\n");
+    // for(int i=0; i<dstC_size; i++){ 
+    //     a.f_val = dst_C_DRAM[i];
 
-        #ifdef DUMP_BANK0_ONLY
-        if ((i%256)==0){ // Only Bank 0
-          for(int j=0; j<16; j++){
-            a.f_val = dst_C_DRAM[i+j];
-            printf("idx[%4d] 0x%x  |  ", i, a.u_val);
-            printf("0x%x ", PL_dstC_buf[i+j]);
-            printf("\n");
-          }
-        }
-        #else
-        printf("idx[%4d] 0x%x  |  ", i, a.u_val);
-        printf("0x%x ", PL_dstC_buf[i]);
-        printf("\n");
-        #endif
-        //if (i == 32) // Only Bank 0
-        //    break;        
-    }
-    printf("\n");
+    //     #ifdef DUMP_BANK0_ONLY
+    //     if ((i%256)==0){ // Only Bank 0
+    //       for(int j=0; j<16; j++){
+    //         a.f_val = dst_C_DRAM[i+j];
+    //         printf("idx[%4d] 0x%x  |  ", i, a.u_val);
+    //         printf("0x%x ", PL_dstC_buf[i+j]);
+    //         printf("\n");
+    //       }
+    //     }
+    //     #else
+    //     printf("idx[%4d] 0x%x  |  ", i, a.u_val);
+    //     printf("0x%x ", PL_dstC_buf[i]);
+    //     printf("\n");
+    //     #endif
+    //     //if (i == 32) // Only Bank 0
+    //     //    break;        
+    // }
+    // printf("\n");
+
     pim_free(PL_srcA_buf);
     pim_free(PL_srcB_buf);
     pim_free(PL_dstC_buf);

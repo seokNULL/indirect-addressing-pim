@@ -35,6 +35,24 @@
 #include "../../include/pim.h"
 #include "dma_lib_kern.h"
 
+// #include <asm/barrier.h>
+// #include <asm/delay.h>
+
+#ifdef PERF_TIME
+struct timespec64 start_dma_tx, end_dma_tx;
+uint64_t diff_dma_tx;
+static uint64_t tx_time = 0;
+
+struct timespec64 start_dma_init, end_dma_init;
+uint64_t diff_dma_init;
+static uint64_t dma_init_time = 0;
+
+struct timespec64 start_desc_copy, end_desc_copy;
+uint64_t diff_desc_copy;
+static uint64_t desc_copy_time = 0;
+
+#endif
+
 static DEFINE_MUTEX(dma_lock);
 
 #ifndef INTR_ENABLE
@@ -173,7 +191,7 @@ int dma_single_tx(u32 src_low, u32 src_high, u32 dst_low, u32 dst_high, u32 copy
     return SUCCESS;
 }
 
-int dma_sg_tx(u32 desc_idx, u32 last_desc)
+int __attribute__((optimize("O0")))dma_sg_tx(u32 desc_idx, u32 last_desc)
 {
     int ret;
 #ifdef INTR_ENABLE
@@ -271,9 +289,9 @@ int dma_sg_tx(u32 desc_idx, u32 last_desc)
     dma_ctrl_write(CDMA_REG_SR, CDMA_REG_SR_IOCIRQ);
     dma_ctrl_write(CDMA_CURDESC_PNTR_L, cdma_dev->desc_mem_base);
     dma_ctrl_write(CDMA_CURDESC_PNTR_H, HIGH_ADDR);
-    wmb();
     dma_ctrl_write(CDMA_TAILDESC_PNTR_L, last_desc-0x40);
     dma_ctrl_write(CDMA_TAILDESC_PNTR_H, HIGH_ADDR);
+    wmb();
     ret=wait_sg(desc_idx);
     return ret;
 #endif    
@@ -291,7 +309,17 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
     uint32_t *clr_signal;
     uint32_t *pim_signal;
 
-    clr_signal = (void *)cdma_dev->config_reg + 0x5000;
+    uint32_t *args_mm_A_signal;
+    uint32_t *args_mm_B_signal;
+    uint32_t *args_mm_C_signal;
+
+    uint32_t *args_mm_x_signal;
+
+    u64 A_pa, B_pa, C_pa;
+    u32 A_pa_lsb, B_pa_lsb, C_pa_lsb;
+    u32 lut_x;
+
+    clr_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_HPC_CLR;
     pim_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_AIM_WORKING;
     arg_ptr = (void __user *) arg;
     if (copy_from_user((void *)&pim_args, (void __user *)arg, sizeof(pim_args))) {
@@ -304,12 +332,28 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
     {
         case DMA_START:  /* Notify DMA start */
         {   
+            #ifdef PERF_TIME
+            dma_init_time    = 0;    
+            desc_copy_time   = 0;     
+            tx_time          = 0;
+            PERF_START(start_dma_init);
+            #endif
+
             /* Wait for DMA idle until loop count reaches zero or timeout */
             err = readl_poll_timeout((void *)(cdma_dev->dma_ctl_reg) + CDMA_REG_SR, val, (val & CDMA_REG_SR_IDLE), 0, CDMA_MAX_POLLING);
             if (err) {
                 printk(KERN_ERR " PL_DMA] DMA in used \n");
                 return -EIOCTL;
             }
+            #ifdef PERF_TIME
+            PERF_END(start_dma_init, end_dma_init, dma_init_time);
+            #endif
+
+
+            #ifdef PERF_TIME
+            PERF_START(start_desc_copy);
+            #endif
+
             /* 
              * Copy PISA-DMA instructions from system memory to descriptor memory 
              * pisa structure size is 64B (= descriptor granularity)
@@ -318,27 +362,33 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
                 printk(KERN_ERR " PL_DMA] ERROR copy_from_user descriptor");
                 return -EIOCTL;
             }
-            //check descriptor
-            uint32_t *tmp = (uint32_t *)cdma_dev->desc_pim;  //0080_0000  //0000_0000
-            int k;
-            for (k = 0; k < 16*6; k++) {
-                if(k%16==0) printk("%d descriptor chunk\n", k);
-                printk("desc_idx[%d]=%x\n", k, tmp[k]);
-            }   
+            #ifdef PERF_TIME
+            PERF_END(start_desc_copy, end_desc_copy, desc_copy_time);
+            #endif
 
-            //#define CONF_OFFSET_HPC_CLR 0x5000
-            //#define CONF_OFFSET_AIM_WORKING 0x4000
-            
+            #ifdef PERF_TIME
+            PERF_START(start_dma_tx);
+            #endif
+
             clr_signal[0] = 0;
             pim_signal[0] = 0;
-
             /* Start DMA transaction */
+            // printk("desc_idx: %d\n",  pim_args.desc_idx, );
+            // printk("desc_last: %llx\n", pim_args.desc_last);
+
             if (dma_sg_tx(pim_args.desc_idx, pim_args.desc_last) < 0) {
                 printk(KERN_ERR " PL_DMA] Error transactions");
                 return -EDMA_TX;
             }
             clr_signal[0] = 0;
             pim_signal[0] = 0;
+            
+            #ifdef PERF_TIME
+            PERF_END(start_dma_tx, end_dma_tx, tx_time);
+            printk("PROF] DMA WAIT: %llu ns\n", (long long unsigned int) dma_init_time);            
+            printk("PROF] DESC COPY: %llu ns\n", (long long unsigned int) desc_copy_time);            
+            printk("PROF] DMA TX: %llu ns\n", (long long unsigned int) tx_time);            
+            #endif
 
             break;   
         }
@@ -478,6 +528,82 @@ long pl_dma_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 #endif
             break;
         }
+        case INDIRECT_CODE_COPY:
+        {
+            /* 
+             * Copy PISA-DMA instructions from system memory to descriptor memory 
+             * pisa structure size is 64B (= descriptor granularity)
+             */
+            if (copy_from_user((void *)cdma_dev->desc_pim, (void *__user)pim_args.desc_host, (pim_args.desc_idx + 1) * 0x40)) {
+                printk(KERN_ERR " PL_DMA] ERROR copy_from_user descriptor");
+                return -EIOCTL;
+            }
+            break;
+        }
+
+        case INDIRECT_DMA_START:
+        {
+            #ifdef PERF_TIME
+            dma_init_time    = 0;    
+            tx_time          = 0;
+            PERF_START(start_dma_init);
+            #endif
+
+        
+            /* Wait for DMA idle until loop count reaches zero or timeout */
+            err = readl_poll_timeout((void *)(cdma_dev->dma_ctl_reg) + CDMA_REG_SR, val, (val & CDMA_REG_SR_IDLE), 0, CDMA_MAX_POLLING);
+            if (err) {
+                printk(KERN_ERR " PL_DMA] DMA in used \n");
+                return -EIOCTL;
+            }
+            #ifdef PERF_TIME
+            PERF_END(start_dma_init, end_dma_init, dma_init_time);
+            #endif
+
+            #ifdef PERF_TIME
+            PERF_START(start_dma_tx);
+            #endif
+            args_mm_A_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_ARGS_MM_A;
+            args_mm_B_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_ARGS_MM_B;
+            args_mm_C_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_ARGS_MM_C;
+            args_mm_x_signal = (void *)cdma_dev->config_reg + CONF_OFFSET_ARGS_MM_LUT;
+
+            clr_signal[0] = 0;
+            pim_signal[0] = 0;
+
+            A_pa = va_to_pa(pim_args.srcA_va);
+            B_pa = va_to_pa(pim_args.srcB_va);
+            C_pa = va_to_pa(pim_args.dstC_va);
+            
+            A_pa_lsb = (uint32_t)(A_pa);
+            B_pa_lsb = (uint32_t)(B_pa);
+            C_pa_lsb = (uint32_t)(C_pa);
+
+            lut_x    = (uint32_t)(pim_args.lut_x_init);
+            // printk("LUT X[0]: %d\n", lut_x);            
+
+            args_mm_A_signal[0] =  A_pa_lsb;
+            args_mm_B_signal[0] =  B_pa_lsb;
+            args_mm_C_signal[0] =  C_pa_lsb;
+            args_mm_x_signal[0] =  lut_x;
+
+            /* Start DMA transaction */
+            if (dma_sg_tx(pim_args.desc_idx, pim_args.desc_last) < 0) {
+                printk(KERN_ERR " PL_DMA] Error transactions");
+                return -EDMA_TX;
+            }
+            clr_signal[0] = 0;
+            pim_signal[0] = 0;
+        
+         #ifdef PERF_TIME
+            PERF_END(start_dma_tx, end_dma_tx, tx_time);
+            printk("PROF] DMA WAIT: %llu ns\n", (long long unsigned int) dma_init_time);            
+            // printk("PROF] DESC COPY: %llu ns\n", (long long unsigned int) desc_copy_time);            
+            printk("PROF] DMA TX: %llu ns\n", (long long unsigned int) tx_time);            
+        #endif            
+            break;
+        }
+
         default :
             printk(KERN_ERR "Invalid IOCTL:%d\n", cmd);
             break;

@@ -29,7 +29,7 @@ void close_pim_drv(void) {
 
 int init_pim_drv(void) {
     if (dma_fd == 0) {
-        pim_isa = (pim_isa_t *)malloc(sizeof(pim_isa_t) * 2048); /* 2048 is temporal maximum descriptor */
+        pim_isa = (pim_isa_t *)malloc(sizeof(pim_isa_t) * 1024*1024); /* 2048 is temporal maximum descriptor */
         dma_fd = open(PL_DMA_DRV, O_RDWR, 0);
         if (dma_fd < 0) {
             printf("\033[0;31m Couldn't open device: %s (%d) \033[0m\n", PL_DMA_DRV, dma_fd);
@@ -77,3 +77,33 @@ int pim_exec(pim_args *pim_args) {
 		return -1;
 	}
 }
+
+int indirect_code_load(pim_args *pim_args) {
+    if (dma_fd != 0) {
+        pim_args->desc_host = pim_isa;
+    	PIM_MATH_LOG("%s: desc_host:%p, num_desc:%d, last_desc:%x \n", 
+    		__func__, pim_args->desc_host, pim_args->desc_idx, pim_args->desc_last);
+		if (ioctl(dma_fd, INDIRECT_CODE_COPY, pim_args) < 0) {
+            printf("\033[0;31m Copying code to PIM code region failed! \033[0m\n");
+			return -1;
+        }
+		return 0;
+		
+	} else {
+		printf("\033[0;31m DMA driver not loaded! \033[0m");
+		return -1;
+	}
+}
+
+int pim_exec_indirect(pim_args *pim_args) {
+		
+	PIM_MATH_LOG("%s: desc_host:%p, num_desc:%d, last_desc:%x \n", 
+    		__func__, pim_args->desc_host, pim_args->desc_idx, pim_args->desc_last);
+
+	if (ioctl(dma_fd, INDIRECT_DMA_START, pim_args) < 0) {
+        printf("\033[0;31m DMA transaction failed! \033[0m\n");
+		return -1;
+    }
+	return 0;
+}
+

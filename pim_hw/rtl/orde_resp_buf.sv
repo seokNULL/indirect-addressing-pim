@@ -21,6 +21,7 @@ module orde_resp_buf #(
     input logic [31:0] i_reg_C_data,  
     input logic [255:0] i_reg_LUT_data[15:0],
     input logic        i_HPC_clear,
+    // input logic        i_orde_axbr_pkt_valid,
 
   `endif
   output logic [DATA_WIDTH-1:0]               buffer_data_mem_out
@@ -79,11 +80,18 @@ module orde_resp_buf #(
   wire [31:0] bus_desc_pim_opcode;
 
   wire [255:0] w_buffer_data_mem;
-    assign w_buffer_data_mem = buffer_data_mem[data_pop_ptr_next];
-    assign bus_desc_addr_l = w_buffer_data_mem[32*1-1: 32*0];
-    assign bus_desc_addr_h = w_buffer_data_mem[32*2-1: 32*1];
-    assign bus_desc_pim_opcode = w_buffer_data_mem[32*8-1:32*7];      
+    // assign w_buffer_data_mem = buffer_data_mem[data_pop_ptr_next];
+    assign w_buffer_data_mem = icnt_orde_pkt.data;
 
+// (* keep = "true", mark_debug = "true" *)reg [255:0] w_buffer_data_mem_r;
+// always@(posedge clk,  posedge rst )begin
+//   if(rst)               w_buffer_data_mem_r <= 'b0;
+//   else                  w_buffer_data_mem_r <= w_buffer_data_mem;
+// end
+
+  assign bus_desc_addr_l = w_buffer_data_mem[32*1-1: 32*0];
+  assign bus_desc_addr_h = w_buffer_data_mem[32*2-1: 32*1];
+  assign bus_desc_pim_opcode = w_buffer_data_mem[32*8-1:32*7];    
 
 // /* Additional logic for preventing DMA prefetch
 reg [27:0] current_desc_addr;
@@ -93,98 +101,93 @@ wire is_read_desc;
   assign is_read_desc = (bus_desc_addr_h[31:16] == 16'h0000) && 
                           (bus_desc_addr_h[15:0]  == 16'h0004) && 
                           ((bus_desc_addr_l[5:0]  == 6'b000011)||(bus_desc_addr_l[5:0]   == 6'b000101)) &&
-                          (bus_desc_addr_l[23:20] ==4'b1???) &&
+                          (bus_desc_addr_l[23:20] ==  'b1???) &&
                           (bus_desc_addr_l[31:24] ==8'h00);
 wire is_next_desc_enable;
-  assign is_next_desc_enable = (is_read_desc && (bus_desc_addr_l[31:4]==next_desc_addr))?1'b1:1'b0;
-always @(posedge clk, posedge rst)begin
-  if(rst | i_HPC_clear)begin
-                          current_desc_addr              <=28'h008_0000;
-                          next_desc_addr                 <=28'h008_0004;
-  end
-  else if(is_next_desc_enable)begin
-                          current_desc_addr              <= current_desc_addr + 28'h000_0004; 
-                          next_desc_addr                 <= next_desc_addr + 28'h000_0004;
-  end
-end
-wire is_current_desc_on_way;
-  assign is_current_desc_on_way = (is_read_desc&&(bus_desc_addr_l[31:4]==current_desc_addr))?1'b1:1'b0;
+  // assign is_next_desc_enable = (is_read_desc && (bus_desc_addr_l[31:4]==next_desc_addr))?1'b1:1'b0;
+  assign is_next_desc_enable = is_read_desc;
 
+// always @(posedge clk, posedge rst)begin
+//   if(rst | i_HPC_clear)begin
+//                           current_desc_addr              <=28'h008_0000;
+//                           next_desc_addr                 <=28'h008_0004;
+//   end
+//   else if(is_next_desc_enable)begin
+//                           current_desc_addr              <= current_desc_addr + 28'h000_0004; 
+//                           next_desc_addr                 <= next_desc_addr + 28'h000_0004;
+//   end
+// end
 
+/*FPGA latching...
+descr_enable needs to be set 1 between is_next_desc ~ data_pop, timing margin can be existed*/
+
+// reg descr_enable;
+// always @(*) begin
+  // if(rst)                             descr_enable <=1'b0;
+  // if(is_next_desc_enable)        descr_enable <=1'b1;
+  // else if(descr_enable && data_pop)   descr_enable <=1'b0;
+  // else if(descr_enable && !data_pop)  descr_enable <=1'b1;  
+  // else                                descr_enable <=1'b0;
+// end
 wire descr_enable;
-    assign descr_enable = ((is_current_desc_on_way | is_next_desc_enable) && 
-                            is_read_desc);
+  assign descr_enable = is_next_desc_enable;
+// reg descr_enable_r;
+// always @(posedge clk, posedge rst)begin
+//   if(rst)                 descr_enable_r <='b0; 
+//   else                    descr_enable_r <=descr_enable;
+// end
 
-// reg is_read_desc_r;
-// reg is_next_desc_enable_r;
-(* keep = "true", mark_debug = "true" *)reg descr_enable_r;
-
-always @(posedge clk, posedge rst)begin
-  if(rst)          begin
-                                // is_read_desc_r         <='b0; 
-                                // is_next_desc_enable_r  <='b0;        
-                                descr_enable_r         <='b0;     
-  end
-  else             begin
-                                // is_read_desc_r         <=is_read_desc; 
-                                // is_next_desc_enable_r  <=is_next_desc_enable;        
-                                descr_enable_r         <=descr_enable;     
-  end  
-end
-
-// wire descr_enable;
-//     assign descr_enable = //(pkt_insert_valid) && 
-//                           (bus_desc_addr_h[31:16] == 16'h0000) && 
-//                           (bus_desc_addr_h[15:0]  == 16'h0004) && 
-//                           ((bus_desc_addr_l[5:0]  == 6'b000011)||(bus_desc_addr_l[5:0]   == 6'b000101)) &&
-//                           (bus_desc_addr_l[23:20] ==4'b1???) &&
-//                           (bus_desc_addr_l[31:24] ==8'h00);
+// (* keep = "true", mark_debug = "true" *)reg descr_enable_r;
 
 
 wire is_desc_A;
 wire is_desc_B;
 wire is_desc_C;
-    // assign is_desc_A = descr_enable && bus_desc_pim_opcode[1];
-    // assign is_desc_B = descr_enable && bus_desc_pim_opcode[2];
-    // assign is_desc_C = descr_enable && bus_desc_pim_opcode[3];
-    assign is_desc_A = descr_enable_r && bus_desc_pim_opcode[1];
-    assign is_desc_B = descr_enable_r && bus_desc_pim_opcode[2];
-    assign is_desc_C = descr_enable_r && bus_desc_pim_opcode[3];
+    assign is_desc_A = descr_enable && bus_desc_pim_opcode[1];
+    assign is_desc_B = descr_enable && bus_desc_pim_opcode[2];
+    assign is_desc_C = descr_enable && bus_desc_pim_opcode[3];
+    // assign is_desc_A = descr_enable_r && bus_desc_pim_opcode[1];
+    // assign is_desc_B = descr_enable_r && bus_desc_pim_opcode[2];
+    // assign is_desc_C = descr_enable_r && bus_desc_pim_opcode[3];
 wire is_indirect;
 wire is_immediate;
 wire is_register;
-    // assign is_indirect = descr_enable && w_buffer_data_mem[0];
-    // assign is_immediate = descr_enable && w_buffer_data_mem[1];
-    // assign is_register = descr_enable && w_buffer_data_mem[2];
-    assign is_indirect = descr_enable_r && w_buffer_data_mem[0];
-    assign is_immediate = descr_enable_r && w_buffer_data_mem[1];
-    assign is_register = descr_enable_r && w_buffer_data_mem[2];
+    assign is_indirect = descr_enable && bus_desc_addr_l[0];
+    assign is_immediate = descr_enable && bus_desc_addr_l[1];
+    assign is_register = descr_enable && bus_desc_addr_l[2];
+    // assign is_indirect = descr_enable_r && bus_desc_addr_l[0];
+    // assign is_immediate = descr_enable_r && bus_desc_addr_l[1];
+    // assign is_register = descr_enable_r && bus_desc_addr_l[2];
 
 `ifdef SUPPORT_LUT_DATAPATH
 reg  [255:0] lut_x_mem;
 wire [3:0]   acc_index;
 wire [3:0]   bank_index;
-  assign acc_index =  bus_desc_pim_opcode[27:24];
-  assign bank_index = bus_desc_pim_opcode[31:28];
+  assign acc_index =  bus_desc_pim_opcode[24:21];
+  assign bank_index = bus_desc_pim_opcode[28:25];
 
 
 always@(*)begin
   if(is_indirect&&is_register) begin
-    if(bank_index==4'b0000)            lut_x_mem = i_reg_LUT_data[0];
-    else if(bank_index==4'b0001)       lut_x_mem = i_reg_LUT_data[1];
-    else if(bank_index==4'b0010)       lut_x_mem = i_reg_LUT_data[2];
-    else if(bank_index==4'b0011)       lut_x_mem = i_reg_LUT_data[3];
-    else if(bank_index==4'b0100)       lut_x_mem = i_reg_LUT_data[4];
+    //Bank group 0~3, Bank 0
+    if     (bank_index==4'b0000)       lut_x_mem = i_reg_LUT_data[0];
+    else if(bank_index==4'b0100)       lut_x_mem = i_reg_LUT_data[1];
+    else if(bank_index==4'b1000)       lut_x_mem = i_reg_LUT_data[2];
+    else if(bank_index==4'b1100)       lut_x_mem = i_reg_LUT_data[3];
+    //Bank group 0~3, Bank 1
+    else if(bank_index==4'b0001)       lut_x_mem = i_reg_LUT_data[4];
     else if(bank_index==4'b0101)       lut_x_mem = i_reg_LUT_data[5];
-    else if(bank_index==4'b0110)       lut_x_mem = i_reg_LUT_data[6];
-    else if(bank_index==4'b0111)       lut_x_mem = i_reg_LUT_data[7];
-    else if(bank_index==4'b1000)       lut_x_mem = i_reg_LUT_data[8];
-    else if(bank_index==4'b1001)       lut_x_mem = i_reg_LUT_data[9];
+    else if(bank_index==4'b1001)       lut_x_mem = i_reg_LUT_data[6];
+    else if(bank_index==4'b1101)       lut_x_mem = i_reg_LUT_data[7];
+    //Bank group 0~3, Bank 2
+    else if(bank_index==4'b0010)       lut_x_mem = i_reg_LUT_data[8];
+    else if(bank_index==4'b0110)       lut_x_mem = i_reg_LUT_data[9];
     else if(bank_index==4'b1010)       lut_x_mem = i_reg_LUT_data[10];
-    else if(bank_index==4'b1011)       lut_x_mem = i_reg_LUT_data[11];
-    else if(bank_index==4'b1100)       lut_x_mem = i_reg_LUT_data[12];
-    else if(bank_index==4'b1101)       lut_x_mem = i_reg_LUT_data[13];
-    else if(bank_index==4'b1110)       lut_x_mem = i_reg_LUT_data[14];
+    else if(bank_index==4'b1110)       lut_x_mem = i_reg_LUT_data[11];
+    //Bank group 0~3, Bank 3
+    else if(bank_index==4'b0011)       lut_x_mem = i_reg_LUT_data[12];
+    else if(bank_index==4'b0111)       lut_x_mem = i_reg_LUT_data[13];
+    else if(bank_index==4'b1011)       lut_x_mem = i_reg_LUT_data[14];
     else if(bank_index==4'b1111)       lut_x_mem = i_reg_LUT_data[15];
   end
   else                                  lut_x_mem ='b0;
@@ -242,24 +245,28 @@ wire [31:0] indirect_address;
   // assign indirect_address = is_indirect ? offset_in | base_in : 'b0;
   assign indirect_address = is_indirect ? (offset_in + base_in) : 'b0;
 
-wire [255:0] modified_buffer_data_mem;
+// wire [255:0] modified_buffer_data_mem;
 reg [255:0] tmp_indirect_data_mem;
-  
+reg [255:0] tmp_indirect_data_mem_r;
 always @(*) begin
   if(is_indirect) begin
     if(is_desc_A | is_desc_B)       tmp_indirect_data_mem = {w_buffer_data_mem[32*8-1:32*3], indirect_address, w_buffer_data_mem[32*2-1:32*0]};
     else if(is_desc_C)              tmp_indirect_data_mem = {w_buffer_data_mem[32*8-1:32*5], indirect_address, w_buffer_data_mem[32*4-1:32*0]};
   end                                   
-  else                              tmp_indirect_data_mem = 'b0;
+  else                              tmp_indirect_data_mem = icnt_orde_pkt.data;
 end
-  // assign modified_buffer_data_mem = descr_enable? tmp_indirect_data_mem: w_buffer_data_mem;
-  assign modified_buffer_data_mem = descr_enable_r? tmp_indirect_data_mem: w_buffer_data_mem;
 
-reg [255:0] modified_buffer_data_mem_r;//Timing Latch
-always@(posedge clk,  posedge rst )begin
-  if(rst)               modified_buffer_data_mem_r <= 'b0;
-  else                  modified_buffer_data_mem_r <= modified_buffer_data_mem;
-end
+// always @(posedge clk, posedge rst)begin
+//   if(rst)                 tmp_indirect_data_mem_r <='b0; 
+//   else                    tmp_indirect_data_mem_r <=tmp_indirect_data_mem;
+// end
+
+// reg pkt_insert_valid_r;//Timing Latch
+// always@(posedge clk,  posedge rst )begin
+//   if(rst)               pkt_insert_valid_r <= 'b0;
+//   else                  pkt_insert_valid_r <= pkt_insert_valid;
+// end
+
 `endif
 
 
@@ -267,22 +274,18 @@ end
       if(pkt_insert_valid) begin 
         pkt_insert_ptr                  <=  pkt_insert_ptr + 1;
         buffer_meta_mem[pkt_insert_ptr] <=  {icnt_orde_pkt_rd_type,icnt_orde_pkt_ch_addr,icnt_orde_pkt.bk_addr,icnt_orde_pkt.row_addr,icnt_orde_pkt.col_addr};
-        //buffer_meta_mem[pkt_insert_ptr] <=  {icnt_orde_pkt_ch_addr, icnt_orde_pkt.bk_addr,icnt_orde_pkt.row_addr,icnt_orde_pkt.col_addr};
-        buffer_data_mem[pkt_insert_ptr] <=  icnt_orde_pkt.data;
+        buffer_data_mem[pkt_insert_ptr] <=  tmp_indirect_data_mem;
+        // buffer_data_mem[pkt_insert_ptr] <=  icnt_orde_pkt.data;
       end
+      // if(pkt_insert_valid_r) begin 
+      //   buffer_data_mem[pkt_insert_ptr] <=  descr_enable ? tmp_indirect_data_mem :icnt_orde_pkt.data;
+      // end
       
       if(address_pop)                              buffer_meta_mem_out       <= buffer_meta_mem[address_pop_ptr];
       if(address_pop)                              buffer_meta_mem_out_valid <= buffer_meta_cnt > 0;
       else if(equal_pop_mem || equal_pre_pop_mem)  buffer_meta_mem_out_valid <= buffer_meta_mem_out_valid;
       else if(buffer_meta_mem_out_valid)           buffer_meta_mem_out_valid <= 0;
-
-      `ifdef SUPPORT_INDIRECT_ADDRESSING
-      // buffer_data_mem_out  <= descr_enable? modified_buffer_data_mem_r:w_buffer_data_mem;
-      buffer_data_mem_out  <= is_indirect? modified_buffer_data_mem_r:buffer_data_mem[data_pop_ptr_next];
-      // buffer_data_mem_out  <= buffer_data_mem[data_pop_ptr_next];
-      `else
       buffer_data_mem_out  <= buffer_data_mem[data_pop_ptr_next];
-      `endif
   end 
   
   assign orde_rdy = buffer_data_cnt < (NUM_BUFFERING - 2);
@@ -331,29 +334,24 @@ end
 (* keep = "true", mark_debug = "true" *)reg         debug_orde_is_indirect;
 (* keep = "true", mark_debug = "true" *)reg         debug_orde_is_immediate;
 (* keep = "true", mark_debug = "true" *)reg         debug_orde_is_register;
-// (* keep = "true", mark_debug = "true" *)reg  [255:0] debug_orde_lut_x_from_memory;
-// (* keep = "true", mark_debug = "true" *)reg [3:0]   debug_orde_lut_acc_index;
 (* keep = "true", mark_debug = "true" *)reg [31:0]   debug_orde_offset_in;
 (* keep = "true", mark_debug = "true" *)reg [31:0]   debug_orde_base_in;
 (* keep = "true", mark_debug = "true" *)reg [31:0]  debug_orde_indirect_address;
 (* keep = "true", mark_debug = "true" *)reg [255:0]  debug_orde_tmp_indirect_data_mem;
-// (* keep = "true", mark_debug = "true" *)reg [255:0]  debug_orde_modified_buffer_data_mem_r;//Timing Latch
+(* keep = "true", mark_debug = "true" *)reg [255:0]  debug_buffer_data_mem_out;
 
-
-// (* keep = "true", mark_debug = "true" *) reg  [255:0] debug_lut_x_mem;
-// (* keep = "true", mark_debug = "true" *) reg  [3:0]   debug_acc_index;
-// (* keep = "true", mark_debug = "true" *) reg  [3:0]   debug_bank_index;
-// (* keep = "true", mark_debug = "true" *) reg  [11:0]  debug_lut_offset_in;
-
-
-
-(* keep = "true", mark_debug = "true" *) reg [27:0] debug_current_desc_addr;
-(* keep = "true", mark_debug = "true" *) reg [27:0] debug_next_desc_addr;
-// (* keep = "true", mark_debug = "true" *) reg        debug_is_indirect_start;
+// (* keep = "true", mark_debug = "true" *) reg [27:0] debug_current_desc_addr;
+// (* keep = "true", mark_debug = "true" *) reg [27:0] debug_next_desc_addr;
 (* keep = "true", mark_debug = "true" *) reg        debug_is_next_desc_enable;
-// (* keep = "true", mark_debug = "true" *) reg        debug_desc_enable_test;
-(* keep = "true", mark_debug = "true" *) reg        debug_is_current_desc_on_way;
 (* keep = "true", mark_debug = "true" *) reg        debug_is_read_descr;
+
+(* keep = "true", mark_debug = "true" *) reg        debug_icnt_orde_pkt_valid;
+
+(* keep = "true", mark_debug = "true" *) reg        debug_data_pop;
+
+(* keep = "true", mark_debug = "true" *)reg         debug_pkt_insert_valid;
+(* keep = "true", mark_debug = "true" *)reg [$clog2(NUM_BUFFERING)-1:0] debug_pkt_insert_ptr;
+(* keep = "true", mark_debug = "true" *)reg [$clog2(NUM_BUFFERING)-1:0] debug_data_pop_ptr_next;
 always@(posedge clk,  posedge rst )begin
   if(rst) begin                 
                         debug_orde_descr_enable               <='b0;                       
@@ -368,20 +366,19 @@ always@(posedge clk,  posedge rst )begin
                         debug_orde_base_in                    <='b0;                  
                         debug_orde_indirect_address           <='b0;                 
                         debug_orde_tmp_indirect_data_mem      <='b0;                           
-                        // debug_orde_modified_buffer_data_mem_r <='b0; 
 
-                        // debug_lut_x_mem                       <='b0; 
-                        // debug_acc_index                       <='b0; 
-                        // debug_bank_index                      <='b0; 
-                        // debug_lut_offset_in                   <='b0; 
-
-                        debug_current_desc_addr               <='b0;
-                        debug_next_desc_addr                  <='b0; 
-                        // debug_is_indirect_start               <='b0;
+                        // debug_current_desc_addr               <='b0;
+                        // debug_next_desc_addr                  <='b0; 
                         debug_is_next_desc_enable             <='b0;
-                        // debug_desc_enable_test                <='b0;
-                        debug_is_current_desc_on_way          <='b0;
-                        debug_is_read_descr                   <='b0;                                                                        
+                        debug_is_read_descr                   <='b0;
+                        debug_icnt_orde_pkt_valid             <='b0;   
+                        debug_data_pop                        <='b0;
+
+                        debug_pkt_insert_valid                <='b0;     
+                        debug_pkt_insert_ptr                  <='b0;      
+                        debug_data_pop_ptr_next               <='b0;
+                        debug_buffer_data_mem_out             <='b0;
+
   end
   else begin
                         debug_orde_descr_enable               <= descr_enable;
@@ -396,20 +393,20 @@ always@(posedge clk,  posedge rst )begin
                         debug_orde_base_in                    <= base_in;
                         debug_orde_indirect_address           <= indirect_address;
                         debug_orde_tmp_indirect_data_mem      <= tmp_indirect_data_mem;
-                        // debug_orde_modified_buffer_data_mem_r <= modified_buffer_data_mem_r;
-                        
-                        // debug_lut_x_mem                       <=lut_x_mem; 
-                        // debug_acc_index                       <=acc_index; 
-                        // debug_bank_index                      <=bank_index; 
-                        // debug_lut_offset_in                   <=lut_offset_in;
 
-                        debug_current_desc_addr               <=current_desc_addr;
-                        debug_next_desc_addr                  <=next_desc_addr;
-                        // debug_is_indirect_start               <=is_indirect_start;
+
+                        // debug_current_desc_addr               <=current_desc_addr;
+                        // debug_next_desc_addr                  <=next_desc_addr;
                         debug_is_next_desc_enable             <=is_next_desc_enable;
-                        // debug_desc_enable_test                <=desc_enable_test;
-                        debug_is_current_desc_on_way          <=is_current_desc_on_way;
                         debug_is_read_descr                   <=is_read_desc;
+
+                        debug_icnt_orde_pkt_valid             <=icnt_orde_pkt_valid;
+                        debug_data_pop                        <=data_pop;
+
+                        debug_pkt_insert_valid                <=pkt_insert_valid;     
+                        debug_pkt_insert_ptr                  <=pkt_insert_ptr;                              
+                        debug_data_pop_ptr_next               <=data_pop_ptr_next;
+                        debug_buffer_data_mem_out             <=buffer_data_mem_out;
   end            
   
 end

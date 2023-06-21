@@ -93,7 +93,10 @@ int _matmul_silent(pim_args *pim_args)
             } else {
                 C_pa = C_base + C_off;
             }
-            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
+	    //Write barrier
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY,CONF_OFFSET_HPC_CLR+0x1000, 0x20, 0x0 | (OPCODE_MAT_MUL << 0x4)); 
+	    PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY,CONF_OFFSET_HPC_CLR+0x1000, 0x20, 0x0 | (OPCODE_MAT_MUL << 0x4)); 
         }
     }
     pim_args->desc_idx = desc_idx - 1;
@@ -156,7 +159,7 @@ int _gemm_silent(pim_args *pim_args)
                 src2_pa = src2_base + offset;
                 dst_pa = dst_base + offset;
             }
-            PIM_RD_INSTR(&desc_idx, &next_desc, src2_pa, (BRAM_DUMMY + offset) % 0x40, C_len, RD_B_ATTR | (OPCODE_ELE_ADD << 0x4));
+            PIM_RD_INSTR(&desc_idx, &next_desc, src2_pa, BRAM_DUMMY + (offset % 0x40), C_len, RD_B_ATTR | (OPCODE_ELE_ADD << 0x4));
 
             for (q = 0; q < q_size; q = q + REG_SIZE) {
                 src0_off = (q * TYPE_SIZE) + ((q_size * TYPE_SIZE) * p);
@@ -173,10 +176,10 @@ int _gemm_silent(pim_args *pim_args)
                 } else {
                     src1_pa = src1_base + src1_off;
                 }
-                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, (BRAM_DUMMY + src0_off) % 0x40, A_len, RD_A_ATTR | (OPCODE_MAT_MUL << 0x4));
-                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, (BRAM_DUMMY + src1_off) % 0x40, B_len, RD_B_ATTR | (OPCODE_MAT_MUL << 0x4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, BRAM_DUMMY + (src0_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL << 0x4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, BRAM_DUMMY + (src1_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL << 0x4));
             }
-            PIM_WR_INSTR(&desc_idx, &next_desc, (BRAM_DUMMY + offset) % 0x40, dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (offset % 0x40), dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
         }
     }
     pim_args->desc_idx = desc_idx - 1;
@@ -246,7 +249,7 @@ int _matmul_fusion_silent(pim_args *pim_args)
                 src2_pa = src2_base + offset;
                 dst_pa = dst_base + offset;
             }
-            PIM_RD_INSTR(&desc_idx, &next_desc, src2_pa, (BRAM_DUMMY + offset) % 0x40, C_len, RD_B_ATTR | (fused_op << 0x4));
+            PIM_RD_INSTR(&desc_idx, &next_desc, src2_pa, BRAM_DUMMY + (offset % 0x40), C_len, RD_B_ATTR | (fused_op << 0x4));
 
             for (q = 0; q < q_size; q = q + REG_SIZE) {
                 //read A
@@ -265,10 +268,10 @@ int _matmul_fusion_silent(pim_args *pim_args)
                 } else {
                     src1_pa = src1_base + src1_off;
                 }
-                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, (BRAM_DUMMY + src0_off) % 0x40, A_len, RD_A_ATTR | (OPCODE_MAT_MUL << 0x4));
-                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, (BRAM_DUMMY + src1_off) % 0x40, B_len, RD_B_ATTR | (OPCODE_MAT_MUL << 0x4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, BRAM_DUMMY + (src0_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL << 0x4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, BRAM_DUMMY + (src1_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL << 0x4));
             }
-            PIM_WR_INSTR(&desc_idx, &next_desc, (BRAM_DUMMY + offset) % 0x40, dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (offset % 0x40), dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL << 0x4));
         }
     }
     pim_args->desc_idx = desc_idx - 1;
@@ -345,8 +348,8 @@ int _matmul_decoupled(pim_args *pim_args)
                 cnt_B += 512;
                 cnt_A += REG_SIZE * REG_SIZE;
 
-                PIM_RD_INSTR(&desc_idx, &next_desc, B_pa, (BRAM_DUMMY + B_off) % 0x40, B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
-                PIM_RD_INSTR(&desc_idx, &next_desc, A_pa, (BRAM_DUMMY + A_off) % 0x40, A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, B_pa, BRAM_DUMMY + (B_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, A_pa, BRAM_DUMMY + (A_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
             }
             C_off = ((cnt_C) * TYPE_SIZE);
             if ((C_off % HUGE_PAGE_SIZE) == 0) {
@@ -357,7 +360,7 @@ int _matmul_decoupled(pim_args *pim_args)
                 C_pa = C_base + C_off;
             }
             cnt_C += REG_SIZE * NUM_BANKS;
-            PIM_WR_INSTR(&desc_idx, &next_desc, (BRAM_DUMMY + C_off) % 0x40, C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
         }
     }
     pim_args->desc_idx = desc_idx - 1;
@@ -431,8 +434,8 @@ int _gemm_decoupled(pim_args *pim_args)
                 }
                 cnt_A += REG_SIZE * REG_SIZE;
 
-                PIM_RD_INSTR(&desc_idx, &next_desc, B_pa, (BRAM_DUMMY + B_off) % 0x40, B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
-                PIM_RD_INSTR(&desc_idx, &next_desc, A_pa, (BRAM_DUMMY + A_off) % 0x40, A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, B_pa, BRAM_DUMMY + (B_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, A_pa, BRAM_DUMMY + (A_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
             }
             C_off = ((cnt_C) * TYPE_SIZE);
             if ((C_off % HUGE_PAGE_SIZE) == 0) {
@@ -443,7 +446,7 @@ int _gemm_decoupled(pim_args *pim_args)
                 C_pa = C_base + C_off;
             }
             cnt_C += REG_SIZE * NUM_BANKS;
-            PIM_WR_INSTR(&desc_idx, &next_desc, (BRAM_DUMMY + C_off) % 0x40, C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (C_off % 0x40), C_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
 
         }
     }
@@ -584,10 +587,10 @@ int _matmul_fusion_decoupled(pim_args *pim_args)
                 }
                 cnt_A += REG_SIZE * REG_SIZE;
 
-                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, (BRAM_DUMMY + src1_off) % 0x40, B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
-                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, (BRAM_DUMMY + src0_off) % 0x40, A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src1_pa, BRAM_DUMMY + (src1_off % 0x40), B_len, RD_B_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+                PIM_RD_INSTR(&desc_idx, &next_desc, src0_pa, BRAM_DUMMY + (src0_off % 0x40), A_len, RD_A_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
             }
-            PIM_WR_INSTR(&desc_idx, &next_desc, (BRAM_DUMMY + offset) % 0x40, dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
+            PIM_WR_INSTR(&desc_idx, &next_desc, BRAM_DUMMY + (offset % 0x40), dst_pa, C_len, WR_C_ATTR | (OPCODE_MAT_MUL_DECOUPLED_8x4 << 4));
 
         }
     }
@@ -598,4 +601,3 @@ int _matmul_fusion_decoupled(pim_args *pim_args)
     }
     return 0;
 }
-

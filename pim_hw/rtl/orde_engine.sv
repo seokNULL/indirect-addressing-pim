@@ -387,6 +387,7 @@ module ordr_engine #(
     .i_reg_C_data(i_args_reg_C),
     .i_reg_LUT_data(i_args_reg_LUT_x),
     .i_HPC_clear(i_HPC_clear),
+    // .i_orde_axbr_pkt_valid(orde_axbr_pkt_valid),
     `endif
     .buffer_data_mem_out(buffer_data_mem_out));
 
@@ -463,7 +464,21 @@ module ordr_engine #(
     .matched_idx(matched_idx),
     .matched_idx_valid(matched_idx_valid)
   );  
+`ifdef SUPPORT_INDIRECT_ADDRESSING
+(* keep = "true", mark_debug = "true" *)reg                          matched_idx_valid_r;
+(* keep = "true", mark_debug = "true" *)reg [$clog2(NUM_MAX_RD)-1:0] matched_idx_r;
 
+always@(posedge clk,  posedge rst )begin
+  if(rst)               matched_idx_valid_r <= 'b0;
+  else                  matched_idx_valid_r <= matched_idx_valid;
+end
+
+always@(posedge clk,  posedge rst )begin
+  if(rst)               matched_idx_r <= 'b0;
+  else                  matched_idx_r <= matched_idx;
+end
+
+`endif
     // =================== RD Response Memory ===================
   always @(posedge clk) begin 
     // Read/Write RD Data Buffer
@@ -471,11 +486,24 @@ module ordr_engine #(
     orde_int_pkt.addr      <= 0;     // Address is not required by AXI Bridge if we only handle READ transactions (responses leave in-order)
     orde_int_pkt.mask      <= 0;     // Not required
     orde_int_pkt.data      <= rd_data_mem[oldest_idx_next];    
-    orde_int_pkt_valid     <= |per_rd_data_valid && (mem_cnt > 0 && !(mem_cnt == 1 && mem_cnt_next == 0));    
-    
+    orde_int_pkt_valid     <= |per_rd_data_valid && (mem_cnt > 0 && !(mem_cnt == 1 && mem_cnt_next == 0));
+    // `ifdef SUPPORT_INDIRECT_ADDRESSING
+    // if (matched_idx_valid_r) rd_data_mem[matched_idx_r] <= buffer_data_mem_out;
+    // `else
     if (matched_idx_valid) rd_data_mem[matched_idx] <= buffer_data_mem_out;
+    // `endif
   end
   
+  (* keep = "true", mark_debug = "true" *)reg [255:0]  debug_orde_int_pkt_data;
+  always@(posedge clk,  posedge rst )begin
+  if(rst) begin   
+                                debug_orde_int_pkt_data  <='b0;
+  end
+  else begin
+                                debug_orde_int_pkt_data  <=orde_int_pkt.data;    
+  end
+  end
+
   
 
   // ============================= Initialization ==============================
