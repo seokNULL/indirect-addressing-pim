@@ -1,1 +1,0 @@
-cmd_/home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/Module.symvers := sed 's/\.ko$$/\.o/' /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/modules.order | scripts/mod/modpost   -E -o /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/Module.symvers -e -i Module.symvers   -T -

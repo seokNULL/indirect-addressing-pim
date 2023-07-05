@@ -1,1 +1,0 @@
-cmd_/home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/pim_drv.ko := ld -r -EL  -maarch64linux -z norelro --build-id=sha1  -T scripts/module.lds -o /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/pim_drv.ko /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/pim_drv.o /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/pim_drv.mod.o;  true

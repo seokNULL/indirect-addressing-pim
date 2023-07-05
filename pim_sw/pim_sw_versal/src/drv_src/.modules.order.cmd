@@ -1,1 +1,0 @@
-cmd_/home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/modules.order := {   echo /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/pim_drv.ko; :; } | awk '!x[$$0]++' - > /home/sy/work/indirect-addressing/pim_sw_versal/src/drv_src/modules.order
