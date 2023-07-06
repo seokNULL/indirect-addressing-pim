@@ -6,7 +6,6 @@
 #include "core/common/common.h"
 #include "core/framework/op_kernel.h"
 #include "core/providers/pim/helper/pim_interface.h"
-
 #include "core/providers/pim/helper/aten/convert_numeric.h"
 
 namespace onnxruntime {

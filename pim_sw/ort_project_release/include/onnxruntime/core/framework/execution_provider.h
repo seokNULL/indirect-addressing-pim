@@ -13,6 +13,10 @@
 #include "core/framework/tensor.h"
 #include "core/framework/data_transfer.h"
 
+// #include "core/providers/pim/helper/pim_init.h"
+// #include <pim.h>
+typedef uint16_t Bfloat16;
+
 namespace onnxruntime {
 
 class GraphViewer;
@@ -157,6 +161,13 @@ class IExecutionProvider {
      that all commands of current Run has been submmited by CPU
   */
   virtual common::Status OnRunEnd() { return Status::OK(); }
+
+  /**
+     Modify for PIM LUT operaetion. 
+     This encapsulation function supports the table address for compute op_kernel
+  */
+  virtual common::Status RegisterLut() { return Status::OK(); }
+  virtual Bfloat16* ReturnLut(int num_id) const { return nullptr; }
 
   /**
      Called when session creation is complete
